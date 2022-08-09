@@ -42,8 +42,10 @@ public class CollectableObjectController : MonoBehaviour
         IsTool = m_Information.IsTool;
         Icon = m_Information.Icon;
         if(ResetDurability)
+        {
             MaxDurability = m_Information.ToolDurability;
             CurrDurability = m_Information.StartDurability;
+        }
         CollectableOrNot = true;
     }
     public CollectableType GetCollectableType()
@@ -126,6 +128,8 @@ public class CollectableObjectController : MonoBehaviour
     {
         return m_Action;
     }
+
+
 }
 
 public enum CollectableType

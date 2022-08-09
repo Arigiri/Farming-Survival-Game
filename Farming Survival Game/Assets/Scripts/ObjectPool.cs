@@ -24,23 +24,24 @@ public class CollectableObjectPool
             else m_NewObj.SetDurability(item.GetCurrDurability());
             m_NewObj.transform.SetParent(Parent);
         }
-        else if(m_InactiveObject.Count <= 0)
+        else 
+        if(m_InactiveObject.Count <= 0)
         {
-           m_NewObj = GameObject.Instantiate(m_Object);
-           m_NewObj.transform.position = Position;
-           m_NewObj.transform.SetParent(Parent);
-           m_NewObj.gameObject.SetActive(true);
-           m_ActiveObject.Add(m_NewObj);
+            m_NewObj = GameObject.Instantiate(item);
+            m_NewObj.transform.position = Position;
+            m_NewObj.transform.SetParent(Parent);
+            m_NewObj.gameObject.SetActive(true);
+            m_ActiveObject.Add(m_NewObj);
         }
         else
         {
-           m_NewObj = m_InactiveObject[0];
-           m_NewObj.transform.position = Position;
-           m_NewObj.transform.SetParent(Parent);
-           m_NewObj.gameObject.SetActive(true);
-           m_ActiveObject.Add(m_NewObj);
-           m_InactiveObject.RemoveAt(0);
-           
+            m_NewObj = m_InactiveObject[0];
+            m_NewObj.transform.position = Position;
+            m_NewObj.transform.SetParent(Parent);
+            m_NewObj.gameObject.SetActive(true);
+            m_ActiveObject.Add(m_NewObj);
+            m_InactiveObject.RemoveAt(0);
+            
         }
         return m_NewObj;
     }
