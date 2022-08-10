@@ -92,6 +92,10 @@ public class PlayerActionController : MonoBehaviour
             default : print("Quen Setup Kia!!!"); break;            
         }
         m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
+        if( m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0)
+        {
+             m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
+        }
         m_ToolBar.Setup();
         // Debug.Break();
     }
