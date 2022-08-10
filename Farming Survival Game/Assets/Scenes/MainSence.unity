@@ -20748,6 +20748,7 @@ MonoBehaviour:
   m_InformationPanel: {fileID: 2132768979}
   m_text: {fileID: 1368552858}
   m_Icon: {fileID: 1371399959}
+  m_Inventory: {fileID: 721788832}
   m_SlotIdx: 0
 --- !u!1001 &648202919
 PrefabInstance:
