@@ -102,9 +102,11 @@ public class PlayerController : MonoBehaviour
                             m_AttributeUIController.SetAction(m_Action);
                             m_PlayerActionController.SetCropPosition(Position);
                         }
-                        else
+                        else if(m_Action == Action.Plant && m_PlayerActionController.CanPlant())
                         {
-                            
+                            m_AttributeUIController.MakeProgressBar(0.2f);
+                            m_AttributeUIController.SetAction(m_Action);
+                            m_PlayerActionController.SetCropPosition(Position);
                         }
                         TempItemOnHand = CurrItemOnHand;
                     }

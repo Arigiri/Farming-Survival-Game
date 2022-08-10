@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,10 @@ public class TileController : MonoBehaviour
    public Tilemap m_TileMap;
    public RuleTile m_UnWateredCropTile;
    public RuleTile m_WateredCropTile;
+   public PlantController[] m_Crops;
    public Tilemap m_UnWateredCropTileMap;
    public Tilemap m_WateredCropTileMap;
+   public Tilemap m_CropTileMap;
    [SerializeField] private float m_MaxLengthPlace;
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
@@ -26,13 +29,7 @@ public class TileController : MonoBehaviour
       m_TileMap.SetTile(Location,TileSelect);
    }
 
-   public void SetCropTile(PlayerController m_Player, Vector3 Position)
-   {
-      // print("StartCrop");
-      
-      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
-      m_UnWateredCropTileMap.SetTile(NewLocation, m_UnWateredCropTile);
-   }
+   
 
    public bool CanCrop(PlayerController m_Player, Vector3 Position)
    {
@@ -48,11 +45,38 @@ public class TileController : MonoBehaviour
       return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace && m_UnWateredCropTileMap.GetTile(NewLocation) != null && m_WateredCropTileMap.GetTile(NewLocation) == null;
    }
 
+   public bool CanPlant(PlayerController m_Player, Vector3 Position)
+   {
+      Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace && m_WateredCropTileMap.GetTile(NewLocation) != null && m_CropTileMap.GetTile(NewLocation) == null;
+   }
    public void SetWateredTile(Vector3 Position)
    {
-      print("WaterCrop");
+      // print("WaterCrop");
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       m_WateredCropTileMap.SetTile(NewLocation, m_WateredCropTile);
+   }
+   public void SetCropTile(PlayerController m_Player, Vector3 Position)
+   {
+      // print("StartCrop");
+      
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      m_UnWateredCropTileMap.SetTile(NewLocation, m_UnWateredCropTile);
+   }
+   public void SetPlantTile(PlayerController m_Player, Vector3 Position, TreeType type)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      foreach(PlantController plant in m_Crops)
+      {
+         if(plant.GetTreeType() == type)
+         {
+            m_CropTileMap.SetTile(NewLocation, plant.GetAnimatedTile());
+            print(plant.GetAnimatedTile());
+            return;
+         }
+      }
+      
    }
    public Vector3Int GetTile(Vector3 Position, bool IsObjectOnMap)
    {

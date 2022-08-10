@@ -47,6 +47,7 @@ public class InventoryController : MonoBehaviour
         public Action m_Action;
         public int m_Durability;
         public int m_MaxDurability;
+        public TreeType m_TreeType;
         public CollectableObjectController m_CollectableObject;
         public Slot()
         {
@@ -61,6 +62,10 @@ public class InventoryController : MonoBehaviour
         public void Add(CollectableObjectController Object)
         {
             Type = Object.GetCollectableType();
+            if(Type == CollectableType.SeedBag)
+            {
+                m_TreeType = Object.GetTreeType();
+            }
             m_Icon = Object.Icon;
             MaxCount = Object.GetStack();
             m_Action = Object.GetAction();
