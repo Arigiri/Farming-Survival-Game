@@ -16,4 +16,5 @@ public class CollectableObjectInformation : ScriptableObject
     public Action Action;
     public Sprite Icon;
     public bool IsTool;
+    public string Description;
 }

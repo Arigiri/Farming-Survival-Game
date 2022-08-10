@@ -10,8 +10,9 @@ public class ObjectInformationPanel : MonoBehaviour
     [SerializeField] private GameObject m_InformationPanel;
     [SerializeField] private TextMeshProUGUI m_text;
     [SerializeField] private Image m_Icon;
+    [SerializeField] private InventoryController m_Inventory;
 
-    public int m_SlotIdx;
+    public int m_SlotIdx; // Chi so cua o hien tai cua ObjectInformationPanel
 
     public void RefreshInformationPanel(Image Icon)
     {
@@ -22,6 +23,7 @@ public class ObjectInformationPanel : MonoBehaviour
         }
         m_Icon.sprite = Icon.sprite;
         m_Icon.color = new Color(1, 1, 1, 1);
+        m_text.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.Description;
         // Debug.Log(Icon.sprite);
     }
 
