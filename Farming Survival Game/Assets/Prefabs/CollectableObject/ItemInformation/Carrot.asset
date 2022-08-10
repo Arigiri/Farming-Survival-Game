@@ -22,3 +22,4 @@ MonoBehaviour:
   Action: 0
   Icon: {fileID: -1827429619, guid: 027f9bb55f2632949815e6c83352a0df, type: 3}
   IsTool: 0
+  Description: This is a carrot
