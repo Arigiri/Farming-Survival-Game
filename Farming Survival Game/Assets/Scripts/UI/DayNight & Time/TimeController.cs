@@ -9,6 +9,7 @@ public class TimeController : MonoBehaviour
     [SerializeField]private Volume ppv;
     [SerializeField]private float TotalSecondInDay;
     [SerializeField] private float StartHourOfFirstDay;
+    [SerializeField] private RainManager m_RainManager;
     private float TotalSecondInNight;
     private float TotalSecondADay;
     private int Day;
@@ -54,11 +55,26 @@ public class TimeController : MonoBehaviour
             SetUpLight(1.0f, 1.0f);
         }
         // print(CurrTime);
+
+        if(m_RainManager.GetCurrRainLevel() == 2)
+        {
+            SetLight(0.2f);
+        }
+        if(m_RainManager.GetCurrRainLevel() == 3)
+        {
+            SetLight(0.65f);
+        }
     }
 
     private void SetUpLight(float Time, float TotalTime)
     {
         float Weight = Mathf.Min(Time/TotalTime, 1f);
+        ppv.weight = Weight;
+    }
+
+    public void SetLight(float x)
+    {
+        float Weight = Mathf.Max(x, ppv.weight);
         ppv.weight = Weight;
     }
 
