@@ -35,7 +35,7 @@ public class ObjectInformationPanel : MonoBehaviour
         else 
         {
             m_Food.SetActive(true);
-            m_FoodText.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemFood.ToString();
+            m_FoodText.text = " : " + m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemFood.ToString();
         }
         if(m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemStamina == -1) 
         {
@@ -44,7 +44,7 @@ public class ObjectInformationPanel : MonoBehaviour
         else 
         {
             m_Stamina.SetActive(true);
-            m_StaminaText.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemStamina.ToString();
+            m_StaminaText.text = " : " + m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemStamina.ToString();
         }
         // Debug.Log(Icon.sprite);
     }
