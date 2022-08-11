@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bc81612358e024abb0edd81fd54bff, type: 3}
   m_Name: TomatoSeedBag
   m_EditorClassIdentifier: 
-  ItemName: TomatoSeedBag
+  ItemName: Tomato Seed
   ItemFood: -1
   ItemStamina: -1
   ToolDurability: -1
