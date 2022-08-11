@@ -13,7 +13,8 @@ public class CollectableObjectsPool : MonoBehaviour
         {CollectableType.Chili, new CollectableObjectPool(CollectableType.Chili)},
         {CollectableType.Axe, new CollectableObjectPool(CollectableType.Axe)},
         {CollectableType.Hoe, new CollectableObjectPool(CollectableType.Hoe)},
-        {CollectableType.WateringCan, new CollectableObjectPool(CollectableType.WateringCan)}
+        {CollectableType.WateringCan, new CollectableObjectPool(CollectableType.WateringCan)},
+        {CollectableType.SeedBag, new CollectableObjectPool(CollectableType.SeedBag)},
     };
     void Awake()
     {

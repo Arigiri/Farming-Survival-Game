@@ -25,6 +25,7 @@ public class OnMapObjectController : MonoBehaviour
     {
         DropItem();
         transform.parent.gameObject.SetActive(false);
+        m_TileController.RemoveOnMapObject(transform.position);
     }
     private void DropItem()
     {

@@ -14,6 +14,7 @@ public class PlayerActionController : MonoBehaviour
     private TileBase CurrTile;
     private Vector3 CropPosition;
     private Vector3 MousePosition;
+    private TreeType m_TreeType;
     public bool CanCut = false;
     
     public TileController GetTileController()
@@ -21,7 +22,10 @@ public class PlayerActionController : MonoBehaviour
         return m_TileController;
     }
 
-
+    public void SetTreeTile(TreeType Type)
+    {
+        m_TreeType = Type;
+    }
     void Start()
     {
         
@@ -84,9 +88,14 @@ public class PlayerActionController : MonoBehaviour
             case Action.Cut : if(ObjectOnQueue.Count > 0) ObjectOnQueue[0].GetComponent<OnMapObjectController>().SelfDestroy(); break;
             case Action.Hoe : m_TileController.SetCropTile(m_Player, CropPosition); break;
             case Action.Water : m_TileController.SetWateredTile(CropPosition); break;
+            case Action.Plant : m_TileController.SetPlantTile(m_Player, CropPosition, m_Player.GetCurrItem().m_TreeType);break;
             default : print("Quen Setup Kia!!!"); break;            
         }
         m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
+        if( m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0)
+        {
+             m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
+        }
         m_ToolBar.Setup();
         // Debug.Break();
     }
@@ -107,6 +116,12 @@ public class PlayerActionController : MonoBehaviour
         return m_TileController.CanWater(m_Player, MousePosition);
     }
 
+    public bool CanPlant()
+    {
+        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return m_TileController.CanPlant(m_Player, MousePosition);
+    }
+
 }
 
 public enum Action
@@ -117,4 +132,5 @@ public enum Action
     Dig,
     Pick,
     Water,
+    Plant,
 }

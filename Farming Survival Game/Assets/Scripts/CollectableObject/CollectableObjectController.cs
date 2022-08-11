@@ -16,20 +16,11 @@ public class CollectableObjectController : MonoBehaviour
     public Sprite Icon;
     public bool CollectableOrNot;
     public Rigidbody2D rb2d;
+    private TreeType m_TreeType;
 
     private void Awake()
     {
-        m_Type = m_Information.Type;
-        m_Action = m_Information.Action;
-        m_MaxStack = m_Information.Stack;
-        IsTool = m_Information.IsTool;
-        Icon = m_Information.Icon;
-
-        if(m_Information.ToolDurability > 0)
-        {
-            MaxDurability = m_Information.ToolDurability;
-            CurrDurability = m_Information.StartDurability;
-        }
+        ResetAttribute(true);
         CollectableOrNot = true;
         m_Pool = FindObjectOfType<CollectableObjectsPool>().m_Pool[m_Type];
         rb2d = GetComponent<Rigidbody2D>();
@@ -41,9 +32,15 @@ public class CollectableObjectController : MonoBehaviour
         m_MaxStack = m_Information.Stack;
         IsTool = m_Information.IsTool;
         Icon = m_Information.Icon;
+        if(m_Information.Type == CollectableType.SeedBag)
+        {
+            m_TreeType = m_Information.m_TreeType;
+        }
         if(ResetDurability)
+        {
             MaxDurability = m_Information.ToolDurability;
             CurrDurability = m_Information.StartDurability;
+        }
         CollectableOrNot = true;
     }
     public CollectableType GetCollectableType()
@@ -51,9 +48,9 @@ public class CollectableObjectController : MonoBehaviour
         return m_Information.Type;
     }
 
-    public void Setter()
+    public TreeType GetTreeType()
     {
-
+        return m_TreeType;
     }
     
     void Start()
@@ -126,6 +123,8 @@ public class CollectableObjectController : MonoBehaviour
     {
         return m_Action;
     }
+
+
 }
 
 public enum CollectableType
@@ -139,5 +138,6 @@ public enum CollectableType
     Pickaxe,
     Shovel,
     Hoe,
-    WateringCan
+    WateringCan,
+    SeedBag
 }

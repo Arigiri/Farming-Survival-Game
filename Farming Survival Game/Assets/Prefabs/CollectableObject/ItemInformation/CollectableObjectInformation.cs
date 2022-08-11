@@ -16,5 +16,6 @@ public class CollectableObjectInformation : ScriptableObject
     public Action Action;
     public Sprite Icon;
     public bool IsTool;
+    public TreeType m_TreeType;
     public string Description;
 }
