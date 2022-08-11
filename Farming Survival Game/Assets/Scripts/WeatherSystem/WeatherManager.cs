@@ -9,6 +9,7 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private bool m_DoThunder;// Cai sam chop nay tu dong neu troi mua cap 3, cap <= 2 kh co sam chop
     [SerializeField] private RainManager m_RainManager;
     [SerializeField] private ThunderManager m_ThunderManager;
+    [SerializeField] private PlayerController m_Player;
 
     private int ThunderGapTime;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class WeatherManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = m_Player.transform.position;
         if(m_RainLevel != m_RainManager.GetCurrRainLevel())
         {
             m_RainManager.SetRainLevel(m_RainLevel);
