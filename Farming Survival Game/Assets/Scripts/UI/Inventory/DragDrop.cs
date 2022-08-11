@@ -41,7 +41,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             m_CloneQuantity.text = m_InventoryUI.slots[CurrSlotIndex].GetQuantityText();
         }
 
-        if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.5f))
+        if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
         {
             SetActiveFalse();
         }

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_ItemIcon: {fileID: 3520182223037265059}
   m_QuantityText: {fileID: 3520182222205151737}
   m_InventoryUI: {fileID: 0}
-  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_Color: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
   m_FirstSlotPosition: {fileID: 0}
@@ -319,6 +319,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 0}
+  thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &3520182223037265057
 GameObject:

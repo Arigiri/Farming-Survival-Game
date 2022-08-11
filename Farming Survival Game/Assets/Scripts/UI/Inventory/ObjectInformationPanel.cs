@@ -8,7 +8,8 @@ public class ObjectInformationPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject m_InformationPanel;
-    [SerializeField] private TextMeshProUGUI m_text;
+    [SerializeField] private TextMeshProUGUI m_Description;
+    [SerializeField] private TextMeshProUGUI m_ItemName;
     [SerializeField] private Image m_Icon;
     [SerializeField] private InventoryController m_Inventory;
     [SerializeField] private TextMeshProUGUI m_FoodText;
@@ -27,7 +28,8 @@ public class ObjectInformationPanel : MonoBehaviour
         }
         m_Icon.sprite = Icon.sprite;
         m_Icon.color = new Color(1, 1, 1, 1);
-        m_text.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.Description;
+        m_Description.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.Description;
+        m_ItemName.text = m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemName;
         if(m_Inventory.Slots[m_SlotIdx].m_CollectableObject.m_Information.ItemFood == -1)   
         {
             m_Food.SetActive(false);
@@ -58,7 +60,8 @@ public class ObjectInformationPanel : MonoBehaviour
     {
         m_Icon.sprite = null;
         m_Icon.color = new Color(1, 1, 1, 0);
-        m_text.text = "";
+        m_Description.text = "";
+        m_ItemName.text = "";
         m_Food.SetActive(false);
         m_Stamina.SetActive(false);
     }
