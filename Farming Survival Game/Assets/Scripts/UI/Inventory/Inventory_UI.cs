@@ -77,10 +77,10 @@ public class Inventory_UI : MonoBehaviour
         {
             
             CollectableObjectController itemToDrop = ItemGameManager.instance.itemManager.GetItemByType(m_Player.GetCollectableType(m_ObjectInformationPanel.m_SlotIdx));
-            itemToDrop.SetDurability(m_Player.GetInventoryController().Slots[m_ObjectInformationPanel.m_SlotIdx].m_Durability);
-
+            
             if(itemToDrop != null)
             {
+                itemToDrop.SetDurability(m_Player.GetInventoryController().Slots[m_ObjectInformationPanel.m_SlotIdx].m_Durability);
                 Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.1f; 
                 m_Player.DropAllItem(itemToDrop, SpawnPoint + SpawnOffset);
                 m_Player.Remove(m_ObjectInformationPanel.m_SlotIdx); 
