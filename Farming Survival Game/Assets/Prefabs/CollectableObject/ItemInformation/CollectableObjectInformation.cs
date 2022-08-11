@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class CollectableObjectInformation : ScriptableObject
 {
     public string ItemName;
-    public string ItemFood;
-    public string ItemStamina;
+    public int ItemFood;
+    public int ItemStamina;
     public int ToolDurability;
     public int StartDurability;
     public CollectableType Type;
@@ -17,4 +17,5 @@ public class CollectableObjectInformation : ScriptableObject
     public Sprite Icon;
     public bool IsTool;
     public TreeType m_TreeType;
+    public string Description;
 }

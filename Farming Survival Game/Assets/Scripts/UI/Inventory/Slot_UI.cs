@@ -24,7 +24,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
     [SerializeField] private InventoryController m_Inventory;
     private InventoryController.Slot m_Slot;
 
-    public Image thisImage;
+    public Image thisImage; //wtf is this???
     public int SlotIdx;
     private int m_CurrDurability = -1;
     public string GetQuantityText()
@@ -127,7 +127,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
             img.color = m_Color;
         }
         Image image = gameObject.GetComponent<Image>();
-        image.color = new Color(1, 1, 1, 0.5f);
+        image.color = new Color(1, 1, 1, 0.75f); // neu sua cai nay thi sua ca cai trong dragdrop
 
     }
 

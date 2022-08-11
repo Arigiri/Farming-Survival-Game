@@ -22,3 +22,4 @@ MonoBehaviour:
   Action: 2
   Icon: {fileID: 21300000, guid: 56a34bc3f4b8ab044ac767d8c5c4e2c2, type: 3}
   IsTool: 1
+  Description: This is the hoe. It can dig up the ground to grow crops
