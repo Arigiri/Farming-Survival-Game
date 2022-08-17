@@ -1,3 +1,4 @@
+using System.Security;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputAction m_InputAction;
     [SerializeField] private float m_movespeed;
     [SerializeField] private InventoryController m_Inventory;
-    [SerializeField] private float m_Scale;
     [SerializeField] private GameObject m_ChopAnimation;
     [SerializeField] private AttributeController m_AttributeController;
     [SerializeField] private CollectableObjectsPool m_CollectableObjectsPool;
@@ -29,7 +29,18 @@ public class PlayerController : MonoBehaviour
     public bool Active = true;
     public float CurrHealth, CurrFood, CurrStamina;
     public float MaxHealth, MaxFood, MaxStamina;
-
+    //Animation Controller
+    const string IDLE_UP = "Idle_Up";
+    const string IDLE_DOWN = "Idle_Down";
+    const string IDLE_LEFT = "Idle_Left";
+    const string IDLE_RIGHT = "Idle_Right";
+    const string RUN_UP = "Run_Up";
+    const string RUN_DOWN = "Run_Down";
+    const string RUN_LEFT = "Run_Left";
+    const string RUN_RIGHT = "Run_Right";
+    private Direction CurrDirection = Direction.Idle;
+    private Direction OldDirection = Direction.Up;
+    //Script
     private void OnEnable() 
     {
         m_InputAction.Enable();
@@ -130,20 +141,25 @@ public class PlayerController : MonoBehaviour
 
         //Movement
         m_MoveDirection = m_InputAction.ReadValue<Vector2>();
+        if(CurrDirection != Direction.Idle)OldDirection = CurrDirection;
+        CurrDirection = GetDirection(m_MoveDirection);
         if(m_MoveDirection != Vector2.zero)
         {
-            Run();
+            Run(CurrDirection);
             SetAction(Action.None); //reset action
             CanAction = false;
         }
         else
-            Idle();
-        if(m_MoveDirection.x > 0)
-            transform.localScale = Vector3.one * m_Scale;
-        else if (m_MoveDirection.x < 0)
-            transform.localScale= new Vector3(-1, 1, 1) * m_Scale;
+            Idle(OldDirection);
     }
-
+    public Direction GetDirection(Vector2 m_MoveDirection)
+    {
+        if(m_MoveDirection.x < 0)return Direction.Left;
+        if(m_MoveDirection.x > 0)return Direction.Right;
+        if(m_MoveDirection.y > 0)return Direction.Up;
+        if(m_MoveDirection.y < 0)return Direction.Down;
+        return Direction.Idle;
+    }
     public float GetMoveDirection()
     {
         return transform.localScale.x;
@@ -155,16 +171,26 @@ public class PlayerController : MonoBehaviour
     }
 
     [ContextMenu("Run")]
-    private void Run()
+    private void Run(Direction Dir)
     {
-        m_Animator.SetBool("Run", true);
-        m_Animator.SetBool("Idle", false);
+        switch(Dir)
+        {
+            case Direction.Up: m_Animator.Play(RUN_UP);break;
+            case Direction.Down: m_Animator.Play(RUN_DOWN);break;
+            case Direction.Left: m_Animator.Play(RUN_LEFT);break;
+            case Direction.Right: m_Animator.Play(RUN_RIGHT);break;
+        }
     }
     [ContextMenu("Idle")]
-    private void Idle()
+    private void Idle(Direction Dir)
     {
-        m_Animator.SetBool("Idle", true);
-        m_Animator.SetBool("Run", false);
+        switch(Dir)
+        {
+            case Direction.Up: m_Animator.Play(IDLE_UP);break;
+            case Direction.Down: m_Animator.Play(IDLE_DOWN);break;
+            case Direction.Left: m_Animator.Play(IDLE_LEFT);break;
+            case Direction.Right: m_Animator.Play(IDLE_RIGHT);break;
+        }
     }
     [ContextMenu("Die")]
     private void Die()
@@ -297,4 +323,9 @@ public class PlayerController : MonoBehaviour
     {
         return m_Action;
     }
+
+}
+public enum Direction
+{
+    Up, Down, Left, Right, Idle
 }
