@@ -1837,7 +1837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106706804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4088307, y: -0.18587965, z: 0}
+  m_LocalPosition: {x: -0.094, y: 0.233, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -13864,8 +13864,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435754463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.344, y: 0.362, z: 0.03264869}
-  m_LocalScale: {x: 0.72360003, y: 0.72360003, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.01, z: 0.03264869}
+  m_LocalScale: {x: 1.0086261, y: 1.0667312, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 106706805}
@@ -19917,7 +19917,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0009818189, y: 0.0006646812}
+  m_Offset: {x: -0.014708579, y: -0.06522387}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -19928,7 +19928,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20274568, y: 0.2674433}
+  m_Size: {x: 0.41962898, y: 0.3992204}
   m_EdgeRadius: 0
 --- !u!1001 &907333231
 PrefabInstance:
@@ -22095,7 +22095,6 @@ MonoBehaviour:
     m_Flags: 0
   m_movespeed: 3
   m_Inventory: {fileID: 1688331129}
-  m_Scale: 5
   m_ChopAnimation: {fileID: 435754463}
   m_AttributeController: {fileID: 365206159}
   m_CollectableObjectsPool: {fileID: 1576883064}
@@ -22173,7 +22172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008449331, y: -0.06168047}
+  m_Offset: {x: 0.00015866756, y: -0.18178983}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22184,7 +22183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14831014, y: 0.05566605}
+  m_Size: {x: 0.2540064, y: 0.08723763}
   m_EdgeRadius: 0
 --- !u!4 &1057887305
 Transform:
