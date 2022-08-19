@@ -29,27 +29,27 @@ public class RainManager : MonoBehaviour
         if(level == 1)
         {
             var RainEmission = m_Rain.emission;
-            RainEmission.rateOverTime = 125;
+            RainEmission.rateOverTime = 250;
             var RainSplashEmission = m_RainSplash.emission;
-            RainSplashEmission.rateOverTime = 30;
+            RainSplashEmission.rateOverTime = 70;
             var RainGravityModifier = m_Rain.main;
             RainGravityModifier.gravityModifier = 1.4f;
         }
         if(level == 2)
         {
             var RainEmission = m_Rain.emission;
-            RainEmission.rateOverTime = 250;
+            RainEmission.rateOverTime = 450;
             var RainSplashEmission = m_RainSplash.emission;
-            RainSplashEmission.rateOverTime = 60;
+            RainSplashEmission.rateOverTime = 140;
             var RainGravityModifier = m_Rain.main;
             RainGravityModifier.gravityModifier = 1.75f;
         }
         if(level == 3)
         {
             var RainEmission = m_Rain.emission;
-            RainEmission.rateOverTime = 500;
+            RainEmission.rateOverTime = 900;
             var RainSplashEmission = m_RainSplash.emission;
-            RainSplashEmission.rateOverTime = 120;
+            RainSplashEmission.rateOverTime = 280;
             var RainGravityModifier = m_Rain.main;
             RainGravityModifier.gravityModifier = 2.25f;
         }

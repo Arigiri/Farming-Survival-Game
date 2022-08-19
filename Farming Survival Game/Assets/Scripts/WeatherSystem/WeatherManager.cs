@@ -17,12 +17,13 @@ public class WeatherManager : MonoBehaviour
     {
         m_RainManager.SetRainLevel(0);
         m_DoThunder = true;
+        Invoke("SetRainPosition", 3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = m_Player.transform.position;
+        
         if(m_RainLevel != m_RainManager.GetCurrRainLevel())
         {
             m_RainManager.SetRainLevel(m_RainLevel);
@@ -39,5 +40,11 @@ public class WeatherManager : MonoBehaviour
     private void SetDoThunderTrue()
     {
         m_DoThunder = true;
+    }
+
+    private void SetRainPosition()
+    {
+        transform.position = m_Player.transform.position;
+        Invoke("SetRainPosition", 3f);
     }
 }
