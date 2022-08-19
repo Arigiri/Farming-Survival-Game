@@ -13247,7 +13247,7 @@ GameObject:
   - component: {fileID: 408116646}
   - component: {fileID: 408116645}
   m_Layer: 0
-  m_Name: TileAdding
+  m_Name: UnwateredTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16995,7 +16995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b3d16fde6520744bf4e0da15158967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InventoryUI: {fileID: 0}
+  m_InventoryUI: {fileID: 1544195267}
   m_Player: {fileID: 1057887301}
   m_SlotUI:
   - {fileID: 1121883841}
@@ -22100,6 +22100,7 @@ MonoBehaviour:
   m_CollectableObjectsPool: {fileID: 1576883064}
   m_AttributeUIController: {fileID: 137664084}
   m_PlayerActionController: {fileID: 900960565}
+  IsWorking: 0
   CanAction: 1
   Active: 1
   CurrHealth: 0

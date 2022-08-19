@@ -49,7 +49,7 @@ public class TileController : MonoBehaviour
    {
       Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
-      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace && m_WateredCropTileMap.GetTile(NewLocation) != null && m_CropTileMap.GetTile(NewLocation) == null;
+      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace &&  m_CropTileMap.GetTile(NewLocation) == null;
    }
    public void SetWateredTile(Vector3 Position)
    {

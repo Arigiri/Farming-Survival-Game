@@ -72,7 +72,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
         if(m_CurrDurability <= 0)
         {
             m_Durability.gameObject.SetActive(false);
-            if(m_Inventory.Slots[SlotIdx].Count > 0)    m_QuantityText.text = m_Inventory.Slots[SlotIdx].Count.ToString();
+            if(m_Inventory.Slots.Count > 0)    m_QuantityText.text = m_Inventory.Slots[SlotIdx].Count.ToString();
         }
         else
         {

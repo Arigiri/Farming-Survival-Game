@@ -10,6 +10,7 @@ public class AttributeUIController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject m_ProcessingBar;
     [SerializeField] private PlayerActionController m_PlayerAction;
+    private PlayerController m_Player;
     private Slider m_Slider;
     private float m_ProcessingTime = 0f;
     private float m_CurrProcessingTime = -1;
@@ -17,6 +18,7 @@ public class AttributeUIController : MonoBehaviour
     void Start()
     {
         m_Slider = m_ProcessingBar.GetComponentInChildren<Slider>();
+        m_Player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class AttributeUIController : MonoBehaviour
         {
             m_PlayerAction.TriggerAction(m_Action);
             TurnOffProgressBar();
+            m_Player.IsWorking = false;
         }
     }
 

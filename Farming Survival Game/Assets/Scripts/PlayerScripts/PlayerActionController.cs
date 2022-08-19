@@ -97,6 +97,7 @@ public class PlayerActionController : MonoBehaviour
              m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
         }
         m_ToolBar.Setup();
+        
         // Debug.Break();
     }
 

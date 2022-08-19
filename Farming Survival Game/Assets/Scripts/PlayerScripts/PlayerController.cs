@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private InventoryController.Slot CurrItemOnHand;
     private Action m_Action;
     private InventoryController.Slot TempItemOnHand;
+    public bool IsWorking = false;
     public bool CanAction = true;
     public bool Active = true;
     public float CurrHealth, CurrFood, CurrStamina;
@@ -38,6 +39,10 @@ public class PlayerController : MonoBehaviour
     const string RUN_DOWN = "Run_Down";
     const string RUN_LEFT = "Run_Left";
     const string RUN_RIGHT = "Run_Right";
+    const string WORK_UP = "Working_Up";
+    const string WORK_DOWN = "Working_Down";
+    const string WORK_LEFT = "Working_Left";
+    const string WORK_RIGHT = "Working_Right";
     private Direction CurrDirection = Direction.Idle;
     private Direction OldDirection = Direction.Up;
     //Script
@@ -101,25 +106,31 @@ public class PlayerController : MonoBehaviour
                             m_AttributeUIController.MakeProgressBar(0.2f);
                             m_AttributeUIController.SetAction(m_Action);
                             m_PlayerActionController.SetCropPosition(Position);
+                            IsWorking = true;
                         }
                         else if(m_Action == Action.Cut && m_PlayerActionController.CanCut)
                         {
                             m_AttributeUIController.MakeProgressBar(0.2f);
                             m_AttributeUIController.SetAction(m_Action);
+                            IsWorking = true;
                         }
                         else if(m_Action == Action.Water && m_PlayerActionController.CanWater())
                         {
                             m_AttributeUIController.MakeProgressBar(0.2f);
                             m_AttributeUIController.SetAction(m_Action);
                             m_PlayerActionController.SetCropPosition(Position);
+                            IsWorking = true;
                         }
                         else if(m_Action == Action.Plant && m_PlayerActionController.CanPlant())
                         {
                             m_AttributeUIController.MakeProgressBar(0.2f);
                             m_AttributeUIController.SetAction(m_Action);
                             m_PlayerActionController.SetCropPosition(Position);
+                            IsWorking = true;
                         }
                         TempItemOnHand = CurrItemOnHand;
+                        if(IsWorking)TriggerWorkAction();
+                        
                     }
                     
                     
@@ -145,11 +156,11 @@ public class PlayerController : MonoBehaviour
         CurrDirection = GetDirection(m_MoveDirection);
         if(m_MoveDirection != Vector2.zero)
         {
-            Run(CurrDirection);
+            if(IsWorking == false)Run(CurrDirection);
             SetAction(Action.None); //reset action
             CanAction = false;
         }
-        else
+        else if(IsWorking == false)
             Idle(OldDirection);
     }
     public Direction GetDirection(Vector2 m_MoveDirection)
@@ -191,6 +202,21 @@ public class PlayerController : MonoBehaviour
             case Direction.Left: m_Animator.Play(IDLE_LEFT);break;
             case Direction.Right: m_Animator.Play(IDLE_RIGHT);break;
         }
+    }
+    private void Work(Direction Dir)
+    {
+        print(Dir);
+        switch(Dir)
+        {
+            case Direction.Up: m_Animator.Play(WORK_UP);break;
+            case Direction.Down: m_Animator.Play(WORK_DOWN);break;
+            case Direction.Left: m_Animator.Play(WORK_LEFT);break;
+            case Direction.Right: m_Animator.Play(WORK_RIGHT);break;
+        }
+    }
+    public void TriggerWorkAction()
+    {
+        Work(OldDirection);
     }
     [ContextMenu("Die")]
     private void Die()
