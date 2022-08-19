@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bc81612358e024abb0edd81fd54bff, type: 3}
   m_Name: TomatoSeedBag
   m_EditorClassIdentifier: 
-  ItemName: TomatoSeedBag
+  ItemName: Tomato Seed
   ItemFood: -1
   ItemStamina: -1
   ToolDurability: -1
@@ -23,4 +23,4 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: fbc8b3e0be89dd740891a8a2fdae3332, type: 3}
   IsTool: 0
   m_TreeType: 0
-  Description: 
+  Description: This is a bag of tomato seed
