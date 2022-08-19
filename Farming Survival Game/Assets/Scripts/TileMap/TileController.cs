@@ -71,8 +71,7 @@ public class TileController : MonoBehaviour
       {
          if(plant.GetTreeType() == type)
          {
-            m_CropTileMap.SetTile(NewLocation, plant.GetAnimatedTile());
-            print(plant.GetAnimatedTile());
+            m_CropTileMap.SetTile(NewLocation, plant.GetAnimatedTile(0));
             return;
          }
       }

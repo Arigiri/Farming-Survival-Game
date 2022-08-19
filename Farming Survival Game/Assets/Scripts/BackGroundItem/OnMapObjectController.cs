@@ -47,4 +47,7 @@ public class OnMapObjectController : MonoBehaviour
     {
         return CurrTile;
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+        print(gameObject.name);
+    }
 }

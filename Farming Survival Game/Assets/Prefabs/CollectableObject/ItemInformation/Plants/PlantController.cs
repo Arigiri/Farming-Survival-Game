@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,23 +8,20 @@ public class PlantController : MonoBehaviour
 {
     [SerializeField] private PlantInformation m_PlantInformation;
     private TreeType m_Type;
-    private AnimatedTile m_Tile;
-    private void Awake() {
-        
-        print(m_PlantInformation.PlantTile);
-    }
+    private Tile[] m_Tile;
     public TreeType GetTreeType()
     {
         m_Tile = m_PlantInformation.PlantTile;
         return m_Type;
     }
-    public AnimatedTile GetAnimatedTile()
+    public Tile GetAnimatedTile(int index)
     {
-        return m_Tile;
+        return m_Tile[index];
     }
 }
 
 public enum TreeType
 {
-    Tomato
+    Tomato,
+    NormalTree
 };
