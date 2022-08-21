@@ -56,7 +56,7 @@ public class ChestController : MonoBehaviour
         foreach(CollectableObjectController item in ItemsContainer)
         {
             item.ResetAttribute(true);
-            Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.1f;
+            Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f;
             m_Player.DropAllFromObject(item, SpawnPoint + SpawnOffset, SpawnPoint);
         }
     }
