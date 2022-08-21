@@ -139,5 +139,6 @@ public enum CollectableType
     Shovel,
     Hoe,
     WateringCan,
-    SeedBag
+    SeedBag,
+    Chest
 }

@@ -132,7 +132,13 @@ public class PlayerController : MonoBehaviour
                         if(IsWorking)TriggerWorkAction();
                         
                     }
-                    
+                    else 
+                    {
+                        if(m_PlayerActionController.CanInteractive())
+                        {
+                            //Mo ruong, len giuong ...
+                        }
+                    }
                     
                 }
                 catch{}
@@ -228,11 +234,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other) {
         CollectableObjectController m_object = other.GetComponent<CollectableObjectController>();
-        
         if(m_object != null && m_object.tag == "CollectableObject" && m_object.GetCollideWith == gameObject.GetComponent<Collider2D>() && m_object.CollectableOrNot)
         {
             if(m_Inventory.Add(m_object))   m_object.SelfDestroy();
         }
+    }
+
+    public bool AddItemToInventory(CollectableObjectController obj)
+    {
+        if(obj == null)  return false;
+        if(obj.tag == "CollectableObject" || obj.tag == "UnpickableObject") return m_Inventory.Add(obj);
+        return false;
     }
 
     public int GetInventoryNumSlot()

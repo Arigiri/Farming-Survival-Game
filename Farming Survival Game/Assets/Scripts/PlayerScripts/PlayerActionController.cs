@@ -123,6 +123,12 @@ public class PlayerActionController : MonoBehaviour
         return m_TileController.CanPlant(m_Player, MousePosition);
     }
 
+    public bool CanInteractive()
+    {
+        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return m_TileController.CanInteractive(m_Player, MousePosition);
+    }
+
 }
 
 public enum Action
@@ -134,4 +140,5 @@ public enum Action
     Pick,
     Water,
     Plant,
+    Interact, // Tuong tac voi cac do vi du nhu ruong
 }

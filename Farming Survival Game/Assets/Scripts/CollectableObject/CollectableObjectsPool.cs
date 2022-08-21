@@ -15,6 +15,7 @@ public class CollectableObjectsPool : MonoBehaviour
         {CollectableType.Hoe, new CollectableObjectPool(CollectableType.Hoe)},
         {CollectableType.WateringCan, new CollectableObjectPool(CollectableType.WateringCan)},
         {CollectableType.SeedBag, new CollectableObjectPool(CollectableType.SeedBag)},
+        {CollectableType.Chest, new CollectableObjectPool(CollectableType.Chest)},
     };
     void Awake()
     {
