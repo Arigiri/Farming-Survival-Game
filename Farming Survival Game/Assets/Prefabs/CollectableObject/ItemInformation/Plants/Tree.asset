@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cc39529a223a442aac2a9efbc17ec9, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  Name: 
-  FoodProvide: 0
-  StaminaProvide: 0
-  DayToGrow: 0
-  PlantTile: {fileID: 0}
+  Name: Tree
+  FoodProvide: -1
+  StaminaProvide: -1
+  DayToGrow: -1
+  PlantTile: []
   Type: 0
+  ItemsDrops:
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}

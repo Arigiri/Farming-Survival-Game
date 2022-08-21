@@ -17,6 +17,7 @@ public class TileController : MonoBehaviour
    [SerializeField] private float m_MaxLengthPlace;
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
+   private Dictionary<Vector3Int, PlantController> PlantOnMap = new Dictionary<Vector3Int, PlantController>();
 
    private void Start() {
       // m_UnWateredCropTile.gameObject.transform.localScale = new Vector3(0.15f, 0.15f, 0);
@@ -27,6 +28,12 @@ public class TileController : MonoBehaviour
       Vector3 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       Location = m_TileMap.WorldToCell(MousePosition);
       m_TileMap.SetTile(Location,TileSelect);
+
+      if(Input.GetMouseButtonDown(0))
+      {
+         print("tree");
+         print(GetHavestTree(MousePosition));
+      }
    }
 
    
@@ -49,7 +56,11 @@ public class TileController : MonoBehaviour
    {
       Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
-      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace &&  m_CropTileMap.GetTile(NewLocation) == null;
+      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace &&  m_CropTileMap.GetTile(NewLocation) == null && m_UnWateredCropTileMap.GetTile(NewLocation) != null;
+   }
+   public bool CanGrowSapling(PlayerController m_Player, Vector3 Position)
+   {
+      return CanCrop(m_Player, Position);
    }
    public void SetWateredTile(Vector3 Position)
    {
@@ -67,12 +78,27 @@ public class TileController : MonoBehaviour
    public void SetPlantTile(PlayerController m_Player, Vector3 Position, TreeType type)
    {
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      PlantController Plant = new PlantController();
       foreach(PlantController plant in m_Crops)
       {
          if(plant.GetTreeType() == type)
          {
-            m_CropTileMap.SetTile(NewLocation, plant.GetAnimatedTile(0));
-            return;
+            // print( plant.GetAnimatedTile(1, false));
+            Plant = plant;
+            PlantOnMap[NewLocation] = plant;
+            break;
+         }
+      }
+
+      StartCoroutine(GrowUp(0));
+
+      IEnumerator GrowUp(int GrowState)
+      {
+         m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(GrowState, false));
+         if(GrowState < Plant.GetMaxSize() - 2)
+         {
+            yield return new WaitForSeconds(Plant.TimeToGrow);
+            yield return GrowUp(GrowState + 1);
          }
       }
       
@@ -88,5 +114,31 @@ public class TileController : MonoBehaviour
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       if(OnMapObjectsList.Contains(NewLocation))
          OnMapObjectsList.Remove(NewLocation);
+   }
+   public string GetTileName(Vector3 Position, Tilemap Tilemap)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      var Tile = Tilemap.GetTile(NewLocation);
+      return  Tile == null ? "" : Tile.name;  
+   }
+   public TreeType GetHavestTree(Vector3 Position)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      var NewTile = m_CropTileMap.GetTile(NewLocation);
+      if(NewTile != null)
+      {
+         if(NewTile.name.IndexOf("Tomato", 0) >= 0)
+         {
+            return TreeType.Tomato;
+         }
+         else return TreeType.None;
+      }
+      else return TreeType.None;
+   }
+   public void CutDownTree(Vector3 Position)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      m_CropTileMap.SetTile(NewLocation, null);
+      m_CropTileMap.GetComponent<OnMapObjectController>().CutDownTree(Position);
    }
 }

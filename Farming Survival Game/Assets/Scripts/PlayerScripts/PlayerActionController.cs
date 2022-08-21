@@ -8,7 +8,7 @@ public class PlayerActionController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private PlayerController m_Player;
     [SerializeField] private Tilemap m_Tilemap;
-    private List<OnMapObjectController> ObjectOnQueue = new List<OnMapObjectController>();
+    private List<Vector2> ObjectOnQueue = new List<Vector2>();
     [SerializeField]private TileController m_TileController;
     [SerializeField] private ToolBarController m_ToolBar;
     private TileBase CurrTile;
@@ -40,44 +40,32 @@ public class PlayerActionController : MonoBehaviour
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private bool MapObjectFind(OnMapObjectController Object)
+    private bool MapObjectFind(Vector2 Object)
     {
         foreach(var obj in ObjectOnQueue)
         {
-            if(obj.transform.parent.gameObject.name == Object.transform.parent.gameObject.name)
-            {
-                return false;
-            }
+            if(obj == Object)return true;
         }
-        return true;
+        return false;
     }
     private void OnTriggerStay2D(Collider2D other) {
-        OnMapObjectController NewObject = other.gameObject.GetComponent<OnMapObjectController>();
-        
+        var NewObject = other.gameObject.GetComponent<OnMapObjectController>();
         if(NewObject != null)
         {
-            if(MapObjectFind(NewObject))ObjectOnQueue.Add(NewObject);
-            if(NewObject.GetAction() == Action.Cut)
+            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var name = m_TileController.GetTileName(mousePosition, m_TileController.m_CropTileMap);
+            if(name != null && name.IndexOf("Tree") >= 0 && other.name == "ObjectMap")
             {
+                // if((MousePosition - m_Player.transform.position).magnitude <= 10)CanCut = true;
                 CanCut = true;
                 m_Player.Chop(true);
             }
+            // print(m_TileController.GetTileName(m_Player.transform.position, m_TileController.m_CropTileMap));
         }
     }
-
     private void OnTriggerExit2D(Collider2D other) {
-        OnMapObjectController NewObject = other.gameObject.GetComponent<OnMapObjectController>();
-        
-        if(NewObject != null)
-        {
-            ObjectOnQueue.Remove(NewObject);
-            if(ObjectOnQueue.Count == 0)
-            {
-                CanCut = false;
-                m_Player.Chop(false);
-            } 
-           
-        }
+        m_Player.Chop(false);
+        CanCut = false;
     }
 
     public void TriggerAction(Action m_Action)
@@ -85,10 +73,11 @@ public class PlayerActionController : MonoBehaviour
         if(m_Action == Action.None)return;
         switch(m_Action)
         {
-            case Action.Cut : if(ObjectOnQueue.Count > 0) ObjectOnQueue[0].GetComponent<OnMapObjectController>().SelfDestroy(); break;
+            case Action.Cut : m_TileController.CutDownTree(CropPosition); break;
             case Action.Hoe : m_TileController.SetCropTile(m_Player, CropPosition); break;
             case Action.Water : m_TileController.SetWateredTile(CropPosition); break;
             case Action.Plant : m_TileController.SetPlantTile(m_Player, CropPosition, m_Player.GetCurrItem().m_TreeType);break;
+            // case Action.GrowSapling : m_TileController.set
             default : print("Quen Setup Kia!!!"); break;            
         }
         m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
@@ -123,15 +112,28 @@ public class PlayerActionController : MonoBehaviour
         return m_TileController.CanPlant(m_Player, MousePosition);
     }
 
+    public bool CanGrowSapling()
+    {
+        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return m_TileController.CanGrowSapling(m_Player, Position);
+    }
+    public bool CanHavest()
+    {
+        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return m_TileController.GetHavestTree(Position) != TreeType.None;
+    }
+
 }
 
 public enum Action
 {
-    None,
-    Cut,
-    Hoe,
-    Dig,
-    Pick,
-    Water,
-    Plant,
+    None = 0,
+    Cut = 1,
+    Hoe = 2,
+    Dig = 3,
+    Havest = 4,
+    Water = 5,
+    Plant = 6,
+    GrowSapling = 7,
+
 }

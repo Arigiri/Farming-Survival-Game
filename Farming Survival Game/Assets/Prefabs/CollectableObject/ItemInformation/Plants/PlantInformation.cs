@@ -12,5 +12,5 @@ public class PlantInformation : ScriptableObject
     public float DayToGrow;//In game
     public Tile[] PlantTile;
     public TreeType Type;
-    public CollectableObjectController[] ItemsDropper;
+    public CollectableObjectController[] ItemsDrops;
 }

@@ -16,5 +16,11 @@ MonoBehaviour:
   FoodProvide: 10
   StaminaProvide: 10
   DayToGrow: 1
-  PlantTile: {fileID: 11400000, guid: 5ec4b48ff18c3ba4fa9dc2eeec873020, type: 2}
+  PlantTile:
+  - {fileID: 11400000, guid: 181a4e41b5c74134cb69a8a7ca0feb09, type: 2}
+  - {fileID: 11400000, guid: 7b72d313564a0a349a383881021e1f2b, type: 2}
+  - {fileID: 11400000, guid: cee89e8ee0c27ab43b7336a28fd50d2e, type: 2}
+  - {fileID: 11400000, guid: c7ba8e7dbcd55974496fbe99ffb16ab0, type: 2}
+  - {fileID: 11400000, guid: 6f091113b39959148b32f92dfef2cddf, type: 2}
   Type: 0
+  ItemsDropper: []

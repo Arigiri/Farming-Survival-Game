@@ -8,20 +8,35 @@ public class PlantController : MonoBehaviour
 {
     [SerializeField] private PlantInformation m_PlantInformation;
     private TreeType m_Type;
-    private Tile[] m_Tile;
+    private List<Tile> m_Tile;
+    public float TimeToGrow;
+    private void SetUp() {
+        m_Tile = new List<Tile>();
+        foreach(var tile in m_PlantInformation.PlantTile)
+        {
+            m_Tile.Add(tile);
+        }
+        TimeToGrow = m_PlantInformation.DayToGrow;
+    }
     public TreeType GetTreeType()
     {
-        m_Tile = m_PlantInformation.PlantTile;
         return m_Type;
     }
-    public Tile GetAnimatedTile(int index)
+    public Tile GetAnimatedTile(int index, bool Setup)
     {
+        if(Setup) SetUp();
+        
         return m_Tile[index];
     }
+    public int GetMaxSize()
+    {
+        return m_Tile.Count;
+    }
+    
 }
 
 public enum TreeType
 {
     Tomato,
-    NormalTree
+    None
 };

@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
                         {
                             m_AttributeUIController.MakeProgressBar(0.2f);
                             m_AttributeUIController.SetAction(m_Action);
+                            m_PlayerActionController.SetCropPosition(Position);
                             IsWorking = true;
                         }
                         else if(m_Action == Action.Water && m_PlayerActionController.CanWater())
@@ -128,14 +129,29 @@ public class PlayerController : MonoBehaviour
                             m_PlayerActionController.SetCropPosition(Position);
                             IsWorking = true;
                         }
+                        else if(m_Action == Action.GrowSapling && m_PlayerActionController.CanGrowSapling())
+                        {
+                            m_AttributeUIController.MakeProgressBar(0.2f);
+                            m_AttributeUIController.SetAction(m_Action);
+                            m_PlayerActionController.SetCropPosition(Position);
+                            IsWorking = true;
+                        }
                         TempItemOnHand = CurrItemOnHand;
                         if(IsWorking)TriggerWorkAction();
+                        else{}
                         
                     }
                     
                     
                 }
                 catch{}
+                if(m_PlayerActionController.CanHavest())
+                {
+                    m_AttributeUIController.MakeProgressBar(0.2f);
+                    m_AttributeUIController.SetAction(Action.Havest);
+                    SetAction(Action.Havest);
+                    IsWorking = true;
+                }
             }
         }
         
@@ -205,7 +221,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Work(Direction Dir)
     {
-        print(Dir);
         switch(Dir)
         {
             case Direction.Up: m_Animator.Play(WORK_UP);break;
