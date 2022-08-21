@@ -121,6 +121,7 @@ public class PlayerActionController : MonoBehaviour
     {
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return m_TileController.GetHavestTree(Position) != TreeType.None;
+    }
     public bool CanInteractive()
     {
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
