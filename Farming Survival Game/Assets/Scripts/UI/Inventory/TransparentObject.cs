@@ -20,7 +20,7 @@ public class TransparentObject : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        // Debug.Log("OnDropInTransparentObject");
+        Debug.Log("OnDropInTransparentObject");
         if(eventData.pointerDrag != null)
         {
             m_InventoryUI.RemoveAll();

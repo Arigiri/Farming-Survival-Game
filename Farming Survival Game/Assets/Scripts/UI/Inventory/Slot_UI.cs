@@ -49,6 +49,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
         {
             m_Durability.gameObject.SetActive(false);
             if(m_Inventory.Slots[SlotIdx].Count > 0)    m_QuantityText.text = m_Inventory.Slots[SlotIdx].Count.ToString();
+            else m_QuantityText.text = "";
         }
         else
         {
@@ -73,6 +74,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
         {
             m_Durability.gameObject.SetActive(false);
             if(m_Inventory.Slots[SlotIdx].Count > 0)    m_QuantityText.text = m_Inventory.Slots[SlotIdx].Count.ToString();
+            else m_QuantityText.text = "";
         }
         else
         {
@@ -94,7 +96,8 @@ public class Slot_UI : MonoBehaviour, IDropHandler
         {
             m_ItemIcon.sprite = slot.m_Icon;
             m_ItemIcon.color = new Color(1, 1, 1, 1);
-            m_QuantityText.text = slot.Count.ToString();
+            if(slot.Count > 0)  m_QuantityText.text = slot.Count.ToString();
+            else m_QuantityText.text = "";
             m_Slot = slot;
             // if(slot.m_Durability != -1)print(slot.m_Durability);
         }

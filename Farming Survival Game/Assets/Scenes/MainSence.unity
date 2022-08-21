@@ -26743,7 +26743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461348301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.1, z: -3.3556814}
+  m_LocalPosition: {x: 0.7, y: 18.61, z: -3.3556814}
   m_LocalScale: {x: 0.025, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27458,7 +27458,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 750, y: 1, z: 1}
+    m_Scale: {x: 2000, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -36980,7 +36980,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 20, y: 20, z: 1}
+    m_Scale: {x: 50, y: 50, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -45462,8 +45462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8694, y: 0.8333}
-  m_SizeDelta: {x: 1689.5315, y: 689.2759}
+  m_AnchoredPosition: {x: -0.9589, y: 14.916695}
+  m_SizeDelta: {x: 1284.8152, y: 620.6023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134239605
 MonoBehaviour:
