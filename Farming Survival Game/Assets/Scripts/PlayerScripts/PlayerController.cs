@@ -351,9 +351,8 @@ public class PlayerController : MonoBehaviour
         return point;
     }
 
-    public void DropAllFromObject(CollectableObjectController item, Vector3 spawnPoint, GameObject obj)
+    public void DropAllFromObject(CollectableObjectController item, Vector3 spawnPoint, Vector3 spawnLocation)
     {
-        Vector3 spawnLocation = obj.transform.position;
         CollectableObjectController droppedItem = m_CollectableObjectsPool.m_Pool[item.GetCollectableType()].Spawn(spawnPoint,null, item);//Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
         droppedItem.rb2d.AddForce((spawnPoint - spawnLocation) * 2.5f, ForceMode2D.Impulse);
         ChangeCollectableOrNot(droppedItem);

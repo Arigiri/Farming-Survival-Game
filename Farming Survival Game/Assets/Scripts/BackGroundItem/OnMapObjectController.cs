@@ -42,7 +42,7 @@ public class OnMapObjectController : MonoBehaviour
         {
             item.ResetAttribute(true);
             Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.1f;
-            m_Player.DropAllFromObject(item, SpawnPoint + SpawnOffset, gameObject);
+            m_Player.DropAllFromObject(item, SpawnPoint + SpawnOffset, SpawnPoint);
         }
     }
     public Action GetAction()
