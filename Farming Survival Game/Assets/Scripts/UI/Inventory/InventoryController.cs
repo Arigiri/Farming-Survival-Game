@@ -107,7 +107,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public bool Add(CollectableObjectController Object)
+    public bool Add(CollectableObjectController Object) // kiem tra co add do vao inventory thanh cong khong
     {
         bool Flag = false;
         foreach(Slot slot in Slots)

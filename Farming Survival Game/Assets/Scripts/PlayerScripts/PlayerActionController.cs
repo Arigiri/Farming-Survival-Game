@@ -121,6 +121,10 @@ public class PlayerActionController : MonoBehaviour
     {
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return m_TileController.GetHavestTree(Position) != TreeType.None;
+    public bool CanInteractive()
+    {
+        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return m_TileController.CanInteractive(m_Player, MousePosition);
     }
 
 }
@@ -135,5 +139,5 @@ public enum Action
     Water = 5,
     Plant = 6,
     GrowSapling = 7,
-
+    Interact = 8,// Tuong tac voi cac do vi du nhu ruong
 }

@@ -140,5 +140,6 @@ public enum CollectableType
     Hoe,
     WateringCan,
     SeedBag,
-    Sapling
+    Sapling,
+    Chest,
 }

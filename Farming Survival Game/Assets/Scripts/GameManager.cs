@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
         Menu,
         Play,
         Pause,
-        Death
+        Death,
+        Settings
     }
-    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools;
+    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
     [SerializeField] AttributeUIController m_AtrributeUI;
@@ -56,6 +57,12 @@ public class GameManager : MonoBehaviour
             PausePanel.SetActive(true);
             Time.timeScale = 0;
         }
+        else if(State == GameState.Settings)
+        {
+            Time.timeScale = 0;
+            m_Player.Active = false;
+            SettingsPanel.SetActive(true);
+        }
         else
         {
             Time.timeScale = 1;
@@ -64,7 +71,7 @@ public class GameManager : MonoBehaviour
             DeadScreen.SetActive(State == GameState.Death);
             MenuPanel.SetActive(State == GameState.Menu);
             PlayScreen.SetActive(State == GameState.Play);
-            m_Player.gameObject.SetActive(State != GameState.Menu);
+            SetActivePlayer(State);
             ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
             m_AtrributeUI.gameObject.SetActive(State == GameState.Play);
             m_InventoryUI.gameObject.SetActive(false);
@@ -72,6 +79,11 @@ public class GameManager : MonoBehaviour
             else m_DayNightSystem.SetActive(false);
             m_Player.Active = true;
         }
+    }
+
+    public void SetActivePlayer(GameState State)
+    {
+        m_Player.gameObject.SetActive(State != GameState.Menu);
     }
 }
 

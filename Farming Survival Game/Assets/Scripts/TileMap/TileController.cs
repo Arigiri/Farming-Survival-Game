@@ -62,6 +62,13 @@ public class TileController : MonoBehaviour
    {
       return CanCrop(m_Player, Position);
    }
+
+   public bool CanInteractive(PlayerController m_Player, Vector3 Position)
+   {
+      Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace && OnMapObjectsList.Contains(NewLocation) == true; // Them && NewLocation co cai ruong hoac giuong
+   }
    public void SetWateredTile(Vector3 Position)
    {
       // print("WaterCrop");
@@ -140,5 +147,9 @@ public class TileController : MonoBehaviour
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       m_CropTileMap.SetTile(NewLocation, null);
       m_CropTileMap.GetComponent<OnMapObjectController>().CutDownTree(Position);
+   }
+   public bool CanPutObject(Vector3Int Position)
+   {
+      return m_UnWateredCropTileMap.GetTile(Position) == null && OnMapObjectsList.Contains(Position) == false && m_WateredCropTileMap.GetTile(Position) == null;
    }
 }
