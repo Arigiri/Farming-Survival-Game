@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,13 +13,16 @@ public class GameManager : MonoBehaviour
         Play,
         Pause,
         Death,
-        Settings
+        Settings,
+        MenuControllerSetiing,
+        PauseControllerSetting,
     }
-    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel;
+    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, ControllerPanel;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
     [SerializeField] AttributeUIController m_AtrributeUI;
     [SerializeField] GameObject m_DayNightSystem;
+    [SerializeField] TextMeshProUGUI m_ControllerText;
     private GameState CurrState;
     void Start()
     {
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(1, 1, 1);
-        if(InputManager.instance.GetKeyDown(KeybindingActions.Pause))
+        if(CurrState != GameState.Menu && InputManager.instance.GetKeyDown(KeybindingActions.Pause))
             if(!PausePanel.GetComponent<PausePanel>().OnTrigger() && CurrState != GameState.Menu)
             {
                 SetState(GameState.Pause);
@@ -60,11 +64,20 @@ public class GameManager : MonoBehaviour
         else if(State == GameState.Settings)
         {
             SettingsPanel.SetActive(true);
+            PausePanel.SetActive(false);
+            DeadScreen.SetActive(false);
+            MenuBackgroundButtons.SetActive(false);
+            PlayScreen.SetActive(false);
+        }
+        else if(State == GameState.MenuControllerSetiing)
+        {
+            ControllerPanel.SetActive(true);
+            SettingsPanel.SetActive(false);
         }
         else
         {
             Time.timeScale = 1;
-            CurrState = State;
+            CurrState = State; // CurrState chi quan tam den GameState Play Death Menu
             PausePanel.SetActive(false);
             DeadScreen.SetActive(State == GameState.Death);
             MenuPanel.SetActive(State == GameState.Menu);
