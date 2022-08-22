@@ -24,7 +24,7 @@ public class ChestController : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(InputManager.instance.GetKeyDown(KeybindingActions.Interact))
             {
                 if(CanOpenChest())
                 {

@@ -15,7 +15,7 @@ public class ToolBarController : MonoBehaviour
     public int m_MaxToolSlot;
     public int ActiveSlot;
     private int OldActiveSlot;
-    private KeyCode[] NumberArr = {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9};
+    private KeybindingActions[] NumberArr = {KeybindingActions.Num1, KeybindingActions.Num2, KeybindingActions.Num3, KeybindingActions.Num4, KeybindingActions.Num5, KeybindingActions.Num6, KeybindingActions.Num7, KeybindingActions.Num8, KeybindingActions.Num9};
 
     void Start()
     {
@@ -66,10 +66,10 @@ public class ToolBarController : MonoBehaviour
             }
         }
 
-        if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Q))
+        if(Input.anyKeyDown && !InputManager.instance.GetKeyDown(KeybindingActions.Throw))
         {
             for(int i = 0; i < NumberArr.Length; i++)
-                if(Input.GetKeyDown(NumberArr[i]))
+                if(InputManager.instance.GetKeyDown(NumberArr[i]))
                 {
                     ActiveSlot = i;
                     m_SlotUI[ActiveSlot].ShowTarget();
@@ -87,7 +87,7 @@ public class ToolBarController : MonoBehaviour
                 break;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(InputManager.instance.GetKeyDown(KeybindingActions.Throw))
         {
             CollectableObjectController itemToDrop = ItemGameManager.instance.itemManager.GetItemByType(m_Slots[ActiveSlot].Type);
             if(itemToDrop != null)

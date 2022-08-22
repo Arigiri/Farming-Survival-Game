@@ -26,7 +26,7 @@ public class MenuPanel : MonoBehaviour
             return;
         if(Input.anyKeyDown)
         {
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(InputManager.instance.GetKeyDown(KeybindingActions.Select))
             {
                 Buttons[MenuNumberSelect].Trigger();
             }

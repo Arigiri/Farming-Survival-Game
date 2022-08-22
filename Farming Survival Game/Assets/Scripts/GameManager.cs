@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(1, 1, 1);
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(InputManager.instance.GetKeyDown(KeybindingActions.Pause))
             if(!PausePanel.GetComponent<PausePanel>().OnTrigger() && CurrState != GameState.Menu)
             {
                 SetState(GameState.Pause);
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
                 SetState(CurrState);
             }
         
-        if(Input.GetKeyDown(KeyCode.Tab) && CurrState == GameState.Play && !PausePanel.gameObject.activeSelf)
+        if(InputManager.instance.GetKeyDown(KeybindingActions.Inventory) && CurrState == GameState.Play && !PausePanel.gameObject.activeSelf)
         {
             bool check = !m_InventoryUI.gameObject.activeSelf;
             if(check)
@@ -59,8 +59,6 @@ public class GameManager : MonoBehaviour
         }
         else if(State == GameState.Settings)
         {
-            Time.timeScale = 0;
-            m_Player.Active = false;
             SettingsPanel.SetActive(true);
         }
         else
@@ -71,6 +69,7 @@ public class GameManager : MonoBehaviour
             DeadScreen.SetActive(State == GameState.Death);
             MenuPanel.SetActive(State == GameState.Menu);
             PlayScreen.SetActive(State == GameState.Play);
+            SettingsPanel.SetActive(State == GameState.Settings);
             SetActivePlayer(State);
             ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
             m_AtrributeUI.gameObject.SetActive(State == GameState.Play);
