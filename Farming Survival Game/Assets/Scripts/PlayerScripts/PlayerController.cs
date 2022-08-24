@@ -22,12 +22,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 m_MoveDirection = Vector2.zero;
     private Rigidbody2D rb;
     private PlayerActionController m_ActionCollider;
-    private InventoryController.Slot CurrItemOnHand;
+    private InventoryController.Slot CurrItemOnHand = new InventoryController.Slot();
     private Action m_Action;
-    private InventoryController.Slot TempItemOnHand;
+    private InventoryController.Slot TempItemOnHand = new InventoryController.Slot();
     public bool IsWorking = false;
     public bool CanAction = true;
     public bool Active = true;
+    public bool IsInteracting = false;
     public float CurrHealth, CurrFood, CurrStamina;
     public float MaxHealth, MaxFood, MaxStamina;
     //Animation Controller
@@ -90,82 +91,9 @@ public class PlayerController : MonoBehaviour
         if(!Active)return;
         //Check Current item on hand 
         if(CurrItemOnHand != null && CurrItemOnHand.Count == 0)CurrItemOnHand = null;
-        //trigger action
-        if(Input.anyKeyDown)
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                CanAction = true;
-                try
-                {
-                    if(CurrItemOnHand.m_Action == m_Action)
-                    {
-                        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        if(m_Action == Action.Hoe && m_PlayerActionController.CanCrop())
-                        {
-                            m_AttributeUIController.MakeProgressBar(0.2f);
-                            m_AttributeUIController.SetAction(m_Action);
-                            m_PlayerActionController.SetCropPosition(Position);
-                            IsWorking = true;
-                        }
-                        else if(m_Action == Action.Cut && m_PlayerActionController.CanCut)
-                        {
-                            m_AttributeUIController.MakeProgressBar(0.2f);
-                            m_AttributeUIController.SetAction(m_Action);
-                            m_PlayerActionController.SetCropPosition(Position);
-                            IsWorking = true;
-                        }
-                        else if(m_Action == Action.Water && m_PlayerActionController.CanWater())
-                        {
-                            m_AttributeUIController.MakeProgressBar(0.2f);
-                            m_AttributeUIController.SetAction(m_Action);
-                            m_PlayerActionController.SetCropPosition(Position);
-                            IsWorking = true;
-                        }
-                        else if(m_Action == Action.Plant && m_PlayerActionController.CanPlant())
-                        {
-                            m_AttributeUIController.MakeProgressBar(0.2f);
-                            m_AttributeUIController.SetAction(m_Action);
-                            m_PlayerActionController.SetCropPosition(Position);
-                            IsWorking = true;
-                        }
-                        else if(m_Action == Action.GrowSapling && m_PlayerActionController.CanGrowSapling())
-                        {
-                            m_AttributeUIController.MakeProgressBar(0.2f);
-                            m_AttributeUIController.SetAction(m_Action);
-                            m_PlayerActionController.SetCropPosition(Position);
-                            IsWorking = true;
-                        }
-                        TempItemOnHand = CurrItemOnHand;
-                        if(IsWorking)TriggerWorkAction();
-                        else{}
-                        
-                    }
-                    else 
-                    {
-                        if(m_PlayerActionController.CanInteractive())
-                        {
-                            //Mo ruong, len giuong ...
-                        }
-                    }
-                    
-                }
-                catch{}
-                if(m_PlayerActionController.CanHavest())
-                {
-                    m_AttributeUIController.MakeProgressBar(0.2f);
-                    m_AttributeUIController.SetAction(Action.Havest);
-                    SetAction(Action.Havest);
-                    IsWorking = true;
-                }
-            }
-        }
         
-        if(m_Action == Action.None || TempItemOnHand != CurrItemOnHand)
-        {
-            m_AttributeUIController.TurnOffProgressBar();
-            TempItemOnHand = null;
-        }
+        //trigger action
+        DoSomeAction();
         
         //Update Attribute Information
         m_AttributeController.CurrHealth = CurrHealth;
@@ -184,6 +112,80 @@ public class PlayerController : MonoBehaviour
         }
         else if(IsWorking == false)
             Idle(OldDirection);
+    }
+    private void DoSomeAction()
+    {
+        if(IsInteracting)return;
+        if(Input.anyKeyDown)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                CanAction = true;
+                // try
+                // {
+                var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if(m_PlayerActionController.CanInteractive())
+                {
+                    //Mo ruong, len giuong ...
+                    var NewAction = m_PlayerActionController.GetActionFromTile(Position);
+                    if(NewAction != Action.None)
+                    {
+                        m_AttributeUIController.SetAction(NewAction);
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsInteracting = true;
+                        IsWorking = true;
+                    }
+                }
+                if(CurrItemOnHand != null && CurrItemOnHand.m_Action == m_Action && IsInteracting == false)
+                {
+                    print("Troll");
+                    if(m_Action == Action.Hoe && m_PlayerActionController.CanCrop())
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsWorking = true;
+                    }
+                    else if(m_Action == Action.Cut && m_PlayerActionController.CanCut)
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsWorking = true;
+                    }
+                    else if(m_Action == Action.Water && m_PlayerActionController.CanWater())
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsWorking = true;
+                    }
+                    else if(m_Action == Action.Plant && m_PlayerActionController.CanPlant())
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsWorking = true;
+                    }
+                    else if(m_Action == Action.GrowSapling && m_PlayerActionController.CanGrowSapling())
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsWorking = true;
+                    }
+                    TempItemOnHand = CurrItemOnHand;
+                    if(IsWorking)TriggerWorkAction();
+                    else{}
+                }
+                // }
+                // catch{
+                //     print("??? Loi dau the");
+                // }
+                
+            }
+        }
     }
     public Direction GetDirection(Vector2 m_MoveDirection)
     {

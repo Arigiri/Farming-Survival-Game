@@ -23,4 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7ba8e7dbcd55974496fbe99ffb16ab0, type: 2}
   - {fileID: 11400000, guid: 6f091113b39959148b32f92dfef2cddf, type: 2}
   Type: 0
-  ItemsDropper: []
+  ItemsDrops:
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}
+  - {fileID: 3123279933905353902, guid: c7871c99e06a4e1498522dfb7e5dafa8, type: 3}

@@ -10,6 +10,7 @@ public class ToolBarController : MonoBehaviour
     private InventoryController m_Inventory;
     [SerializeField] private Inventory_UI m_InventoryUI;
     [SerializeField] private PlayerController m_Player;
+    private AttributeUIController m_AttributeUIController;
     private List<InventoryController.Slot> m_Slots = new List<InventoryController.Slot>();
     public List<Slot_UI> m_SlotUI;
     public int m_MaxToolSlot;
@@ -19,6 +20,7 @@ public class ToolBarController : MonoBehaviour
 
     void Start()
     {
+        m_AttributeUIController = FindObjectOfType<AttributeUIController>();
         m_Inventory = m_Player.GetInventoryController();
         for(int i = 0; i < m_MaxToolSlot; i++)
         {
@@ -51,6 +53,14 @@ public class ToolBarController : MonoBehaviour
     void Update()
     {
         Setup();
+        if(ChangeToolBar())
+            m_AttributeUIController.TurnOffProgressBar();
+            
+        
+    }
+    private bool ChangeToolBar()
+    {
+        bool result = false;
         Vector2 Scroll = Input.mouseScrollDelta;
         if(Scroll != Vector2.zero)
         {
@@ -61,6 +71,7 @@ public class ToolBarController : MonoBehaviour
                     ActiveSlot = Math.Min(-(int)Scroll.y + i, m_MaxToolSlot - 1);
                     ActiveSlot = Math.Max(ActiveSlot, 0);
                     m_SlotUI[ActiveSlot].ShowTarget();
+                    result = true;
                     break;
                 }
             }
@@ -73,6 +84,7 @@ public class ToolBarController : MonoBehaviour
                 {
                     ActiveSlot = i;
                     m_SlotUI[ActiveSlot].ShowTarget();
+                    result = true;
                     break;
                 }
         }
@@ -100,6 +112,7 @@ public class ToolBarController : MonoBehaviour
         }
         // print(ActiveSlot);
         OldActiveSlot = ActiveSlot;
+        return result;
     }
     public void SetActiveSlot()
     {

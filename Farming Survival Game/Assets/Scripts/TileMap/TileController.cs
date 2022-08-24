@@ -7,13 +7,17 @@ using UnityEngine.Tilemaps;
 public class TileController : MonoBehaviour
 {
    public Tile TileSelect;
-   public Tilemap m_TileMap;
+   public Tile[] TreeTile; 
    public RuleTile m_UnWateredCropTile;
    public RuleTile m_WateredCropTile;
    public PlantController[] m_Crops;
+   public Tilemap m_TileMap;
    public Tilemap m_UnWateredCropTileMap;
    public Tilemap m_WateredCropTileMap;
    public Tilemap m_CropTileMap;
+   public float HourToGrowTree; //InGameTime
+   public Vector3 TreeOffSet = Vector3.zero;
+   [SerializeField] private TimeController m_TimeController;
    [SerializeField] private float m_MaxLengthPlace;
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
@@ -67,13 +71,19 @@ public class TileController : MonoBehaviour
    {
       Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
-      return (PlayerLocation - NewLocation).magnitude <= m_MaxLengthPlace && OnMapObjectsList.Contains(NewLocation) == true; // Them && NewLocation co cai ruong hoac giuong
+      return m_CropTileMap.GetTile(NewLocation) != null; // Them && NewLocation co cai ruong hoac giuong
    }
    public void SetWateredTile(Vector3 Position)
    {
       // print("WaterCrop");
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       m_WateredCropTileMap.SetTile(NewLocation, m_WateredCropTile);
+      try
+      {
+         var Plant = PlantOnMap[NewLocation];
+         StartCoroutine(GrowUpPlant(NewLocation, 0));
+      }
+      catch{}
    }
    public void SetCropTile(PlayerController m_Player, Vector3 Position)
    {
@@ -82,33 +92,58 @@ public class TileController : MonoBehaviour
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       m_UnWateredCropTileMap.SetTile(NewLocation, m_UnWateredCropTile);
    }
-   public void SetPlantTile(PlayerController m_Player, Vector3 Position, TreeType type)
+   public void SetPlantTile(Vector3 Position, TreeType type)
    {
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
       PlantController Plant = new PlantController();
       foreach(PlantController plant in m_Crops)
       {
          if(plant.GetTreeType() == type)
-         {
+         {  
             // print( plant.GetAnimatedTile(1, false));
             Plant = plant;
-            PlantOnMap[NewLocation] = plant;
+            Plant.SetUp();
+            PlantOnMap[NewLocation] = Plant;
+            m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(0));
             break;
          }
       }
 
-      StartCoroutine(GrowUp(0));
-
-      IEnumerator GrowUp(int GrowState)
+      if(m_WateredCropTileMap.GetTile(NewLocation) != null)StartCoroutine(GrowUpPlant(NewLocation, 0));      
+   }
+    IEnumerator GrowUpPlant(Vector3Int NewLocation, int GrowState)
+   {
+      var Plant = PlantOnMap[NewLocation];
+      if(GrowState < Plant.GetMaxSize() - 1)
       {
-         m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(GrowState, false));
-         if(GrowState < Plant.GetMaxSize() - 2)
-         {
-            yield return new WaitForSeconds(Plant.TimeToGrow);
-            yield return GrowUp(GrowState + 1);
-         }
+         yield return new WaitForSeconds(Plant.TimeToGrow);
+         m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(GrowState));
+         yield return GrowUpPlant(NewLocation, GrowState + 1);
       }
-      
+   }
+   
+   public void SetTreeTile(Vector3 Position)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      m_CropTileMap.SetTile(NewLocation, TreeTile[0]);
+      StartCoroutine(GrowUp());
+
+      IEnumerator GrowUp()
+      {
+         yield return new WaitForSeconds(m_TimeController.ToSystemTime(HourToGrowTree));
+         m_CropTileMap.SetTile(NewLocation, TreeTile[1]);
+      }
+   }
+   public void Havest(Vector3 Position)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      var Plant = PlantOnMap[NewLocation];
+      Plant.SelfDestroy(Position);
+      m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(4));
+
+      StartCoroutine(GrowUpPlant(NewLocation, 2));
+
+     
    }
    public Vector3Int GetTile(Vector3 Position, bool IsObjectOnMap)
    {

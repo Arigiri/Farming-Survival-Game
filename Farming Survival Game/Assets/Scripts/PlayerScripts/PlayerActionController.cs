@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,12 +77,13 @@ public class PlayerActionController : MonoBehaviour
             case Action.Cut : m_TileController.CutDownTree(CropPosition); break;
             case Action.Hoe : m_TileController.SetCropTile(m_Player, CropPosition); break;
             case Action.Water : m_TileController.SetWateredTile(CropPosition); break;
-            case Action.Plant : m_TileController.SetPlantTile(m_Player, CropPosition, m_Player.GetCurrItem().m_TreeType);break;
-            // case Action.GrowSapling : m_TileController.set
+            case Action.Plant : m_TileController.SetPlantTile(CropPosition, m_Player.GetCurrItem().m_TreeType);break;
+            case Action.GrowSapling : m_TileController.SetTreeTile(CropPosition); break;
+            case Action.Havest : print("Havest"); m_TileController.Havest(CropPosition); break;
             default : print("Quen Setup Kia!!!"); break;            
         }
-        m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
-        if( m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0)
+        if(m_Player.IsInteracting == false)m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
+        if( m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0 && m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_CollectableObject.IsTool )
         {
              m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
         }
@@ -109,7 +111,7 @@ public class PlayerActionController : MonoBehaviour
     public bool CanPlant()
     {
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        return m_TileController.CanPlant(m_Player, MousePosition);
+        return m_TileController.CanPlant(m_Player, MousePosition) && m_Player.GetAction() != Action.Havest;
     }
 
     public bool CanGrowSapling()
@@ -117,17 +119,23 @@ public class PlayerActionController : MonoBehaviour
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return m_TileController.CanGrowSapling(m_Player, Position);
     }
-    public bool CanHavest()
-    {
-        var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        return m_TileController.GetHavestTree(Position) != TreeType.None;
-    }
     public bool CanInteractive()
     {
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        return m_TileController.CanInteractive(m_Player, MousePosition);
+        return m_TileController.CanInteractive(m_Player, MousePosition);// &&(m_Player.GetCurrItem() == null || m_Player.GetCurrItem().m_Action != Action.Plant);
     }
-
+    public Action GetActionFromTile(Vector3 Position)
+    {
+        var name = m_TileController.GetTileName(Position, m_TileController.m_CropTileMap);
+        if(name == "")return Action.None;
+        int Level = Convert.ToInt32(name[name.Length - 1]) - Convert.ToInt32('0');
+        switch(name.TrimEnd(name[name.Length - 1]))
+        {
+            case "Tomato": if(Level == 3) return Action.Havest; break;
+            default: print("WTH are u doing with this thing?"); break;
+        }
+        return Action.None;
+    }
 }
 
 public enum Action
