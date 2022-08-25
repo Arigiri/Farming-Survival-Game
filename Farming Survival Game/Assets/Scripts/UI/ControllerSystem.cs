@@ -31,7 +31,7 @@ public class ControllerSystem : MonoBehaviour
         Setup();
     }
 
-    public void Setup()
+    public void Setup() // UI
     {
         foreach(Key key in keys)
         {
@@ -46,5 +46,16 @@ public class ControllerSystem : MonoBehaviour
 
         // Duoi day thay doi KeyCode trong game
         keybindings.ChangeKeybinding(keys[idx].GetKeybindingActions(), keys[idx].GetKeyCode());
+    }
+
+    public void SetAsDefault()
+    {
+        for(int i = 0; i < keybindings.keybindingsCheck.Length; i++)
+        {
+            keybindings.keybindingsCheck[i].keybindingActions = m_DefaultKeybindings.keybindingsCheck[i].keybindingActions;
+            keybindings.keybindingsCheck[i].keyCode = m_DefaultKeybindings.keybindingsCheck[i].keyCode;
+            keys[i].SetKeyCode(keybindings.keybindingsCheck[i].keyCode);
+            keys[i].Setup();
+        }
     }
 }

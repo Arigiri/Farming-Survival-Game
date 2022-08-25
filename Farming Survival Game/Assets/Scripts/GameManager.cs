@@ -17,14 +17,13 @@ public class GameManager : MonoBehaviour
         MenuControllerSetiing,
         PauseControllerSetting,
     }
-    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, ControllerPanel, ControllerText;
+    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, MenuControllerPanel, PauseControllerPanel, ControllerText;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
     [SerializeField] AttributeUIController m_AtrributeUI;
     [SerializeField] GameObject m_DayNightSystem;
     [SerializeField] TextMeshProUGUI m_ControllerText;
-    [SerializeField] private Keybindings keybindings;
-    [SerializeField] private DefaultKeybindings m_DefaultKeybindings;
+    [SerializeField] private ControllerSystem m_ControllerSystem;
     private GameState CurrState; // bo khong dung nua, currstate thay bang GetCurrState()
     [SerializeField] private GameState[] GameStateList = new GameState[100];
     private int GameStateIndex; // cac gamestate duoc luu tu 0 den GameStateIndex - 1. Tuc GameStateIndex chua co gi
@@ -32,11 +31,7 @@ public class GameManager : MonoBehaviour
     private void Awake() 
     {
         GameStateIndex = 0;
-        for(int i = 0; i < keybindings.keybindingsCheck.Length; i++)
-        {
-            keybindings.keybindingsCheck[i].keybindingActions = m_DefaultKeybindings.keybindingsCheck[i].keybindingActions;
-            keybindings.keybindingsCheck[i].keyCode = m_DefaultKeybindings.keybindingsCheck[i].keyCode;
-        }
+        m_ControllerSystem.SetAsDefault();
     }
     void Start()
     {
@@ -84,12 +79,15 @@ public class GameManager : MonoBehaviour
         {
             m_Player.Active = false;
             PausePanel.SetActive(true);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            SettingsPanel.SetActive(State == GameState.Settings);
             Time.timeScale = 0;
             SetCurrState(State);
         }
         else if(State == GameState.Settings)
         {
-            ControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
             SettingsPanel.SetActive(State == GameState.Settings);
             // ControllerText.SetActive(State == GameState.Settings);
             PausePanel.SetActive(State == GameState.Pause);
@@ -98,7 +96,8 @@ public class GameManager : MonoBehaviour
         }
         else if(State == GameState.MenuControllerSetiing)
         {
-            ControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            if(MenuPanel.gameObject.activeSelf == true) MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            else PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
             SettingsPanel.SetActive(State == GameState.Settings);
             SetCurrState(State);
         }
@@ -110,7 +109,8 @@ public class GameManager : MonoBehaviour
             DeadScreen.SetActive(State == GameState.Death);
             MenuPanel.SetActive(State == GameState.Menu);
             PlayScreen.SetActive(State == GameState.Play);
-            ControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
             SettingsPanel.SetActive(State == GameState.Settings);
             MenuBackgroundButtons.SetActive(true);
             SetActivePlayer(State);
