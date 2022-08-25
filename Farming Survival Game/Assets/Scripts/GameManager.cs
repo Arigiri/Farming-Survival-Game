@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        if(GetCurrState() != GameState.Play && GetCurrState() != GameState.Pause && InputManager.instance.GetKeyDown(KeybindingActions.Pause))
+        if(GetCurrState() != GameState.Play && GetCurrState() != GameState.Pause && Input.GetKeyDown(KeyCode.Escape))
         {
             BackState();
         }
