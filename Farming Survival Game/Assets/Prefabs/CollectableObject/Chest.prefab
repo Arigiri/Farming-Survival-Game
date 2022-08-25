@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2692969541679545297}
   - component: {fileID: 6216937083890256358}
   m_Layer: 0
-  m_Name: treasure_chests_32x32_109
+  m_Name: Chest
   m_TagString: UncollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

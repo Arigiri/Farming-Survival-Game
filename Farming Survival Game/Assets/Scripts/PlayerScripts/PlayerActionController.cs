@@ -9,15 +9,23 @@ public class PlayerActionController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private PlayerController m_Player;
     [SerializeField] private Tilemap m_Tilemap;
-    private List<Vector2> ObjectOnQueue = new List<Vector2>();
     [SerializeField]private TileController m_TileController;
     [SerializeField] private ToolBarController m_ToolBar;
     private TileBase CurrTile;
     private Vector3 CropPosition;
     private Vector3 MousePosition;
     private TreeType m_TreeType;
+    private OnMapBuilding m_Building;
     public bool CanCut = false;
     
+    public void SetBuilding(OnMapBuilding building)
+    {
+        m_Building = building;
+    }
+    public OnMapBuilding GetBuilding()
+    {
+        return m_Building;
+    }
     public TileController GetTileController()
     {
         return m_TileController;
@@ -39,15 +47,6 @@ public class PlayerActionController : MonoBehaviour
         else m_Player.CanAction = true;
 
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    private bool MapObjectFind(Vector2 Object)
-    {
-        foreach(var obj in ObjectOnQueue)
-        {
-            if(obj == Object)return true;
-        }
-        return false;
     }
     private void OnTriggerStay2D(Collider2D other) {
         var NewObject = other.gameObject.GetComponent<OnMapObjectController>();
@@ -80,13 +79,18 @@ public class PlayerActionController : MonoBehaviour
             case Action.Plant : m_TileController.SetPlantTile(CropPosition, m_Player.GetCurrItem().m_TreeType);break;
             case Action.GrowSapling : m_TileController.SetTreeTile(CropPosition); break;
             case Action.Havest : print("Havest"); m_TileController.Havest(CropPosition); break;
+            case Action.Place : m_TileController.SetOnMapObjectTile(CropPosition, m_Building);break;
             default : print("Quen Setup Kia!!!"); break;            
         }
         if(m_Player.IsInteracting == false)m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
-        if( m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0 && m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_CollectableObject.IsTool )
+        try
         {
-             m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
+            if(m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability <= 0 && (m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_CollectableObject.IsTool || !m_Player.IsInteracting) )
+            {
+                m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].RemoveItem();
+            }
         }
+        catch {}
         m_ToolBar.Setup();
         
         // Debug.Break();
@@ -124,15 +128,23 @@ public class PlayerActionController : MonoBehaviour
         var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return m_TileController.CanInteractive(m_Player, MousePosition);// &&(m_Player.GetCurrItem() == null || m_Player.GetCurrItem().m_Action != Action.Plant);
     }
+    public bool CanPlace()
+    {
+        return m_TileController.CanCrop(m_Player, MousePosition);
+    }
     public Action GetActionFromTile(Vector3 Position)
     {
         var name = m_TileController.GetTileName(Position, m_TileController.m_CropTileMap);
         if(name == "")return Action.None;
         int Level = Convert.ToInt32(name[name.Length - 1]) - Convert.ToInt32('0');
-        switch(name.TrimEnd(name[name.Length - 1]))
+        switch(name.TrimEnd(name[name.Length - 1]))//tree
         {
             case "Tomato": if(Level == 3) return Action.Havest; break;
-            default: print("WTH are u doing with this thing?"); break;
+        }
+        switch(name)
+        {
+            case "Chest": return Action.Interact;
+            default: break;
         }
         return Action.None;
     }
@@ -149,4 +161,5 @@ public enum Action
     Plant = 6,
     GrowSapling = 7,
     Interact = 8,// Tuong tac voi cac do vi du nhu ruong
+    Place = 9,
 }

@@ -18,9 +18,10 @@ MonoBehaviour:
   ToolDurability: -1
   StartDurability: -1
   Type: 9
-  Stack: 16
-  Action: 0
+  Stack: 1
+  Action: 9
   Icon: {fileID: 94207079, guid: 13fec995b15470842adad86347aff014, type: 3}
   IsTool: 0
-  m_TreeType: 0
+  m_TreeType: 1
   Description: 
+  Building: 101

@@ -62,3 +62,9 @@ public class OnMapObjectController : MonoBehaviour
         DropItem(ItemsDropperInTree, Position);
     }
 }
+
+public enum OnMapBuilding
+{
+    Chest = 101,
+    None = 100,
+}

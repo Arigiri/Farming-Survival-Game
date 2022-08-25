@@ -18,4 +18,5 @@ public class CollectableObjectInformation : ScriptableObject
     public bool IsTool;
     public TreeType m_TreeType;
     public string Description;
+    public OnMapBuilding Building = OnMapBuilding.None;
 }

@@ -11,27 +11,16 @@ public class ChestController : MonoBehaviour
     [SerializeField] private float m_MaxLengthInteractive;
     public Tilemap m_TileMap;
     private TileController m_TileController;
-    private Vector3Int CurrTile;
     // Start is called before the first frame update
     void Start()
     {
-        m_TileController = FindObjectOfType<TileController>();
-        CurrTile = m_TileController.GetTile(transform.position, true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                if(CanOpenChest())
-                {
-                    
-                }
-            }
-        }
+
     }
 
     public bool CanOpenChest()
@@ -59,14 +48,5 @@ public class ChestController : MonoBehaviour
             Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f;
             m_Player.DropAllFromObject(item, SpawnPoint + SpawnOffset, SpawnPoint);
         }
-    }
-    public Action GetAction()
-    {
-        return m_Action;
-    }
-
-    public Vector3Int GetTile()
-    {
-        return CurrTile;
     }
 }

@@ -17,6 +17,7 @@ public class TileController : MonoBehaviour
    public Tilemap m_CropTileMap;
    public float HourToGrowTree; //InGameTime
    public Vector3 TreeOffSet = Vector3.zero;
+   public List<Tile> m_OnMapBuildingTiles;
    [SerializeField] private TimeController m_TimeController;
    [SerializeField] private float m_MaxLengthPlace;
    Vector3Int Location = Vector3Int.zero;
@@ -35,8 +36,9 @@ public class TileController : MonoBehaviour
 
       if(Input.GetMouseButtonDown(0))
       {
-         print("tree");
-         print(GetHavestTree(MousePosition));
+         print(OnMapBuilding.Chest.ToString());
+         print(m_OnMapBuildingTiles[0].name);
+         print(OnMapBuilding.Chest.ToString() == m_OnMapBuildingTiles[0].name);
       }
    }
 
@@ -142,8 +144,19 @@ public class TileController : MonoBehaviour
       m_CropTileMap.SetTile(NewLocation, Plant.GetAnimatedTile(4));
 
       StartCoroutine(GrowUpPlant(NewLocation, 2));
-
-     
+   }
+   public void SetOnMapObjectTile(Vector3 Position, OnMapBuilding building)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      foreach(var Building in m_OnMapBuildingTiles)
+      {
+         if(Building.name == building.ToString())
+         {
+            m_CropTileMap.SetTile(NewLocation, Building);
+            print(Building);
+            break;
+         }
+      }
    }
    public Vector3Int GetTile(Vector3 Position, bool IsObjectOnMap)
    {

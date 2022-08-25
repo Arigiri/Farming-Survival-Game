@@ -175,6 +175,14 @@ public class PlayerController : MonoBehaviour
                         m_PlayerActionController.SetCropPosition(Position);
                         IsWorking = true;
                     }
+                    else if(m_Action == Action.Place && m_PlayerActionController.CanPlace())
+                    {
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_AttributeUIController.SetAction(m_Action);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        m_PlayerActionController.SetBuilding(CurrItemOnHand.m_CollectableObject.m_Information.Building);
+                        IsWorking = true;
+                    }
                     TempItemOnHand = CurrItemOnHand;
                     if(IsWorking)TriggerWorkAction();
                     else{}
