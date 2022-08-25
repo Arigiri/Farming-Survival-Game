@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         transform.localScale = new Vector3(1, 1, 1);
         if((GetCurrState() == GameState.Play || GetCurrState() == GameState.Pause) && InputManager.instance.GetKeyDown(KeybindingActions.Pause)) // bat tat bang pause 
         {
-            if(!PausePanel.GetComponent<PausePanel>().OnTrigger())
+            if(!PausePanel.gameObject.activeSelf)
             {
                 SetState(GameState.Pause);
             }
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        if(GetCurrState() != GameState.Play && GetCurrState() != GameState.Pause && Input.GetKeyDown(KeyCode.Escape))
+        if(GetCurrState() != GameState.Play && GetCurrState() != GameState.Pause && Input.GetKeyDown(KeyCode.Escape))//An escape de quay lai State truoc do
         {
             BackState();
         }
