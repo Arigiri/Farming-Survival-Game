@@ -24,7 +24,7 @@ public class PausePanel : MonoBehaviour
             return;
         if(Input.anyKeyDown)
         {
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(InputManager.instance.GetKeyDown(KeybindingActions.Select))
             {
                 Buttons[NumberSelect].Trigger();
                 OnTrigger();

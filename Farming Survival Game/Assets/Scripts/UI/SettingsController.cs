@@ -1,30 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
+using System;
 
-public class MenuPanel : MonoBehaviour
+public class SettingsController : MonoBehaviour
 {
     [SerializeField] private Color MenuColorSelect;
     [SerializeField] private ButtonController[] Buttons;
-    [SerializeField] private GameObject m_MenuBackgroundButtons;
-
     private int MenuNumberSelect;
     private bool Changed = true; // Check if need to update
-    // private bool Trigger = false;
+    // Start is called before the first frame update
     void Start()
     {
         MenuNumberSelect = 0;
         MenuColorSelect.a = 1;
     }
 
+    // Update is called once per frame
     void Update()
     {
         if(gameObject.activeSelf == false)
-            return;
-        if(m_MenuBackgroundButtons.gameObject.activeSelf == false)
             return;
         if(Input.anyKeyDown)
         {

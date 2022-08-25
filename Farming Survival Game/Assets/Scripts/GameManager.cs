@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,14 +13,26 @@ public class GameManager : MonoBehaviour
         Play,
         Pause,
         Death,
-        Settings
+        Settings,
+        MenuControllerSetiing,
+        PauseControllerSetting,
     }
-    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel;
+    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, MenuControllerPanel, PauseControllerPanel, ControllerText;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
     [SerializeField] AttributeUIController m_AtrributeUI;
     [SerializeField] GameObject m_DayNightSystem;
-    private GameState CurrState;
+    [SerializeField] TextMeshProUGUI m_ControllerText;
+    [SerializeField] private ControllerSystem m_ControllerSystem;
+    private GameState CurrState; // bo khong dung nua, currstate thay bang GetCurrState()
+    [SerializeField] private GameState[] GameStateList = new GameState[100];
+    private int GameStateIndex; // cac gamestate duoc luu tu 0 den GameStateIndex - 1. Tuc GameStateIndex chua co gi
+
+    private void Awake() 
+    {
+        GameStateIndex = 0;
+        m_ControllerSystem.SetAsDefault();
+    }
     void Start()
     {
         SetState(GameState.Menu);
@@ -29,48 +42,77 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(1, 1, 1);
-        if(Input.GetKeyDown(KeyCode.Escape))
-            if(!PausePanel.GetComponent<PausePanel>().OnTrigger() && CurrState != GameState.Menu)
+        if((GetCurrState() == GameState.Play || GetCurrState() == GameState.Pause) && InputManager.instance.GetKeyDown(KeybindingActions.Pause)) // bat tat bang pause 
+        {
+            if(!PausePanel.gameObject.activeSelf)
             {
                 SetState(GameState.Pause);
             }
             else 
             {
-                SetState(CurrState);
+                BackState();
             }
+        }
         
-        if(Input.GetKeyDown(KeyCode.Tab) && CurrState == GameState.Play && !PausePanel.gameObject.activeSelf)
+        if(GetCurrState() != GameState.Play && GetCurrState() != GameState.Pause && Input.GetKeyDown(KeyCode.Escape))//An escape de quay lai State truoc do
+        {
+            BackState();
+        }
+
+        if(InputManager.instance.GetKeyDown(KeybindingActions.Inventory) && GetCurrState() == GameState.Play && !PausePanel.gameObject.activeSelf)
         {
             bool check = !m_InventoryUI.gameObject.activeSelf;
             if(check)
                 m_InventoryUI.Setup(false);
             m_InventoryUI.gameObject.SetActive(check);
         }
-
     }
 
     public void SetState(GameState State)
     {
+        if(State == GameState.Play || State == GameState.Death) // khi vao mot gamestate ma khong muon co the quay lai state truoc do(vi du gamestate.play khong muon quay lai gamestate.menu)
+        {
+            SetEmptyStateList();//tao mot statelist moi voi gamestate.play la phan tu dau tien cua list => khong the ans esc de quay lai menu duoc
+        }
+        
         if(State == GameState.Pause)
         {
             m_Player.Active = false;
             PausePanel.SetActive(true);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            SettingsPanel.SetActive(State == GameState.Settings);
             Time.timeScale = 0;
+            SetCurrState(State);
         }
         else if(State == GameState.Settings)
         {
-            Time.timeScale = 0;
-            m_Player.Active = false;
-            SettingsPanel.SetActive(true);
+            MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            SettingsPanel.SetActive(State == GameState.Settings);
+            // ControllerText.SetActive(State == GameState.Settings);
+            PausePanel.SetActive(State == GameState.Pause);
+            MenuBackgroundButtons.SetActive(false);
+            SetCurrState(State);
+        }
+        else if(State == GameState.MenuControllerSetiing)
+        {
+            if(MenuPanel.gameObject.activeSelf == true) MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            else PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            SettingsPanel.SetActive(State == GameState.Settings);
+            SetCurrState(State);
         }
         else
         {
             Time.timeScale = 1;
-            CurrState = State;
-            PausePanel.SetActive(false);
+            SetCurrState(State);
+            PausePanel.SetActive(State == GameState.Pause);
             DeadScreen.SetActive(State == GameState.Death);
             MenuPanel.SetActive(State == GameState.Menu);
             PlayScreen.SetActive(State == GameState.Play);
+            MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+            SettingsPanel.SetActive(State == GameState.Settings);
+            MenuBackgroundButtons.SetActive(true);
             SetActivePlayer(State);
             ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
             m_AtrributeUI.gameObject.SetActive(State == GameState.Play);
@@ -81,9 +123,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool BackState() // quay lai gamestate truoc do
+    {
+        if(GameStateIndex <= 1)
+        {
+            print("Khong co gamestate o truoc");
+            return false;
+        }
+        GameStateIndex-=2;
+        SetState(GameStateList[GameStateIndex]);
+        return true;
+    }
+
     public void SetActivePlayer(GameState State)
     {
         m_Player.gameObject.SetActive(State != GameState.Menu);
+    }
+    public GameState GetCurrState()
+    {
+        return GameStateList[GameStateIndex-1];
+    }
+    public void SetCurrState(GameState gameState)
+    {
+        GameStateList[GameStateIndex] = gameState;
+        GameStateIndex++;
+    }
+    public void SetEmptyStateList()
+    {
+        GameStateIndex = 0;
     }
 }
 
