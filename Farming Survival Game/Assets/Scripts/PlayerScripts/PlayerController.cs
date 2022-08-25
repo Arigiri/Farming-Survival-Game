@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         if(IsInteracting)return;
         if(Input.anyKeyDown)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(InputManager.instance.GetKeyDown(KeybindingActions.Interact))
             {
                 CanAction = true;
                 // try

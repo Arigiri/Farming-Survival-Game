@@ -8,7 +8,6 @@ public class PlayerActionController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private PlayerController m_Player;
-    [SerializeField] private Tilemap m_Tilemap;
     [SerializeField]private TileController m_TileController;
     [SerializeField] private ToolBarController m_ToolBar;
     private TileBase CurrTile;

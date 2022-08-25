@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, MenuControllerPanel, PauseControllerPanel, ControllerText;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
-    [SerializeField] AttributeUIController m_AtrributeUI;
+    [SerializeField] AttributeUIController m_AttributeUI;
     [SerializeField] GameObject m_DayNightSystem;
     [SerializeField] TextMeshProUGUI m_ControllerText;
     [SerializeField] private ControllerSystem m_ControllerSystem;
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
             MenuBackgroundButtons.SetActive(true);
             SetActivePlayer(State);
             ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
-            m_AtrributeUI.gameObject.SetActive(State == GameState.Play);
+            m_AttributeUI.gameObject.SetActive(State == GameState.Play);
             m_InventoryUI.gameObject.SetActive(false);
             if(State == GameState.Play || State == GameState.Pause) m_DayNightSystem.SetActive(true);
             else m_DayNightSystem.SetActive(false);
