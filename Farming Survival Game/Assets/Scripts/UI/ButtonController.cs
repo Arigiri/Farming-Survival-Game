@@ -27,6 +27,7 @@ public class ButtonController : MonoBehaviour
 
     public void Trigger()
     {
+        print(ScenceChangeTo);
         m_GameManager.SetState(ScenceChangeTo);
     }
 }

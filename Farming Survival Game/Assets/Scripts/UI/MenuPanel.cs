@@ -1,4 +1,3 @@
-using System.Globalization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ public class MenuPanel : MonoBehaviour
 {
     [SerializeField] private Color MenuColorSelect;
     [SerializeField] private ButtonController[] Buttons;
+    [SerializeField] private GameObject m_MenuBackgroundButtons;
 
     private int MenuNumberSelect;
     private bool Changed = true; // Check if need to update
@@ -23,6 +23,8 @@ public class MenuPanel : MonoBehaviour
     void Update()
     {
         if(gameObject.activeSelf == false)
+            return;
+        if(m_MenuBackgroundButtons.gameObject.activeSelf == false)
             return;
         if(Input.anyKeyDown)
         {

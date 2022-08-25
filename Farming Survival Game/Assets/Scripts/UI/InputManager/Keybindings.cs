@@ -13,4 +13,15 @@ public class Keybindings : ScriptableObject
     }
 
     public KeybindingsCheck[] keybindingsCheck;
+
+    public void ChangeKeybinding(KeybindingActions keybindingActions, KeyCode keyCode)
+    {
+        foreach(KeybindingsCheck keybinding in keybindingsCheck)
+        {
+            if(keybinding.keybindingActions == keybindingActions)
+            {
+                keybinding.keyCode = keyCode;
+            }
+        }
+    }
 }

@@ -1,6 +1,6 @@
 public enum KeybindingActions
 {
-    
+    None,
     Interact,
     Pause,
     Inventory,

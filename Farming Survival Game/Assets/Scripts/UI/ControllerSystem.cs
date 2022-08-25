@@ -6,9 +6,16 @@ public class ControllerSystem : MonoBehaviour
 {
     [SerializeField] private Key[] keys;
     [SerializeField] private Keybindings keybindings;
+    [SerializeField] private DefaultKeybindings m_DefaultKeybindings;
+    // [SerializeField] private GameObject m_object;
 
     private void Start()
     {
+        // transform.position = m_object.transform.position;
+        for(int i = 0; i < keys.Length; i++)
+        {
+            keys[i].KeybindingIndex = i;
+        }
         int idx = 0;
         foreach(Keybindings.KeybindingsCheck key in keybindings.keybindingsCheck)
         {
@@ -30,5 +37,14 @@ public class ControllerSystem : MonoBehaviour
         {
             key.Setup();
         }
+    }
+    public void SetKeyCode(int idx, KeyCode key)
+    {
+        // 2 cai duoi day thay doi UI
+        keys[idx].SetKeyCode(key);
+        keys[idx].Setup();
+
+        // Duoi day thay doi KeyCode trong game
+        keybindings.ChangeKeybinding(keys[idx].GetKeybindingActions(), keys[idx].GetKeyCode());
     }
 }
