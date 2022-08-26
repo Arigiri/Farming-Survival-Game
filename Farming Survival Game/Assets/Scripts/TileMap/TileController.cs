@@ -19,6 +19,7 @@ public class TileController : MonoBehaviour
    public List<Tile> m_OnMapBuildingTiles;
    [SerializeField] private TimeController m_TimeController;
    [SerializeField] private float m_MaxLengthPlace;
+   [SerializeField] private GameObject[] BuildingList;
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
    private Dictionary<Vector3Int, PlantController> PlantOnMap = new Dictionary<Vector3Int, PlantController>();
@@ -152,9 +153,14 @@ public class TileController : MonoBehaviour
       {
          if(Building.name == building.ToString())
          {
-            switch(Building.name)
+            foreach(var Object in BuildingList)
             {
-               // case "Chest" : ChestOnMap[NewLocation] = Building;
+               if(Object.name == Building.name)
+               {
+                  var Chest = Object.GetComponent<ChestController>();
+                  Chest.Init();
+                  ChestOnMap[NewLocation] = Chest;
+               }
             }
             m_CropTileMap.SetTile(NewLocation, Building);
             break;
