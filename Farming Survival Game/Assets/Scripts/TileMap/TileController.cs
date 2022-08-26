@@ -16,7 +16,6 @@ public class TileController : MonoBehaviour
    public Tilemap m_WateredCropTileMap;
    public Tilemap m_CropTileMap;
    public float HourToGrowTree; //InGameTime
-   public Vector3 TreeOffSet = Vector3.zero;
    public List<Tile> m_OnMapBuildingTiles;
    [SerializeField] private TimeController m_TimeController;
    [SerializeField] private float m_MaxLengthPlace;

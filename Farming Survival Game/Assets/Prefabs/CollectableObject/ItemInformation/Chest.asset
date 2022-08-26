@@ -17,7 +17,7 @@ MonoBehaviour:
   ItemStamina: -1
   ToolDurability: -1
   StartDurability: -1
-  Type: 9
+  Type: 10
   Stack: 1
   Action: 9
   Icon: {fileID: 94207079, guid: 13fec995b15470842adad86347aff014, type: 3}
