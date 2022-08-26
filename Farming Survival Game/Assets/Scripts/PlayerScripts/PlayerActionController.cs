@@ -89,9 +89,10 @@ public class PlayerActionController : MonoBehaviour
             case Action.Havest : print("Havest"); m_TileController.Havest(CropPosition); break;
             case Action.Place : m_TileController.SetOnMapObjectTile(CropPosition, m_Building);break;
             case Action.Interact : 
+                Vector3Int NewLocation = m_TileController.m_TileMap.WorldToCell(CropPosition);
                 switch(GetCurrTargetTile())
                 {
-                    case "Chest": break;
+                    case "Chest": m_TileController.ChestOnMap[NewLocation].CanOpenChest();break;
                     default : print("Quen Setup Ten Tile Kia!!!"); break;
                 } break;
             default : print("Quen Setup Kia!!!"); break;            

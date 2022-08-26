@@ -22,8 +22,8 @@ public class TileController : MonoBehaviour
    [SerializeField] private GameObject[] BuildingList;
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
-   private Dictionary<Vector3Int, PlantController> PlantOnMap = new Dictionary<Vector3Int, PlantController>();
-   private Dictionary<Vector3Int, ChestController> ChestOnMap = new Dictionary<Vector3Int, ChestController>();
+   public Dictionary<Vector3Int, PlantController> PlantOnMap = new Dictionary<Vector3Int, PlantController>();
+   public Dictionary<Vector3Int, ChestController> ChestOnMap = new Dictionary<Vector3Int, ChestController>();
 
    private void Start() {
       // m_UnWateredCropTile.gameObject.transform.localScale = new Vector3(0.15f, 0.15f, 0);
