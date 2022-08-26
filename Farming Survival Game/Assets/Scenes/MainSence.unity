@@ -33435,6 +33435,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e0e6c1575112e842a59cd83bbd0d157, type: 2}
   m_TimeController: {fileID: 1764694703}
   m_MaxLengthPlace: 3
+  BuildingList:
+  - {fileID: 8362033048695491864, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
 --- !u!156049354 &1616473650
 Grid:
   m_ObjectHideFlags: 0
