@@ -11,6 +11,7 @@ public class TilemapManager : MonoBehaviour {
     [SerializeField] private Tilemap[] _TileMapsToSave;
     [SerializeField] private ScriptableLevel _Level;
     [SerializeField] private Tilemap _TileMapToLoad;
+    private List<TileBase> TileList = new List<TileBase>();
 
     public void SaveMap() {
         
@@ -32,9 +33,10 @@ public class TilemapManager : MonoBehaviour {
             foreach (var pos in map.cellBounds.allPositionsWithin) {
                 if (map.HasTile(pos)) {
                     var levelTile = map.GetTile(pos);
+                    if(TileList.Contains(levelTile) == false)TileList.Add(levelTile);
                     yield return new SavedTile() {
                         Position = pos,
-                        m_Tile = levelTile
+                        TileIndex = TileList.IndexOf(levelTile)
                     };
                 }
             }
@@ -59,7 +61,7 @@ public class TilemapManager : MonoBehaviour {
         ClearMap();
 
         foreach (var savedTile in level.TileMap) {
-           _TileMapToLoad.SetTile(savedTile.Position, savedTile.m_Tile);
+           _TileMapToLoad.SetTile(savedTile.Position, TileList[savedTile.TileIndex]);
         }
 
     }
@@ -72,6 +74,14 @@ public class TilemapManager : MonoBehaviour {
 public static class ScriptableObjectUtility {
     public static void SaveLevelFile(ScriptableLevel level) {
         AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+    
+    public static void SaveRecipeFile(ScriptableRecipe recipe)
+    {
+        AssetDatabase.CreateAsset(recipe, $"Assets/Recipes/{recipe.Name}.asset");
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
