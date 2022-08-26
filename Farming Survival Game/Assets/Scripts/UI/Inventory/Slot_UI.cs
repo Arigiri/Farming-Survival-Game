@@ -114,14 +114,9 @@ public class Slot_UI : MonoBehaviour, IDropHandler
 
     public void OnClick()
     {
-        // print("SOS!");
-        // SetNumSlot(10);
         if(m_InventoryUI == null)
         {
             ShowTarget();
-            // print(m_CurrDurability);
-            // print(SlotIdx);
-            // print(m_Player.GetInventoryController().Slots[SlotIdx].Type);
             return;
         }
         foreach(Slot_UI slot in m_InventoryUI.slots)

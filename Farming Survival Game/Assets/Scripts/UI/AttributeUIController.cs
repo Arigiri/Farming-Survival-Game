@@ -24,12 +24,6 @@ public class AttributeUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_CurrProcessingTime == 0)
-        {
-            print(m_CurrProcessingTime);
-            print(Time.deltaTime);
-            print(m_ProcessingTime);
-        }
         if(m_CurrProcessingTime >= 0)
         {
             m_CurrProcessingTime += Time.deltaTime;
@@ -37,7 +31,6 @@ public class AttributeUIController : MonoBehaviour
         }
         if(m_CurrProcessingTime >= m_ProcessingTime)
         {
-            print("???");
             m_PlayerAction.TriggerAction(m_Action);
             TurnOffProgressBar();
             m_Player.IsWorking = false;
@@ -55,7 +48,6 @@ public class AttributeUIController : MonoBehaviour
 
     public void TurnOffProgressBar()
     {
-        print("Where Are You");
         m_ProcessingBar.SetActive(false);
         m_CurrProcessingTime = -1;
         m_ProcessingTime = 0;

@@ -54,9 +54,6 @@ public class OnMapObjectController : MonoBehaviour
     {
         return CurrTile;
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        print(other.gameObject.name);
-    }
     public void CutDownTree(Vector3 Position)
     {
         DropItem(ItemsDropperInTree, Position);

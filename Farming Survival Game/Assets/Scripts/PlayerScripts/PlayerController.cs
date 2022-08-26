@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
                 }
                 if(CurrItemOnHand != null && CurrItemOnHand.m_Action == m_Action && IsInteracting == false)
                 {
-                    print("Troll");
                     if(m_Action == Action.Hoe && m_PlayerActionController.CanCrop())
                     {
                         m_AttributeUIController.MakeProgressBar(0.2f);

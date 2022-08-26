@@ -152,7 +152,6 @@ public class TileController : MonoBehaviour
          if(Building.name == building.ToString())
          {
             m_CropTileMap.SetTile(NewLocation, Building);
-            print(Building);
             break;
          }
       }
