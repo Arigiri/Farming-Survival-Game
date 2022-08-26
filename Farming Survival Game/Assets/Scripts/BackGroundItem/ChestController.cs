@@ -7,14 +7,14 @@ public class ChestController : MonoBehaviour
 {
     public CollectableObjectController[] ItemsContainer;
     [SerializeField]private Action m_Action;
-    [SerializeField] private PlayerController m_Player;
+    
     [SerializeField] private float m_MaxLengthInteractive;
-    public Tilemap m_TileMap;
     private TileController m_TileController;
+    private PlayerController m_Player;
     // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
-
+        m_Player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -23,15 +23,12 @@ public class ChestController : MonoBehaviour
 
     }
 
-    public bool CanOpenChest()
+    public bool CanOpenChest() // Mo ruong
     {
-        Vector3 MousePosiotion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int PlayerLocation = m_TileMap.WorldToCell(m_Player.transform.position);
-        Vector3Int NewLocation = m_TileMap.WorldToCell(MousePosiotion);
-        return ((PlayerLocation - NewLocation).magnitude <= m_MaxLengthInteractive && m_TileController.CanPutObject(NewLocation));
+        return false;
     }
 
-    public void SelfDestroy()
+    public void SelfDestroy() // Pha ruong va Lay ruong vao Inventory
     {
         m_Player.AddItemToInventory(gameObject.GetComponent<CollectableObjectController>());
         DropItem();
@@ -40,7 +37,6 @@ public class ChestController : MonoBehaviour
     }
     private void DropItem()
     {
-        PlayerController m_Player = FindObjectOfType<PlayerController>();
         Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f);
         foreach(CollectableObjectController item in ItemsContainer)
         {

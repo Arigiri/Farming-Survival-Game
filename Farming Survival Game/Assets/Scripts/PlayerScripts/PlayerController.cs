@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
                         m_AttributeUIController.SetAction(NewAction);
                         m_AttributeUIController.MakeProgressBar(0.2f);
                         m_PlayerActionController.SetCropPosition(Position);
-                        IsInteracting = true;
+                        IsInteracting = true; 
                         IsWorking = true;
                     }
                 }

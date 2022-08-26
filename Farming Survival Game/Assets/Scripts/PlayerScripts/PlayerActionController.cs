@@ -15,8 +15,17 @@ public class PlayerActionController : MonoBehaviour
     private Vector3 MousePosition;
     private TreeType m_TreeType;
     private OnMapBuilding m_Building;
+    private string CurrTargetTile;
     public bool CanCut = false;
     
+    public string GetCurrTargetTile()
+    {
+        return CurrTargetTile;
+    }
+    public void SetCurrTargetTile(string currTargetTile)
+    {
+        CurrTargetTile = currTargetTile;
+    }
     public void SetBuilding(OnMapBuilding building)
     {
         m_Building = building;
@@ -79,6 +88,12 @@ public class PlayerActionController : MonoBehaviour
             case Action.GrowSapling : m_TileController.SetTreeTile(CropPosition); break;
             case Action.Havest : print("Havest"); m_TileController.Havest(CropPosition); break;
             case Action.Place : m_TileController.SetOnMapObjectTile(CropPosition, m_Building);break;
+            case Action.Interact : 
+                switch(GetCurrTargetTile())
+                {
+                    case "Chest": break;
+                    default : print("Quen Setup Ten Tile Kia!!!"); break;
+                } break;
             default : print("Quen Setup Kia!!!"); break;            
         }
         if(m_Player.IsInteracting == false)m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
@@ -142,7 +157,7 @@ public class PlayerActionController : MonoBehaviour
         }
         switch(name)
         {
-            case "Chest": return Action.Interact;
+            case "Chest": SetCurrTargetTile(name); return Action.Interact;
             default: break;
         }
         return Action.None;

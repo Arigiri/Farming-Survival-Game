@@ -23596,6 +23596,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3123279933905353903, guid: f11c22aa1b6a8394eb1315d73fdcedeb, type: 3}
   m_PrefabInstance: {fileID: 1950889018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1256377724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256377725}
+  - component: {fileID: 1256377726}
+  m_Layer: 0
+  m_Name: HiddenChestObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1256377725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256377724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.496231, y: -1.073897, z: -0.0038879882}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256377726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256377724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1172b62fc769d4241b3cb7404f5059b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemsContainer: []
+  m_Action: 8
+  m_Player: {fileID: 1057887301}
+  m_MaxLengthInteractive: 3
+  m_TileMap: {fileID: 0}
 --- !u!1 &1260598912
 GameObject:
   m_ObjectHideFlags: 0
