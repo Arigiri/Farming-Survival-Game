@@ -17,11 +17,11 @@ MonoBehaviour:
   ItemStamina: -1
   ToolDurability: -1
   StartDurability: -1
-  Type: 9
+  Type: 10
   Stack: 1
   Action: 9
   Icon: {fileID: 94207079, guid: 13fec995b15470842adad86347aff014, type: 3}
   IsTool: 0
   m_TreeType: 1
-  Description: 
+  Description: This is a chest that contains items
   Building: 101
