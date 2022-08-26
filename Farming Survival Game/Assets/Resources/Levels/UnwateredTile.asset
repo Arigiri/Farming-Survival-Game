@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8c0cf59cd4191489a131f793ecc190, type: 3}
+  m_Name: UnwateredTile
+  m_EditorClassIdentifier: 
+  LevelIndex: 0
+  TileMap:
+  - Position: {x: 6, y: -4, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 7, y: -4, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 8, y: -4, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 5, y: -3, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 6, y: -3, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 7, y: -3, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 8, y: -3, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 9, y: -3, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 5, y: -2, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 6, y: -2, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 7, y: -2, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 8, y: -2, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 9, y: -2, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 6, y: -1, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 7, y: -1, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}
+  - Position: {x: 8, y: -1, z: 0}
+    m_Tile: {fileID: 11400000, guid: 449381a75b423ae44b342b781d28ea71, type: 2}

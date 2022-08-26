@@ -8,29 +8,33 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class TilemapManager : MonoBehaviour {
-    [SerializeField] private Tilemap _groundMap, _unitMap;
-    [SerializeField] private int _levelIndex;
+    [SerializeField] private Tilemap[] _TileMapsToSave;
+    [SerializeField] private ScriptableLevel _Level;
+    [SerializeField] private Tilemap _TileMapToLoad;
 
     public void SaveMap() {
-        var newLevel = ScriptableObject.CreateInstance<ScriptableLevel>();
+        
+        foreach(var tilemap in _TileMapsToSave)
+        {
+            var newLevel = ScriptableObject.CreateInstance<ScriptableLevel>();
+            newLevel.name = tilemap.name;
 
-        newLevel.LevelIndex = _levelIndex;
-        newLevel.name = $"Level {_levelIndex}";
-
-        newLevel.GroundTiles = GetTilesFromMap(_groundMap).ToList();
-        newLevel.UnitTiles = GetTilesFromMap(_unitMap).ToList();
-
+            newLevel.TileMap = GetTilesFromMap(tilemap).ToList();
+            ScriptableObjectUtility.SaveLevelFile(newLevel);
+        }
+       
 
 
-        ScriptableObjectUtility.SaveLevelFile(newLevel);
+
+        
 
         IEnumerable<SavedTile> GetTilesFromMap(Tilemap map) {
             foreach (var pos in map.cellBounds.allPositionsWithin) {
                 if (map.HasTile(pos)) {
-                    var levelTile = map.GetTile<LevelTile>(pos);
+                    var levelTile = map.GetTile(pos);
                     yield return new SavedTile() {
                         Position = pos,
-                        Tile = levelTile
+                        m_Tile = levelTile
                     };
                 }
             }
@@ -46,40 +50,18 @@ public class TilemapManager : MonoBehaviour {
     }
 
     public void LoadMap() {
-        var level = Resources.Load<ScriptableLevel>($"Levels/Level {_levelIndex}");
+        var level = _Level;//Resources.Load<ScriptableLevel>($"Assets/Resources/Levels/Level {_levelIndex}");
         if (level == null) {
-            Debug.LogError($"Level {_levelIndex} does not exist.");
+            Debug.LogError($"Tilemap does not exist.");
             return;
         }
 
         ClearMap();
 
-        foreach (var savedTile in level.GroundTiles) {
-            switch (savedTile.Tile.Type) {
-                case TileType.Grass:
-                    SetTile(_groundMap, savedTile);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+        foreach (var savedTile in level.TileMap) {
+           _TileMapToLoad.SetTile(savedTile.Position, savedTile.m_Tile);
         }
 
-        foreach (var savedTile in level.UnitTiles)
-        {
-            switch (savedTile.Tile.Type)
-            {
-                case TileType.Quinn:
-                case TileType.Snorlax:
-                    SetTile(_unitMap, savedTile);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        void SetTile(Tilemap map, SavedTile tile) {
-            map.SetTile(tile.Position, tile.Tile);
-        }
     }
 
     
@@ -99,21 +81,3 @@ public static class ScriptableObjectUtility {
 #endif
 
 
-
-public struct Level {
-    public int LevelIndex;
-    public List<SavedTile> GroundTiles;
-    public List<SavedTile> UnitTiles;
-
-    public string Serialize() {
-        var builder = new StringBuilder();
-
-        builder.Append("g[");
-        foreach (var groundTile in GroundTiles) {
-            builder.Append($"{(int) groundTile.Tile.Type}({groundTile.Position.x},{groundTile.Position.y})");
-        }
-        builder.Append("]");
-
-        return builder.ToString();
-    }
-}
