@@ -6,26 +6,20 @@ using UnityEngine.Tilemaps;
 public class ChestController : MonoBehaviour
 {
     public CollectableObjectController[] ItemsContainer;
-    [SerializeField]private Action m_Action;
-    
+    [SerializeField] private Action m_Action;
     [SerializeField] private float m_MaxLengthInteractive;
     private TileController m_TileController;
     private PlayerController m_Player;
-    // Start is called before the first frame update
+    private ChestUI m_ChestUI;
     public void Init()
     {
-        m_Player = FindObjectOfType<PlayerController>();
+        m_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        m_ChestUI = GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenChest() // Mo ruong
     {
-
-    }
-
-    public bool CanOpenChest() // Mo ruong
-    {
-        return false;
+        m_ChestUI.TurnOnChestUI();
     }
 
     public void SelfDestroy() // Pha ruong va Lay ruong vao Inventory

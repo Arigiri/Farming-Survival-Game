@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator m_Animator;
     [SerializeField] private InputAction m_InputAction;
     [SerializeField] private float m_movespeed;
-    [SerializeField] private InventoryController m_Inventory;
+    [SerializeField] private InventoryController    m_Inventory;
     [SerializeField] private GameObject m_ChopAnimation;
     [SerializeField] private AttributeController m_AttributeController;
     [SerializeField] private CollectableObjectsPool m_CollectableObjectsPool;

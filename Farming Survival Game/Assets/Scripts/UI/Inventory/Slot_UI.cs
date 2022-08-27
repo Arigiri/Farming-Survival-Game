@@ -66,6 +66,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
     }
     private void Update()
     {
+        // return;
         if(m_CloneSlot != null && m_CloneSlot.gameObject.activeSelf == true && m_ObjectInformationPanel.m_SlotIdx != -1 && m_Player.GetCollectableCount(m_ObjectInformationPanel.m_SlotIdx) == 0)
         {
             m_CloneSlot.GetComponent<DragDrop>().SetActiveFalse();
