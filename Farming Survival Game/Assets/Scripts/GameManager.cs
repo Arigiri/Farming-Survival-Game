@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject m_DayNightSystem;
     [SerializeField] TextMeshProUGUI m_ControllerText;
     [SerializeField] private ControllerSystem m_ControllerSystem;
+    [SerializeField] private ChestUI m_ChestUI;
     private GameState CurrState; // bo khong dung nua, currstate thay bang GetCurrState()
     [SerializeField] private GameState[] GameStateList = new GameState[100];
     private int GameStateIndex; // cac gamestate duoc luu tu 0 den GameStateIndex - 1. Tuc GameStateIndex chua co gi
@@ -61,10 +62,17 @@ public class GameManager : MonoBehaviour
 
         if(InputManager.instance.GetKeyDown(KeybindingActions.Inventory) && GetCurrState() == GameState.Play && !PausePanel.gameObject.activeSelf)
         {
-            bool check = !m_InventoryUI.gameObject.activeSelf;
-            if(check)
-                m_InventoryUI.Setup(false);
-            m_InventoryUI.gameObject.SetActive(check);
+            if(m_ChestUI.GetChestUIOnOrOff() == true)
+            {
+                m_ChestUI.TurnOffChestUI();
+            }
+            else 
+            {
+                bool check = !m_InventoryUI.gameObject.activeSelf;
+                if(check)
+                    m_InventoryUI.Setup(false);
+                m_InventoryUI.gameObject.SetActive(check);
+            }
         }
     }
 

@@ -22,6 +22,8 @@ public class Slot_UI : MonoBehaviour, IDropHandler
     [SerializeField] private Slider m_CloneDurability;
     [SerializeField] private TextMeshProUGUI m_CloneQuantityText;
     [SerializeField] private InventoryController m_Inventory;
+    // [SerializeField] private ChestUI m_ChestUI;
+    // [SerializeField] private 
     private InventoryController.Slot m_Slot;
 
     public Image thisImage; //wtf is this???

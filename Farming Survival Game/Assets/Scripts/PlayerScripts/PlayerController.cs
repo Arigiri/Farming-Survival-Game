@@ -384,6 +384,10 @@ public class PlayerController : MonoBehaviour
     {
         return m_Action;
     }
+    public Vector2 GetMoveOrNot()
+    {
+        return m_MoveDirection;
+    }
 
 }
 public enum Direction

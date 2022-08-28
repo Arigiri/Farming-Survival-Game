@@ -6,7 +6,7 @@ public class ChestUI : MonoBehaviour
 {
     [SerializeField] private PlayerController m_Player;
     [SerializeField] GameObject ChestPanel, InventoryPanel;
-    [SerializeField] int x;
+    [SerializeField] private TransparentObject m_TransparentObject;
     public List<Slot_UI> InventorySlots = new List<Slot_UI>();
     void Awake() 
     {
@@ -19,6 +19,29 @@ public class ChestUI : MonoBehaviour
     void Start()
     {
         // Setup();
+    }
+    void Update()
+    {
+        if(m_Player.GetMoveOrNot() != Vector2.zero && GetChestUIOnOrOff() == true)
+        {
+            TurnOffChestUI();
+            return;
+        }
+        if(InventoryPanel.activeSelf == true)
+        {
+            if(m_TransparentObject.gameObject.activeSelf == false)
+            {
+                m_TransparentObject.gameObject.SetActive(true);
+            }
+        }
+
+        if(InventoryPanel.activeSelf == false)
+        {
+            if(m_TransparentObject.gameObject.activeSelf == true)
+            {
+                m_TransparentObject.gameObject.SetActive(false);
+            }
+        }
     }
     public void Setup()
     {
@@ -41,7 +64,7 @@ public class ChestUI : MonoBehaviour
 
     public void TurnOnChestUI()
     {
-        // ChestPanel.SetActive(true);
+        ChestPanel.SetActive(true);
         InventoryPanel.SetActive(true);
         Setup();
     }
@@ -50,5 +73,11 @@ public class ChestUI : MonoBehaviour
     {
         ChestPanel.SetActive(false);
         InventoryPanel.SetActive(false);
+    }
+
+    public bool GetChestUIOnOrOff() // true -> on, false -> off
+    {
+        if(InventoryPanel.activeSelf == true)   return true;
+        else return false;
     }
 }
