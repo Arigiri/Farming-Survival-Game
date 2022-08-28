@@ -7,7 +7,9 @@ public class ChestUI : MonoBehaviour
     [SerializeField] private PlayerController m_Player;
     [SerializeField] GameObject ChestPanel, InventoryPanel;
     [SerializeField] private TransparentObject m_TransparentObject;
+    [SerializeField] private Color m_Color;
     public List<Slot_UI> InventorySlots = new List<Slot_UI>();
+    public List<ChestSlotUI> ChestSlots = new List<ChestSlotUI>();
     void Awake() 
     {
         for(int i = 0; i < InventorySlots.Count; i++)
@@ -25,7 +27,6 @@ public class ChestUI : MonoBehaviour
         if(m_Player.GetMoveOrNot() != Vector2.zero && GetChestUIOnOrOff() == true)
         {
             TurnOffChestUI();
-            return;
         }
         if(InventoryPanel.activeSelf == true)
         {
@@ -58,6 +59,7 @@ public class ChestUI : MonoBehaviour
                 {
                     InventorySlots[i].SetEmpty();
                 }
+                InventorySlots[i].thisImage.color = m_Color;
             }
         }
     }

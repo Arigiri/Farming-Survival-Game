@@ -12608,12 +12608,12 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!1 &500585573
 GameObject:
@@ -50947,6 +50947,7 @@ MonoBehaviour:
   ChestPanel: {fileID: 425174527}
   InventoryPanel: {fileID: 544741378}
   m_TransparentObject: {fileID: 1522359333}
+  m_Color: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
   InventorySlots:
   - {fileID: 164098539}
   - {fileID: 1685636816}
@@ -50975,6 +50976,7 @@ MonoBehaviour:
   - {fileID: 918389280}
   - {fileID: 2024495809}
   - {fileID: 148792682}
+  ChestSlots: []
 --- !u!114 &1505877844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56961,7 +56963,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768040323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

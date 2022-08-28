@@ -26,9 +26,13 @@ public class Slot_UI : MonoBehaviour, IDropHandler
     // [SerializeField] private 
     private InventoryController.Slot m_Slot;
 
-    public Image thisImage; //wtf is this???
+    public Image thisImage; //Day la anh cua Slot
     public int SlotIdx;
     private int m_CurrDurability = -1;
+    private void Awake() 
+    {
+        thisImage = gameObject.GetComponent<Image>();
+    }
     public string GetQuantityText()
     {
         return m_QuantityText.text;
@@ -131,7 +135,10 @@ public class Slot_UI : MonoBehaviour, IDropHandler
         image.color = new Color(1, 1, 1, 0.75f); // neu sua cai nay thi sua ca cai trong dragdrop
 
     }
-
+    public Color GetDefaultColor()
+    {
+        return m_Color;
+    }
     public Image GetImage()
     {
         return m_ItemIcon;
@@ -172,6 +179,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        if(m_ObjectInformationPanel == null)    return;
         if(m_ObjectInformationPanel.m_SlotIdx == -1)    return;
         // Debug.Log("OnDrop");
         if(eventData.pointerDrag != null)

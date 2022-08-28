@@ -37,9 +37,9 @@ public class TileController : MonoBehaviour
 
       if(Input.GetMouseButtonDown(0))
       {
-         print(OnMapBuilding.Chest.ToString());
-         print(m_OnMapBuildingTiles[0].name);
-         print(OnMapBuilding.Chest.ToString() == m_OnMapBuildingTiles[0].name);
+         // print(OnMapBuilding.Chest.ToString());
+         // print(m_OnMapBuildingTiles[0].name);
+         // print(OnMapBuilding.Chest.ToString() == m_OnMapBuildingTiles[0].name);
       }
    }
 
