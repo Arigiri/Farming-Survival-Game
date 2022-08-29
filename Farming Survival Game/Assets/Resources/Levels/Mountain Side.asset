@@ -947,7 +947,7 @@ MonoBehaviour:
   - Position: {x: 148, y: 145, z: 0}
     TileIndex: 55
   - Position: {x: 149, y: 145, z: 0}
-    TileIndex: 70
+    TileIndex: 60
   - Position: {x: -56, y: 146, z: 0}
     TileIndex: 57
   - Position: {x: -55, y: 146, z: 0}
