@@ -10392,7 +10392,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 1707443459}
   m_QuantityText: {fileID: 61388058}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -11371,7 +11371,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 877118651}
   m_QuantityText: {fileID: 1592772288}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -18145,7 +18145,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 1513900624}
   m_QuantityText: {fileID: 844298268}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -41168,7 +41168,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 1565891769}
   m_QuantityText: {fileID: 1735849250}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -45669,7 +45669,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 508479227}
   m_QuantityText: {fileID: 1462801013}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -61610,7 +61610,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 977104388}
   m_QuantityText: {fileID: 2144474569}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -75839,7 +75839,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 1409048616}
   m_QuantityText: {fileID: 1856491609}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -81116,7 +81116,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 508476415}
   m_QuantityText: {fileID: 2101411475}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
@@ -81726,7 +81726,7 @@ MonoBehaviour:
   IsActive: 0
   m_ItemIcon: {fileID: 102775168}
   m_QuantityText: {fileID: 44619604}
-  m_InventoryUI: {fileID: 370013789}
+  m_InventoryUI: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_CloneSlot: {fileID: 0}
   m_ObjectInformationPanel: {fileID: 0}
