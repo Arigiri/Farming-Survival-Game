@@ -1,0 +1,1460 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8c0cf59cd4191489a131f793ecc190, type: 3}
+  m_Name: Mountain Side
+  m_EditorClassIdentifier: 
+  LevelIndex: 0
+  TileMap:
+  - Position: {x: 27, y: 49, z: 0}
+    TileIndex: 48
+  - Position: {x: 28, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 29, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 30, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 31, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 32, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 33, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 34, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 35, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 36, y: 49, z: 0}
+    TileIndex: 50
+  - Position: {x: 88, y: 49, z: 0}
+    TileIndex: 48
+  - Position: {x: 89, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 90, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 91, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 92, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 93, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 94, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 95, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 96, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 97, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 98, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 99, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 100, y: 49, z: 0}
+    TileIndex: 49
+  - Position: {x: 101, y: 49, z: 0}
+    TileIndex: 50
+  - Position: {x: 24, y: 50, z: 0}
+    TileIndex: 48
+  - Position: {x: 25, y: 50, z: 0}
+    TileIndex: 49
+  - Position: {x: 26, y: 50, z: 0}
+    TileIndex: 49
+  - Position: {x: 27, y: 50, z: 0}
+    TileIndex: 51
+  - Position: {x: 36, y: 50, z: 0}
+    TileIndex: 52
+  - Position: {x: 37, y: 50, z: 0}
+    TileIndex: 50
+  - Position: {x: 86, y: 50, z: 0}
+    TileIndex: 48
+  - Position: {x: 87, y: 50, z: 0}
+    TileIndex: 49
+  - Position: {x: 88, y: 50, z: 0}
+    TileIndex: 51
+  - Position: {x: 101, y: 50, z: 0}
+    TileIndex: 52
+  - Position: {x: 102, y: 50, z: 0}
+    TileIndex: 49
+  - Position: {x: 103, y: 50, z: 0}
+    TileIndex: 50
+  - Position: {x: 21, y: 51, z: 0}
+    TileIndex: 48
+  - Position: {x: 22, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 23, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 24, y: 51, z: 0}
+    TileIndex: 51
+  - Position: {x: 37, y: 51, z: 0}
+    TileIndex: 52
+  - Position: {x: 38, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 39, y: 51, z: 0}
+    TileIndex: 50
+  - Position: {x: 84, y: 51, z: 0}
+    TileIndex: 48
+  - Position: {x: 85, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 86, y: 51, z: 0}
+    TileIndex: 51
+  - Position: {x: 103, y: 51, z: 0}
+    TileIndex: 52
+  - Position: {x: 104, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 105, y: 51, z: 0}
+    TileIndex: 49
+  - Position: {x: 106, y: 51, z: 0}
+    TileIndex: 50
+  - Position: {x: 17, y: 52, z: 0}
+    TileIndex: 48
+  - Position: {x: 18, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 19, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 20, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 21, y: 52, z: 0}
+    TileIndex: 51
+  - Position: {x: 39, y: 52, z: 0}
+    TileIndex: 52
+  - Position: {x: 40, y: 52, z: 0}
+    TileIndex: 50
+  - Position: {x: 83, y: 52, z: 0}
+    TileIndex: 48
+  - Position: {x: 84, y: 52, z: 0}
+    TileIndex: 51
+  - Position: {x: 106, y: 52, z: 0}
+    TileIndex: 52
+  - Position: {x: 107, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 108, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 109, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 110, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 111, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 112, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 113, y: 52, z: 0}
+    TileIndex: 49
+  - Position: {x: 114, y: 52, z: 0}
+    TileIndex: 50
+  - Position: {x: 15, y: 53, z: 0}
+    TileIndex: 48
+  - Position: {x: 16, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 17, y: 53, z: 0}
+    TileIndex: 51
+  - Position: {x: 40, y: 53, z: 0}
+    TileIndex: 52
+  - Position: {x: 41, y: 53, z: 0}
+    TileIndex: 50
+  - Position: {x: 81, y: 53, z: 0}
+    TileIndex: 48
+  - Position: {x: 82, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 83, y: 53, z: 0}
+    TileIndex: 51
+  - Position: {x: 114, y: 53, z: 0}
+    TileIndex: 52
+  - Position: {x: 115, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 116, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 117, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 118, y: 53, z: 0}
+    TileIndex: 49
+  - Position: {x: 119, y: 53, z: 0}
+    TileIndex: 50
+  - Position: {x: 11, y: 54, z: 0}
+    TileIndex: 48
+  - Position: {x: 12, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 13, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 14, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 15, y: 54, z: 0}
+    TileIndex: 51
+  - Position: {x: 41, y: 54, z: 0}
+    TileIndex: 52
+  - Position: {x: 42, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 43, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 44, y: 54, z: 0}
+    TileIndex: 50
+  - Position: {x: 79, y: 54, z: 0}
+    TileIndex: 48
+  - Position: {x: 80, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 81, y: 54, z: 0}
+    TileIndex: 51
+  - Position: {x: 119, y: 54, z: 0}
+    TileIndex: 52
+  - Position: {x: 120, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 121, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 122, y: 54, z: 0}
+    TileIndex: 49
+  - Position: {x: 123, y: 54, z: 0}
+    TileIndex: 50
+  - Position: {x: 7, y: 55, z: 0}
+    TileIndex: 48
+  - Position: {x: 8, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 9, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 10, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 11, y: 55, z: 0}
+    TileIndex: 51
+  - Position: {x: 44, y: 55, z: 0}
+    TileIndex: 52
+  - Position: {x: 45, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 46, y: 55, z: 0}
+    TileIndex: 50
+  - Position: {x: 76, y: 55, z: 0}
+    TileIndex: 48
+  - Position: {x: 77, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 78, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 79, y: 55, z: 0}
+    TileIndex: 51
+  - Position: {x: 123, y: 55, z: 0}
+    TileIndex: 52
+  - Position: {x: 124, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 125, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 126, y: 55, z: 0}
+    TileIndex: 49
+  - Position: {x: 127, y: 55, z: 0}
+    TileIndex: 50
+  - Position: {x: 5, y: 56, z: 0}
+    TileIndex: 48
+  - Position: {x: 6, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 7, y: 56, z: 0}
+    TileIndex: 51
+  - Position: {x: 46, y: 56, z: 0}
+    TileIndex: 52
+  - Position: {x: 47, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 48, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 49, y: 56, z: 0}
+    TileIndex: 50
+  - Position: {x: 73, y: 56, z: 0}
+    TileIndex: 48
+  - Position: {x: 74, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 75, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 76, y: 56, z: 0}
+    TileIndex: 51
+  - Position: {x: 127, y: 56, z: 0}
+    TileIndex: 52
+  - Position: {x: 128, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 129, y: 56, z: 0}
+    TileIndex: 49
+  - Position: {x: 130, y: 56, z: 0}
+    TileIndex: 50
+  - Position: {x: 3, y: 57, z: 0}
+    TileIndex: 48
+  - Position: {x: 4, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 5, y: 57, z: 0}
+    TileIndex: 51
+  - Position: {x: 49, y: 57, z: 0}
+    TileIndex: 52
+  - Position: {x: 50, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 51, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 52, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 53, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 54, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 55, y: 57, z: 0}
+    TileIndex: 50
+  - Position: {x: 65, y: 57, z: 0}
+    TileIndex: 48
+  - Position: {x: 66, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 67, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 68, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 69, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 70, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 71, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 72, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 73, y: 57, z: 0}
+    TileIndex: 51
+  - Position: {x: 130, y: 57, z: 0}
+    TileIndex: 52
+  - Position: {x: 131, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 132, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 133, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 134, y: 57, z: 0}
+    TileIndex: 49
+  - Position: {x: 135, y: 57, z: 0}
+    TileIndex: 50
+  - Position: {x: 0, y: 58, z: 0}
+    TileIndex: 48
+  - Position: {x: 1, y: 58, z: 0}
+    TileIndex: 49
+  - Position: {x: 2, y: 58, z: 0}
+    TileIndex: 49
+  - Position: {x: 3, y: 58, z: 0}
+    TileIndex: 51
+  - Position: {x: 55, y: 58, z: 0}
+    TileIndex: 52
+  - Position: {x: 56, y: 58, z: 0}
+    TileIndex: 50
+  - Position: {x: 63, y: 58, z: 0}
+    TileIndex: 48
+  - Position: {x: 64, y: 58, z: 0}
+    TileIndex: 49
+  - Position: {x: 65, y: 58, z: 0}
+    TileIndex: 51
+  - Position: {x: 135, y: 58, z: 0}
+    TileIndex: 52
+  - Position: {x: 136, y: 58, z: 0}
+    TileIndex: 50
+  - Position: {x: -4, y: 59, z: 0}
+    TileIndex: 48
+  - Position: {x: -3, y: 59, z: 0}
+    TileIndex: 49
+  - Position: {x: -2, y: 59, z: 0}
+    TileIndex: 49
+  - Position: {x: -1, y: 59, z: 0}
+    TileIndex: 49
+  - Position: {x: 0, y: 59, z: 0}
+    TileIndex: 51
+  - Position: {x: 56, y: 59, z: 0}
+    TileIndex: 53
+  - Position: {x: 63, y: 59, z: 0}
+    TileIndex: 54
+  - Position: {x: 136, y: 59, z: 0}
+    TileIndex: 52
+  - Position: {x: 137, y: 59, z: 0}
+    TileIndex: 49
+  - Position: {x: 138, y: 59, z: 0}
+    TileIndex: 50
+  - Position: {x: -6, y: 60, z: 0}
+    TileIndex: 48
+  - Position: {x: -5, y: 60, z: 0}
+    TileIndex: 49
+  - Position: {x: -4, y: 60, z: 0}
+    TileIndex: 51
+  - Position: {x: 138, y: 60, z: 0}
+    TileIndex: 52
+  - Position: {x: 139, y: 60, z: 0}
+    TileIndex: 49
+  - Position: {x: 140, y: 60, z: 0}
+    TileIndex: 50
+  - Position: {x: -8, y: 61, z: 0}
+    TileIndex: 48
+  - Position: {x: -7, y: 61, z: 0}
+    TileIndex: 49
+  - Position: {x: -6, y: 61, z: 0}
+    TileIndex: 51
+  - Position: {x: 140, y: 61, z: 0}
+    TileIndex: 52
+  - Position: {x: 141, y: 61, z: 0}
+    TileIndex: 49
+  - Position: {x: 142, y: 61, z: 0}
+    TileIndex: 50
+  - Position: {x: -10, y: 62, z: 0}
+    TileIndex: 48
+  - Position: {x: -9, y: 62, z: 0}
+    TileIndex: 49
+  - Position: {x: -8, y: 62, z: 0}
+    TileIndex: 51
+  - Position: {x: 142, y: 62, z: 0}
+    TileIndex: 52
+  - Position: {x: 143, y: 62, z: 0}
+    TileIndex: 49
+  - Position: {x: 144, y: 62, z: 0}
+    TileIndex: 50
+  - Position: {x: -12, y: 63, z: 0}
+    TileIndex: 48
+  - Position: {x: -11, y: 63, z: 0}
+    TileIndex: 49
+  - Position: {x: -10, y: 63, z: 0}
+    TileIndex: 51
+  - Position: {x: 144, y: 63, z: 0}
+    TileIndex: 52
+  - Position: {x: 145, y: 63, z: 0}
+    TileIndex: 50
+  - Position: {x: -13, y: 64, z: 0}
+    TileIndex: 48
+  - Position: {x: -12, y: 64, z: 0}
+    TileIndex: 51
+  - Position: {x: 145, y: 64, z: 0}
+    TileIndex: 53
+  - Position: {x: -15, y: 65, z: 0}
+    TileIndex: 48
+  - Position: {x: -14, y: 65, z: 0}
+    TileIndex: 49
+  - Position: {x: -13, y: 65, z: 0}
+    TileIndex: 51
+  - Position: {x: 145, y: 65, z: 0}
+    TileIndex: 52
+  - Position: {x: 146, y: 65, z: 0}
+    TileIndex: 50
+  - Position: {x: -16, y: 66, z: 0}
+    TileIndex: 48
+  - Position: {x: -15, y: 66, z: 0}
+    TileIndex: 51
+  - Position: {x: 146, y: 66, z: 0}
+    TileIndex: 52
+  - Position: {x: 147, y: 66, z: 0}
+    TileIndex: 50
+  - Position: {x: -17, y: 67, z: 0}
+    TileIndex: 48
+  - Position: {x: -16, y: 67, z: 0}
+    TileIndex: 51
+  - Position: {x: 147, y: 67, z: 0}
+    TileIndex: 52
+  - Position: {x: 148, y: 67, z: 0}
+    TileIndex: 50
+  - Position: {x: -20, y: 68, z: 0}
+    TileIndex: 48
+  - Position: {x: -19, y: 68, z: 0}
+    TileIndex: 49
+  - Position: {x: -18, y: 68, z: 0}
+    TileIndex: 49
+  - Position: {x: -17, y: 68, z: 0}
+    TileIndex: 51
+  - Position: {x: 148, y: 68, z: 0}
+    TileIndex: 53
+  - Position: {x: -21, y: 69, z: 0}
+    TileIndex: 48
+  - Position: {x: -20, y: 69, z: 0}
+    TileIndex: 51
+  - Position: {x: 148, y: 69, z: 0}
+    TileIndex: 52
+  - Position: {x: 149, y: 69, z: 0}
+    TileIndex: 49
+  - Position: {x: 150, y: 69, z: 0}
+    TileIndex: 50
+  - Position: {x: -22, y: 70, z: 0}
+    TileIndex: 48
+  - Position: {x: -21, y: 70, z: 0}
+    TileIndex: 51
+  - Position: {x: 150, y: 70, z: 0}
+    TileIndex: 52
+  - Position: {x: 151, y: 70, z: 0}
+    TileIndex: 50
+  - Position: {x: -23, y: 71, z: 0}
+    TileIndex: 48
+  - Position: {x: -22, y: 71, z: 0}
+    TileIndex: 51
+  - Position: {x: 151, y: 71, z: 0}
+    TileIndex: 53
+  - Position: {x: -24, y: 72, z: 0}
+    TileIndex: 48
+  - Position: {x: -23, y: 72, z: 0}
+    TileIndex: 51
+  - Position: {x: 151, y: 72, z: 0}
+    TileIndex: 52
+  - Position: {x: 152, y: 72, z: 0}
+    TileIndex: 50
+  - Position: {x: -26, y: 73, z: 0}
+    TileIndex: 48
+  - Position: {x: -25, y: 73, z: 0}
+    TileIndex: 49
+  - Position: {x: -24, y: 73, z: 0}
+    TileIndex: 51
+  - Position: {x: 152, y: 73, z: 0}
+    TileIndex: 53
+  - Position: {x: -27, y: 74, z: 0}
+    TileIndex: 48
+  - Position: {x: -26, y: 74, z: 0}
+    TileIndex: 51
+  - Position: {x: 152, y: 74, z: 0}
+    TileIndex: 52
+  - Position: {x: 153, y: 74, z: 0}
+    TileIndex: 50
+  - Position: {x: -28, y: 75, z: 0}
+    TileIndex: 48
+  - Position: {x: -27, y: 75, z: 0}
+    TileIndex: 51
+  - Position: {x: 153, y: 75, z: 0}
+    TileIndex: 52
+  - Position: {x: 154, y: 75, z: 0}
+    TileIndex: 50
+  - Position: {x: -29, y: 76, z: 0}
+    TileIndex: 48
+  - Position: {x: -28, y: 76, z: 0}
+    TileIndex: 51
+  - Position: {x: 154, y: 76, z: 0}
+    TileIndex: 53
+  - Position: {x: -29, y: 77, z: 0}
+    TileIndex: 54
+  - Position: {x: 154, y: 77, z: 0}
+    TileIndex: 52
+  - Position: {x: 155, y: 77, z: 0}
+    TileIndex: 50
+  - Position: {x: -30, y: 78, z: 0}
+    TileIndex: 48
+  - Position: {x: -29, y: 78, z: 0}
+    TileIndex: 51
+  - Position: {x: 155, y: 78, z: 0}
+    TileIndex: 53
+  - Position: {x: -32, y: 79, z: 0}
+    TileIndex: 48
+  - Position: {x: -31, y: 79, z: 0}
+    TileIndex: 49
+  - Position: {x: -30, y: 79, z: 0}
+    TileIndex: 51
+  - Position: {x: 155, y: 79, z: 0}
+    TileIndex: 52
+  - Position: {x: 156, y: 79, z: 0}
+    TileIndex: 50
+  - Position: {x: -33, y: 80, z: 0}
+    TileIndex: 48
+  - Position: {x: -32, y: 80, z: 0}
+    TileIndex: 51
+  - Position: {x: 156, y: 80, z: 0}
+    TileIndex: 52
+  - Position: {x: 157, y: 80, z: 0}
+    TileIndex: 50
+  - Position: {x: -34, y: 81, z: 0}
+    TileIndex: 48
+  - Position: {x: -33, y: 81, z: 0}
+    TileIndex: 51
+  - Position: {x: 157, y: 81, z: 0}
+    TileIndex: 53
+  - Position: {x: -36, y: 82, z: 0}
+    TileIndex: 48
+  - Position: {x: -35, y: 82, z: 0}
+    TileIndex: 49
+  - Position: {x: -34, y: 82, z: 0}
+    TileIndex: 51
+  - Position: {x: 157, y: 82, z: 0}
+    TileIndex: 52
+  - Position: {x: 158, y: 82, z: 0}
+    TileIndex: 50
+  - Position: {x: -37, y: 83, z: 0}
+    TileIndex: 48
+  - Position: {x: -36, y: 83, z: 0}
+    TileIndex: 51
+  - Position: {x: 158, y: 83, z: 0}
+    TileIndex: 53
+  - Position: {x: -38, y: 84, z: 0}
+    TileIndex: 48
+  - Position: {x: -37, y: 84, z: 0}
+    TileIndex: 51
+  - Position: {x: 158, y: 84, z: 0}
+    TileIndex: 52
+  - Position: {x: 159, y: 84, z: 0}
+    TileIndex: 50
+  - Position: {x: -39, y: 85, z: 0}
+    TileIndex: 48
+  - Position: {x: -38, y: 85, z: 0}
+    TileIndex: 51
+  - Position: {x: 159, y: 85, z: 0}
+    TileIndex: 53
+  - Position: {x: -40, y: 86, z: 0}
+    TileIndex: 48
+  - Position: {x: -39, y: 86, z: 0}
+    TileIndex: 51
+  - Position: {x: 159, y: 86, z: 0}
+    TileIndex: 52
+  - Position: {x: 160, y: 86, z: 0}
+    TileIndex: 50
+  - Position: {x: -42, y: 87, z: 0}
+    TileIndex: 48
+  - Position: {x: -41, y: 87, z: 0}
+    TileIndex: 49
+  - Position: {x: -40, y: 87, z: 0}
+    TileIndex: 51
+  - Position: {x: 160, y: 87, z: 0}
+    TileIndex: 53
+  - Position: {x: -43, y: 88, z: 0}
+    TileIndex: 48
+  - Position: {x: -42, y: 88, z: 0}
+    TileIndex: 51
+  - Position: {x: 160, y: 88, z: 0}
+    TileIndex: 52
+  - Position: {x: 161, y: 88, z: 0}
+    TileIndex: 50
+  - Position: {x: -44, y: 89, z: 0}
+    TileIndex: 48
+  - Position: {x: -43, y: 89, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 89, z: 0}
+    TileIndex: 53
+  - Position: {x: -45, y: 90, z: 0}
+    TileIndex: 48
+  - Position: {x: -44, y: 90, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 90, z: 0}
+    TileIndex: 52
+  - Position: {x: 162, y: 90, z: 0}
+    TileIndex: 50
+  - Position: {x: -46, y: 91, z: 0}
+    TileIndex: 48
+  - Position: {x: -45, y: 91, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 91, z: 0}
+    TileIndex: 53
+  - Position: {x: -47, y: 92, z: 0}
+    TileIndex: 48
+  - Position: {x: -46, y: 92, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 92, z: 0}
+    TileIndex: 53
+  - Position: {x: -48, y: 93, z: 0}
+    TileIndex: 48
+  - Position: {x: -47, y: 93, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 93, z: 0}
+    TileIndex: 53
+  - Position: {x: -50, y: 94, z: 0}
+    TileIndex: 48
+  - Position: {x: -49, y: 94, z: 0}
+    TileIndex: 49
+  - Position: {x: -48, y: 94, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 94, z: 0}
+    TileIndex: 53
+  - Position: {x: -51, y: 95, z: 0}
+    TileIndex: 48
+  - Position: {x: -50, y: 95, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 95, z: 0}
+    TileIndex: 52
+  - Position: {x: 163, y: 95, z: 0}
+    TileIndex: 50
+  - Position: {x: -52, y: 96, z: 0}
+    TileIndex: 48
+  - Position: {x: -51, y: 96, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 96, z: 0}
+    TileIndex: 53
+  - Position: {x: -53, y: 97, z: 0}
+    TileIndex: 48
+  - Position: {x: -52, y: 97, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 97, z: 0}
+    TileIndex: 53
+  - Position: {x: -54, y: 98, z: 0}
+    TileIndex: 48
+  - Position: {x: -53, y: 98, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 98, z: 0}
+    TileIndex: 53
+  - Position: {x: -55, y: 99, z: 0}
+    TileIndex: 48
+  - Position: {x: -54, y: 99, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 99, z: 0}
+    TileIndex: 53
+  - Position: {x: -56, y: 100, z: 0}
+    TileIndex: 48
+  - Position: {x: -55, y: 100, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 100, z: 0}
+    TileIndex: 53
+  - Position: {x: -57, y: 101, z: 0}
+    TileIndex: 48
+  - Position: {x: -56, y: 101, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 101, z: 0}
+    TileIndex: 53
+  - Position: {x: -58, y: 102, z: 0}
+    TileIndex: 48
+  - Position: {x: -57, y: 102, z: 0}
+    TileIndex: 51
+  - Position: {x: 163, y: 102, z: 0}
+    TileIndex: 53
+  - Position: {x: -59, y: 103, z: 0}
+    TileIndex: 48
+  - Position: {x: -58, y: 103, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 103, z: 0}
+    TileIndex: 55
+  - Position: {x: 163, y: 103, z: 0}
+    TileIndex: 56
+  - Position: {x: -60, y: 104, z: 0}
+    TileIndex: 48
+  - Position: {x: -59, y: 104, z: 0}
+    TileIndex: 51
+  - Position: {x: 162, y: 104, z: 0}
+    TileIndex: 53
+  - Position: {x: -61, y: 105, z: 0}
+    TileIndex: 48
+  - Position: {x: -60, y: 105, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 105, z: 0}
+    TileIndex: 55
+  - Position: {x: 162, y: 105, z: 0}
+    TileIndex: 56
+  - Position: {x: -62, y: 106, z: 0}
+    TileIndex: 48
+  - Position: {x: -61, y: 106, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 106, z: 0}
+    TileIndex: 53
+  - Position: {x: -63, y: 107, z: 0}
+    TileIndex: 48
+  - Position: {x: -62, y: 107, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 107, z: 0}
+    TileIndex: 53
+  - Position: {x: -64, y: 108, z: 0}
+    TileIndex: 48
+  - Position: {x: -63, y: 108, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 108, z: 0}
+    TileIndex: 53
+  - Position: {x: -65, y: 109, z: 0}
+    TileIndex: 48
+  - Position: {x: -64, y: 109, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 109, z: 0}
+    TileIndex: 53
+  - Position: {x: -65, y: 110, z: 0}
+    TileIndex: 54
+  - Position: {x: 161, y: 110, z: 0}
+    TileIndex: 53
+  - Position: {x: -66, y: 111, z: 0}
+    TileIndex: 48
+  - Position: {x: -65, y: 111, z: 0}
+    TileIndex: 51
+  - Position: {x: 161, y: 111, z: 0}
+    TileIndex: 53
+  - Position: {x: -68, y: 112, z: 0}
+    TileIndex: 48
+  - Position: {x: -67, y: 112, z: 0}
+    TileIndex: 49
+  - Position: {x: -66, y: 112, z: 0}
+    TileIndex: 51
+  - Position: {x: 160, y: 112, z: 0}
+    TileIndex: 55
+  - Position: {x: 161, y: 112, z: 0}
+    TileIndex: 56
+  - Position: {x: -69, y: 113, z: 0}
+    TileIndex: 48
+  - Position: {x: -68, y: 113, z: 0}
+    TileIndex: 51
+  - Position: {x: 160, y: 113, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 114, z: 0}
+    TileIndex: 54
+  - Position: {x: 160, y: 114, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 115, z: 0}
+    TileIndex: 54
+  - Position: {x: 159, y: 115, z: 0}
+    TileIndex: 55
+  - Position: {x: 160, y: 115, z: 0}
+    TileIndex: 56
+  - Position: {x: -69, y: 116, z: 0}
+    TileIndex: 54
+  - Position: {x: 159, y: 116, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 117, z: 0}
+    TileIndex: 54
+  - Position: {x: 159, y: 117, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 118, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 118, z: 0}
+    TileIndex: 55
+  - Position: {x: 159, y: 118, z: 0}
+    TileIndex: 56
+  - Position: {x: -69, y: 119, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 119, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 120, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 120, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 121, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 121, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 122, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 122, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 123, z: 0}
+    TileIndex: 54
+  - Position: {x: 158, y: 123, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 124, z: 0}
+    TileIndex: 54
+  - Position: {x: 157, y: 124, z: 0}
+    TileIndex: 55
+  - Position: {x: 158, y: 124, z: 0}
+    TileIndex: 56
+  - Position: {x: -69, y: 125, z: 0}
+    TileIndex: 54
+  - Position: {x: 157, y: 125, z: 0}
+    TileIndex: 53
+  - Position: {x: -69, y: 126, z: 0}
+    TileIndex: 57
+  - Position: {x: -68, y: 126, z: 0}
+    TileIndex: 58
+  - Position: {x: 157, y: 126, z: 0}
+    TileIndex: 53
+  - Position: {x: -68, y: 127, z: 0}
+    TileIndex: 54
+  - Position: {x: 157, y: 127, z: 0}
+    TileIndex: 53
+  - Position: {x: -68, y: 128, z: 0}
+    TileIndex: 57
+  - Position: {x: -67, y: 128, z: 0}
+    TileIndex: 58
+  - Position: {x: 156, y: 128, z: 0}
+    TileIndex: 55
+  - Position: {x: 157, y: 128, z: 0}
+    TileIndex: 56
+  - Position: {x: -67, y: 129, z: 0}
+    TileIndex: 57
+  - Position: {x: -66, y: 129, z: 0}
+    TileIndex: 58
+  - Position: {x: 156, y: 129, z: 0}
+    TileIndex: 53
+  - Position: {x: -66, y: 130, z: 0}
+    TileIndex: 54
+  - Position: {x: 155, y: 130, z: 0}
+    TileIndex: 55
+  - Position: {x: 156, y: 130, z: 0}
+    TileIndex: 56
+  - Position: {x: -66, y: 131, z: 0}
+    TileIndex: 57
+  - Position: {x: -65, y: 131, z: 0}
+    TileIndex: 58
+  - Position: {x: 155, y: 131, z: 0}
+    TileIndex: 53
+  - Position: {x: -65, y: 132, z: 0}
+    TileIndex: 54
+  - Position: {x: 154, y: 132, z: 0}
+    TileIndex: 55
+  - Position: {x: 155, y: 132, z: 0}
+    TileIndex: 56
+  - Position: {x: -65, y: 133, z: 0}
+    TileIndex: 57
+  - Position: {x: -64, y: 133, z: 0}
+    TileIndex: 58
+  - Position: {x: 154, y: 133, z: 0}
+    TileIndex: 53
+  - Position: {x: -64, y: 134, z: 0}
+    TileIndex: 54
+  - Position: {x: 154, y: 134, z: 0}
+    TileIndex: 53
+  - Position: {x: -64, y: 135, z: 0}
+    TileIndex: 54
+  - Position: {x: 153, y: 135, z: 0}
+    TileIndex: 55
+  - Position: {x: 154, y: 135, z: 0}
+    TileIndex: 56
+  - Position: {x: -64, y: 136, z: 0}
+    TileIndex: 57
+  - Position: {x: -63, y: 136, z: 0}
+    TileIndex: 58
+  - Position: {x: 153, y: 136, z: 0}
+    TileIndex: 53
+  - Position: {x: -63, y: 137, z: 0}
+    TileIndex: 54
+  - Position: {x: 153, y: 137, z: 0}
+    TileIndex: 53
+  - Position: {x: -63, y: 138, z: 0}
+    TileIndex: 54
+  - Position: {x: 152, y: 138, z: 0}
+    TileIndex: 55
+  - Position: {x: 153, y: 138, z: 0}
+    TileIndex: 56
+  - Position: {x: -63, y: 139, z: 0}
+    TileIndex: 57
+  - Position: {x: -62, y: 139, z: 0}
+    TileIndex: 58
+  - Position: {x: 152, y: 139, z: 0}
+    TileIndex: 53
+  - Position: {x: -62, y: 140, z: 0}
+    TileIndex: 54
+  - Position: {x: 151, y: 140, z: 0}
+    TileIndex: 55
+  - Position: {x: 152, y: 140, z: 0}
+    TileIndex: 56
+  - Position: {x: -62, y: 141, z: 0}
+    TileIndex: 57
+  - Position: {x: -61, y: 141, z: 0}
+    TileIndex: 58
+  - Position: {x: 150, y: 141, z: 0}
+    TileIndex: 55
+  - Position: {x: 151, y: 141, z: 0}
+    TileIndex: 56
+  - Position: {x: -61, y: 142, z: 0}
+    TileIndex: 57
+  - Position: {x: -60, y: 142, z: 0}
+    TileIndex: 58
+  - Position: {x: 149, y: 142, z: 0}
+    TileIndex: 55
+  - Position: {x: 150, y: 142, z: 0}
+    TileIndex: 56
+  - Position: {x: -60, y: 143, z: 0}
+    TileIndex: 54
+  - Position: {x: 149, y: 143, z: 0}
+    TileIndex: 53
+  - Position: {x: -60, y: 144, z: 0}
+    TileIndex: 57
+  - Position: {x: -59, y: 144, z: 0}
+    TileIndex: 59
+  - Position: {x: -58, y: 144, z: 0}
+    TileIndex: 58
+  - Position: {x: 149, y: 144, z: 0}
+    TileIndex: 53
+  - Position: {x: -58, y: 145, z: 0}
+    TileIndex: 57
+  - Position: {x: -57, y: 145, z: 0}
+    TileIndex: 59
+  - Position: {x: -56, y: 145, z: 0}
+    TileIndex: 58
+  - Position: {x: 148, y: 145, z: 0}
+    TileIndex: 55
+  - Position: {x: 149, y: 145, z: 0}
+    TileIndex: 60
+  - Position: {x: -56, y: 146, z: 0}
+    TileIndex: 57
+  - Position: {x: -55, y: 146, z: 0}
+    TileIndex: 59
+  - Position: {x: -54, y: 146, z: 0}
+    TileIndex: 58
+  - Position: {x: 148, y: 146, z: 0}
+    TileIndex: 53
+  - Position: {x: -54, y: 147, z: 0}
+    TileIndex: 57
+  - Position: {x: -53, y: 147, z: 0}
+    TileIndex: 59
+  - Position: {x: -52, y: 147, z: 0}
+    TileIndex: 58
+  - Position: {x: 147, y: 147, z: 0}
+    TileIndex: 55
+  - Position: {x: 148, y: 147, z: 0}
+    TileIndex: 56
+  - Position: {x: -52, y: 148, z: 0}
+    TileIndex: 57
+  - Position: {x: -51, y: 148, z: 0}
+    TileIndex: 58
+  - Position: {x: 147, y: 148, z: 0}
+    TileIndex: 53
+  - Position: {x: -51, y: 149, z: 0}
+    TileIndex: 57
+  - Position: {x: -50, y: 149, z: 0}
+    TileIndex: 59
+  - Position: {x: -49, y: 149, z: 0}
+    TileIndex: 59
+  - Position: {x: -48, y: 149, z: 0}
+    TileIndex: 59
+  - Position: {x: -47, y: 149, z: 0}
+    TileIndex: 58
+  - Position: {x: 146, y: 149, z: 0}
+    TileIndex: 55
+  - Position: {x: 147, y: 149, z: 0}
+    TileIndex: 56
+  - Position: {x: -47, y: 150, z: 0}
+    TileIndex: 57
+  - Position: {x: -46, y: 150, z: 0}
+    TileIndex: 59
+  - Position: {x: -45, y: 150, z: 0}
+    TileIndex: 58
+  - Position: {x: 146, y: 150, z: 0}
+    TileIndex: 53
+  - Position: {x: -45, y: 151, z: 0}
+    TileIndex: 57
+  - Position: {x: -44, y: 151, z: 0}
+    TileIndex: 58
+  - Position: {x: 145, y: 151, z: 0}
+    TileIndex: 55
+  - Position: {x: 146, y: 151, z: 0}
+    TileIndex: 56
+  - Position: {x: -44, y: 152, z: 0}
+    TileIndex: 57
+  - Position: {x: -43, y: 152, z: 0}
+    TileIndex: 59
+  - Position: {x: -42, y: 152, z: 0}
+    TileIndex: 59
+  - Position: {x: -41, y: 152, z: 0}
+    TileIndex: 58
+  - Position: {x: 145, y: 152, z: 0}
+    TileIndex: 53
+  - Position: {x: -41, y: 153, z: 0}
+    TileIndex: 57
+  - Position: {x: -40, y: 153, z: 0}
+    TileIndex: 59
+  - Position: {x: -39, y: 153, z: 0}
+    TileIndex: 59
+  - Position: {x: -38, y: 153, z: 0}
+    TileIndex: 58
+  - Position: {x: 144, y: 153, z: 0}
+    TileIndex: 55
+  - Position: {x: 145, y: 153, z: 0}
+    TileIndex: 56
+  - Position: {x: -38, y: 154, z: 0}
+    TileIndex: 57
+  - Position: {x: -37, y: 154, z: 0}
+    TileIndex: 59
+  - Position: {x: -36, y: 154, z: 0}
+    TileIndex: 59
+  - Position: {x: -35, y: 154, z: 0}
+    TileIndex: 59
+  - Position: {x: -34, y: 154, z: 0}
+    TileIndex: 58
+  - Position: {x: 144, y: 154, z: 0}
+    TileIndex: 53
+  - Position: {x: -34, y: 155, z: 0}
+    TileIndex: 57
+  - Position: {x: -33, y: 155, z: 0}
+    TileIndex: 59
+  - Position: {x: -32, y: 155, z: 0}
+    TileIndex: 59
+  - Position: {x: -31, y: 155, z: 0}
+    TileIndex: 59
+  - Position: {x: -30, y: 155, z: 0}
+    TileIndex: 59
+  - Position: {x: -29, y: 155, z: 0}
+    TileIndex: 58
+  - Position: {x: 143, y: 155, z: 0}
+    TileIndex: 55
+  - Position: {x: 144, y: 155, z: 0}
+    TileIndex: 56
+  - Position: {x: -29, y: 156, z: 0}
+    TileIndex: 57
+  - Position: {x: -28, y: 156, z: 0}
+    TileIndex: 59
+  - Position: {x: -27, y: 156, z: 0}
+    TileIndex: 59
+  - Position: {x: -26, y: 156, z: 0}
+    TileIndex: 59
+  - Position: {x: -25, y: 156, z: 0}
+    TileIndex: 59
+  - Position: {x: -24, y: 156, z: 0}
+    TileIndex: 58
+  - Position: {x: 143, y: 156, z: 0}
+    TileIndex: 53
+  - Position: {x: -24, y: 157, z: 0}
+    TileIndex: 57
+  - Position: {x: -23, y: 157, z: 0}
+    TileIndex: 59
+  - Position: {x: -22, y: 157, z: 0}
+    TileIndex: 59
+  - Position: {x: -21, y: 157, z: 0}
+    TileIndex: 59
+  - Position: {x: -20, y: 157, z: 0}
+    TileIndex: 58
+  - Position: {x: 142, y: 157, z: 0}
+    TileIndex: 55
+  - Position: {x: 143, y: 157, z: 0}
+    TileIndex: 56
+  - Position: {x: -20, y: 158, z: 0}
+    TileIndex: 57
+  - Position: {x: -19, y: 158, z: 0}
+    TileIndex: 59
+  - Position: {x: -18, y: 158, z: 0}
+    TileIndex: 59
+  - Position: {x: -17, y: 158, z: 0}
+    TileIndex: 59
+  - Position: {x: -16, y: 158, z: 0}
+    TileIndex: 59
+  - Position: {x: -15, y: 158, z: 0}
+    TileIndex: 58
+  - Position: {x: 141, y: 158, z: 0}
+    TileIndex: 55
+  - Position: {x: 142, y: 158, z: 0}
+    TileIndex: 56
+  - Position: {x: -15, y: 159, z: 0}
+    TileIndex: 57
+  - Position: {x: -14, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -13, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -12, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -11, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -10, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -9, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -8, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -7, y: 159, z: 0}
+    TileIndex: 59
+  - Position: {x: -6, y: 159, z: 0}
+    TileIndex: 58
+  - Position: {x: 140, y: 159, z: 0}
+    TileIndex: 55
+  - Position: {x: 141, y: 159, z: 0}
+    TileIndex: 56
+  - Position: {x: -6, y: 160, z: 0}
+    TileIndex: 57
+  - Position: {x: -5, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: -4, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: -3, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: -2, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: -1, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 0, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 1, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 2, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 3, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 4, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 5, y: 160, z: 0}
+    TileIndex: 59
+  - Position: {x: 6, y: 160, z: 0}
+    TileIndex: 58
+  - Position: {x: 139, y: 160, z: 0}
+    TileIndex: 55
+  - Position: {x: 140, y: 160, z: 0}
+    TileIndex: 56
+  - Position: {x: 6, y: 161, z: 0}
+    TileIndex: 57
+  - Position: {x: 7, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 8, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 9, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 10, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 11, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 12, y: 161, z: 0}
+    TileIndex: 59
+  - Position: {x: 13, y: 161, z: 0}
+    TileIndex: 58
+  - Position: {x: 139, y: 161, z: 0}
+    TileIndex: 53
+  - Position: {x: 13, y: 162, z: 0}
+    TileIndex: 57
+  - Position: {x: 14, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 15, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 16, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 17, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 18, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 19, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 20, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 21, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 22, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 23, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 24, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 25, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 26, y: 162, z: 0}
+    TileIndex: 58
+  - Position: {x: 137, y: 162, z: 0}
+    TileIndex: 55
+  - Position: {x: 138, y: 162, z: 0}
+    TileIndex: 59
+  - Position: {x: 139, y: 162, z: 0}
+    TileIndex: 56
+  - Position: {x: 26, y: 163, z: 0}
+    TileIndex: 57
+  - Position: {x: 27, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 28, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 29, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 30, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 31, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 32, y: 163, z: 0}
+    TileIndex: 58
+  - Position: {x: 135, y: 163, z: 0}
+    TileIndex: 55
+  - Position: {x: 136, y: 163, z: 0}
+    TileIndex: 59
+  - Position: {x: 137, y: 163, z: 0}
+    TileIndex: 56
+  - Position: {x: 32, y: 164, z: 0}
+    TileIndex: 57
+  - Position: {x: 33, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 34, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 35, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 36, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 37, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 38, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 39, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 40, y: 164, z: 0}
+    TileIndex: 58
+  - Position: {x: 133, y: 164, z: 0}
+    TileIndex: 55
+  - Position: {x: 134, y: 164, z: 0}
+    TileIndex: 59
+  - Position: {x: 135, y: 164, z: 0}
+    TileIndex: 56
+  - Position: {x: 40, y: 165, z: 0}
+    TileIndex: 57
+  - Position: {x: 41, y: 165, z: 0}
+    TileIndex: 59
+  - Position: {x: 42, y: 165, z: 0}
+    TileIndex: 59
+  - Position: {x: 43, y: 165, z: 0}
+    TileIndex: 59
+  - Position: {x: 44, y: 165, z: 0}
+    TileIndex: 58
+  - Position: {x: 132, y: 165, z: 0}
+    TileIndex: 55
+  - Position: {x: 133, y: 165, z: 0}
+    TileIndex: 56
+  - Position: {x: 44, y: 166, z: 0}
+    TileIndex: 57
+  - Position: {x: 45, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 46, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 47, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 48, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 49, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 50, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 51, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 52, y: 166, z: 0}
+    TileIndex: 58
+  - Position: {x: 130, y: 166, z: 0}
+    TileIndex: 55
+  - Position: {x: 131, y: 166, z: 0}
+    TileIndex: 59
+  - Position: {x: 132, y: 166, z: 0}
+    TileIndex: 56
+  - Position: {x: 52, y: 167, z: 0}
+    TileIndex: 57
+  - Position: {x: 53, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 54, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 55, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 56, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 57, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 58, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 59, y: 167, z: 0}
+    TileIndex: 58
+  - Position: {x: 128, y: 167, z: 0}
+    TileIndex: 55
+  - Position: {x: 129, y: 167, z: 0}
+    TileIndex: 59
+  - Position: {x: 130, y: 167, z: 0}
+    TileIndex: 56
+  - Position: {x: 59, y: 168, z: 0}
+    TileIndex: 57
+  - Position: {x: 60, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 61, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 62, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 63, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 64, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 65, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 66, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 67, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 68, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 69, y: 168, z: 0}
+    TileIndex: 59
+  - Position: {x: 70, y: 168, z: 0}
+    TileIndex: 58
+  - Position: {x: 127, y: 168, z: 0}
+    TileIndex: 55
+  - Position: {x: 128, y: 168, z: 0}
+    TileIndex: 56
+  - Position: {x: 70, y: 169, z: 0}
+    TileIndex: 57
+  - Position: {x: 71, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 72, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 73, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 74, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 75, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 76, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 77, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 78, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 79, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 80, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 81, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 82, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 83, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 84, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 85, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 86, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 87, y: 169, z: 0}
+    TileIndex: 58
+  - Position: {x: 124, y: 169, z: 0}
+    TileIndex: 55
+  - Position: {x: 125, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 126, y: 169, z: 0}
+    TileIndex: 59
+  - Position: {x: 127, y: 169, z: 0}
+    TileIndex: 56
+  - Position: {x: 87, y: 170, z: 0}
+    TileIndex: 57
+  - Position: {x: 88, y: 170, z: 0}
+    TileIndex: 59
+  - Position: {x: 89, y: 170, z: 0}
+    TileIndex: 59
+  - Position: {x: 90, y: 170, z: 0}
+    TileIndex: 59
+  - Position: {x: 91, y: 170, z: 0}
+    TileIndex: 59
+  - Position: {x: 92, y: 170, z: 0}
+    TileIndex: 58
+  - Position: {x: 122, y: 170, z: 0}
+    TileIndex: 55
+  - Position: {x: 123, y: 170, z: 0}
+    TileIndex: 59
+  - Position: {x: 124, y: 170, z: 0}
+    TileIndex: 56
+  - Position: {x: 92, y: 171, z: 0}
+    TileIndex: 57
+  - Position: {x: 93, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 94, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 95, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 96, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 97, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 98, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 99, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 100, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 101, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 102, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 103, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 104, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 105, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 106, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 107, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 108, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 109, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 110, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 111, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 112, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 113, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 114, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 115, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 116, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 117, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 118, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 119, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 120, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 121, y: 171, z: 0}
+    TileIndex: 59
+  - Position: {x: 122, y: 171, z: 0}
+    TileIndex: 56
