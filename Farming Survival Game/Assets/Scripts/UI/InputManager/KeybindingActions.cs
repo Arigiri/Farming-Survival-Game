@@ -5,6 +5,7 @@ public enum KeybindingActions
     Pause,
     Inventory,
     Select,
+    Craft,
     Throw,
     Num1,
     Num2,

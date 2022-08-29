@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private InventoryController.Slot CurrItemOnHand = new InventoryController.Slot();
     private Action m_Action;
     private InventoryController.Slot TempItemOnHand = new InventoryController.Slot();
+    public CraftingInformationPanelUI m_CraftingPanelUI;
     public bool IsWorking = false;
     public bool CanAction = true;
     public bool Active = true;
@@ -260,7 +261,16 @@ public class PlayerController : MonoBehaviour
         CollectableObjectController m_object = other.GetComponent<CollectableObjectController>();
         if(m_object != null && m_object.tag == "CollectableObject" && m_object.GetCollideWith == gameObject.GetComponent<Collider2D>() && m_object.CollectableOrNot)
         {
-            if(m_Inventory.Add(m_object))   m_object.SelfDestroy();
+            if(m_Inventory.Add(m_object))
+            {
+                m_object.SelfDestroy();
+                if(m_CraftingPanelUI.gameObject.activeInHierarchy)m_CraftingPanelUI.ResetText();
+            }
+        }
+        var recipe = other.GetComponent<CollectableRecipe>();
+        if(recipe != null)
+        {
+            recipe.SelfDestroy();
         }
     }
 

@@ -21,7 +21,7 @@ MonoBehaviour:
     keyCode: 9
   - keybindingActions: 4
     keyCode: 13
-  - keybindingActions: 5
+  - keybindingActions: 6
     keyCode: 113
   - keybindingActions: 6
     keyCode: 49
@@ -43,5 +43,5 @@ MonoBehaviour:
     keyCode: 57
   - keybindingActions: 15
     keyCode: 48
-  - keybindingActions: 0
-    keyCode: 0
+  - keybindingActions: 5
+    keyCode: 114

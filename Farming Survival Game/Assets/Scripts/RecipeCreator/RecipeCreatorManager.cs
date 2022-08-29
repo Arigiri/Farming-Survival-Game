@@ -6,11 +6,11 @@ public class RecipeCreatorManager : MonoBehaviour
 {
     [SerializeField] private List<CollectableObjectController> Material;
     [SerializeField] private CollectableObjectController Result;
-    [SerializeField] private string m_Name;
+    [SerializeField] private string ThisRecipeName;
     public void CreateRecipe()
     {
         var newLevel = ScriptableObject.CreateInstance<ScriptableRecipe>();
-        newLevel.Name = m_Name;
+        newLevel.Name = ThisRecipeName;
 
         newLevel.Material = Material;
         newLevel.Result = Result;

@@ -14,10 +14,11 @@ public class GameManager : MonoBehaviour
         Pause,
         Death,
         Settings,
+        Crafting,
         MenuControllerSetiing,
         PauseControllerSetting,
     }
-    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, MenuControllerPanel, PauseControllerPanel, ControllerText;
+    [SerializeField] GameObject DeadScreen, PausePanel, MenuPanel, PlayScreen, ObjectPools, SettingsPanel, MenuBackgroundButtons, MenuControllerPanel, PauseControllerPanel, ControllerText, CraftingUI;
     [SerializeField] PlayerController m_Player;
     [SerializeField] Inventory_UI m_InventoryUI;
     [SerializeField] AttributeUIController m_AttributeUI;
@@ -65,6 +66,11 @@ public class GameManager : MonoBehaviour
             if(check)
                 m_InventoryUI.Setup(false);
             m_InventoryUI.gameObject.SetActive(check);
+        }
+        if(InputManager.instance.GetKeyDown(KeybindingActions.Craft) && GetCurrState() == GameState.Play && !PausePanel.gameObject.activeSelf)
+        {
+            bool check = !CraftingUI.gameObject.activeSelf;
+            CraftingUI.gameObject.SetActive(check);
         }
     }
 
@@ -117,6 +123,7 @@ public class GameManager : MonoBehaviour
             ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
             m_AttributeUI.gameObject.SetActive(State == GameState.Play);
             m_InventoryUI.gameObject.SetActive(false);
+            CraftingUI.gameObject.SetActive(false);
             if(State == GameState.Play || State == GameState.Pause) m_DayNightSystem.SetActive(true);
             else m_DayNightSystem.SetActive(false);
             m_Player.Active = true;

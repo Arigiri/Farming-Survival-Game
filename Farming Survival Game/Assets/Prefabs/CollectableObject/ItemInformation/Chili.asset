@@ -17,9 +17,11 @@ MonoBehaviour:
   ItemStamina: 10
   ToolDurability: -1
   StartDurability: 0
-  Type: 0
-  Stack: 0
+  Type: 2
+  Stack: 16
   Action: 0
-  Icon: {fileID: 0}
+  Icon: {fileID: 751253198, guid: 027f9bb55f2632949815e6c83352a0df, type: 3}
   IsTool: 0
+  m_TreeType: 1
   Description: This is a chili
+  Building: 100

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CollectableObjectController : MonoBehaviour
 {
-    private CollectableType m_Type;
+    private CollectableType m_Type {get; set;}
     private int m_MaxStack;
     private Action m_Action;
     private int MaxDurability = -1;

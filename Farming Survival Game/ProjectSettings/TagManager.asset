@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CollectableObject
   - UnpickableObject
+  - UncollectableObject
+  - CraftingInformationPanelUI
+  - ScrollList
+  - ToolRecipe
   layers:
   - Default
   - TransparentFX
