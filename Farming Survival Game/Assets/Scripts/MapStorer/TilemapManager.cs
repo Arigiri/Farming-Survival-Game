@@ -9,18 +9,21 @@ using UnityEngine.Tilemaps;
 
 public class TilemapManager : MonoBehaviour {
     [SerializeField] private Tilemap[] _TileMapsToSave;
-    [SerializeField] private ScriptableLevel _Level;
-    [SerializeField] private Tilemap _TileMapToLoad;
-    private List<TileBase> TileList = new List<TileBase>();
+    [SerializeField] private ScriptableLevel[] _Levels;
+    [SerializeField] private Tilemap[] _TileMapsToLoad;
+    private List<TileBase> TileList;
+    public TileBaseListStorer TileStorer;
 
     public void SaveMap() {
         
         foreach(var tilemap in _TileMapsToSave)
         {
             var newLevel = ScriptableObject.CreateInstance<ScriptableLevel>();
+            TileList = new List<TileBase>();
             newLevel.name = tilemap.name;
 
             newLevel.TileMap = GetTilesFromMap(tilemap).ToList();
+            // TileStorer.TileList.AddRange(TileList);
             ScriptableObjectUtility.SaveLevelFile(newLevel);
         }
        
@@ -33,10 +36,10 @@ public class TilemapManager : MonoBehaviour {
             foreach (var pos in map.cellBounds.allPositionsWithin) {
                 if (map.HasTile(pos)) {
                     var levelTile = map.GetTile(pos);
-                    if(TileList.Contains(levelTile) == false)TileList.Add(levelTile);
+                    if(TileStorer.TileList.Contains(levelTile) == false)TileStorer.TileList.Add(levelTile);
                     yield return new SavedTile() {
                         Position = pos,
-                        TileIndex = TileList.IndexOf(levelTile)
+                        TileIndex = TileStorer.TileList.IndexOf(levelTile)
                     };
                 }
             }
@@ -44,7 +47,7 @@ public class TilemapManager : MonoBehaviour {
     }
 
     public void ClearMap() {
-        var maps = FindObjectsOfType<Tilemap>();
+        var maps = _TileMapsToLoad;
 
         foreach (var tilemap in maps) {
             tilemap.ClearAllTiles();
@@ -52,16 +55,28 @@ public class TilemapManager : MonoBehaviour {
     }
 
     public void LoadMap() {
-        var level = _Level;//Resources.Load<ScriptableLevel>($"Assets/Resources/Levels/Level {_levelIndex}");
+        var level = _Levels;//Resources.Load<ScriptableLevel>($"Assets/Resources/Levels/Level {_levelIndex}");
         if (level == null) {
             Debug.LogError($"Tilemap does not exist.");
             return;
         }
-
         ClearMap();
-
-        foreach (var savedTile in level.TileMap) {
-           _TileMapToLoad.SetTile(savedTile.Position, TileList[savedTile.TileIndex]);
+        foreach(var Level in level)
+        {
+            Tilemap m_Tilemap = null;
+            foreach(var tilemap in _TileMapsToLoad)
+            {
+                if(tilemap.name == Level.name)
+                {
+                    m_Tilemap = tilemap;
+                    break;
+                }
+            }
+            if(m_Tilemap == null)continue;
+            foreach(var savedTile in Level.TileMap)
+            {
+                m_Tilemap.SetTile(savedTile.Position, TileStorer.TileList[savedTile.TileIndex]);
+            }
         }
 
     }
@@ -86,8 +101,14 @@ public static class ScriptableObjectUtility {
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+
+    public static void SaveTileList(TileBaseListStorer tilelist)
+    {
+        AssetDatabase.CreateAsset(tilelist, $"Assets/Resources/Levels/TileList.asset");
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
 }
 
 #endif
-
-
