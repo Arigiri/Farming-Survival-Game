@@ -119,11 +119,11 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
     }
     public void OnClick1()
     {
-        if(m_ItemIcon.sprite != null)
+        // if(m_ItemIcon.sprite != null)
         {
             m_CloneSlot.gameObject.SetActive(true);
             DragDrop obj = m_CloneSlot.GetComponent<DragDrop>();
-            obj.SetPosition(m_ChestUI.CurrSlotIdx);
+            obj.SetPositionOnChestUI(thisSlotIdx);
             m_CloneSlot.sprite = m_ItemIcon.sprite;
             m_CloneSlot.color = m_ItemIcon.color;
             m_CloneDurability.gameObject.SetActive(true);
@@ -135,5 +135,9 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
             }
             m_CloneQuantityText.text = m_QuantityText.text;
         }
+    }
+    public string GetQuantityText()
+    {
+        return m_QuantityText.text;
     }
 }

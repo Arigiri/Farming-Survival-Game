@@ -10,6 +10,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     [SerializeField] private Canvas canvas;
     [SerializeField] private Inventory_UI m_InventoryUI;
     [SerializeField] private TextMeshProUGUI m_CloneQuantity;
+    [SerializeField] private ChestUI m_ChestUI;
     private Vector3 FirstSlotPosition;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -31,25 +32,52 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private void Update() 
     {
-        if(gameObject.activeSelf == true && m_InventoryUI.gameObject.activeSelf == false)
+        if(m_InventoryUI != null)
         {
-            // Debug.Log("Panik!!!");
-            SetActiveFalse();
-        }
-        if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
-        {
-            m_CloneQuantity.text = m_InventoryUI.slots[CurrSlotIndex].GetQuantityText();
-        }
+            if(gameObject.activeSelf == true && m_InventoryUI.gameObject.activeSelf == false)
+            {
+                // Debug.Log("Panik!!!");
+                SetActiveFalse();
+            }
+            if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+            {
+                m_CloneQuantity.text = m_InventoryUI.slots[CurrSlotIndex].GetQuantityText();
+            }
 
-        if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            {
+                SetActiveFalse();
+            }
+        }
+        
+        if(m_ChestUI != null)
         {
-            SetActiveFalse();
+            if(gameObject.activeSelf == true && m_ChestUI.gameObject.activeSelf == false)
+            {
+                // Debug.Log("Panik!!!");
+                SetActiveFalse();
+            }
+            if(m_CloneQuantity.text != m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText())
+            {
+                m_CloneQuantity.text = m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText();
+            }
+
+            if(m_ChestUI.ChestSlots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            {
+                SetActiveFalse();
+            }
         }
     }
 
     public void SetPosition(int idx)
     {
         gameObject.transform.position = FirstSlotPosition + new Vector3(135 * (idx % 9), -(135 * (idx / 9)), 0);
+        CurrSlotIndex = idx;
+    }
+
+    public void SetPositionOnChestUI(int idx)
+    {
+        gameObject.transform.position = FirstSlotPosition + new Vector3(135 * (idx % 4), -(135 * (idx / 4)), 0);
         CurrSlotIndex = idx;
     }
 
