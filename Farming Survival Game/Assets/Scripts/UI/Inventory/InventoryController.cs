@@ -11,7 +11,17 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private TransparentObject m_TransparentObject;
     public List<Slot> Slots = new List<Slot>();
     public int NumSlots;
+    private ChestUI m_ChestUI;
 
+    private void Awake() 
+    {
+        for(int i = 0; i < NumSlots; i++)
+        {
+            Slot slot = new Slot();
+            Slots.Add(slot);
+        }
+        m_ChestUI = GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>();    
+    }
     private void Update()
     {
         if(m_InventoryUI.gameObject.activeSelf == true)
@@ -95,18 +105,6 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-  
-    
-    void Awake()
-    {
-        // print(NumSlots);
-        for(int i = 0; i < NumSlots; i++)
-        {
-            Slot slot = new Slot();
-            Slots.Add(slot);
-        }
-    }
-
     public bool Add(CollectableObjectController Object) // kiem tra co add do vao inventory thanh cong khong
     {
         bool Flag = false;
@@ -157,5 +155,42 @@ public class InventoryController : MonoBehaviour
         Slots[idx1] = Slots[idx2];
         Slots[idx2] = tmp;
         m_InventoryUI.Setup(false);
+    }
+    public Slot ConvertFromChestSlotToInventorySlot(ChestController.Slot slot)
+    {
+        Slot tmp = new Slot();
+        tmp.Count = slot.Count;
+        tmp.MaxCount = slot.MaxCount;
+        tmp.Type = slot.Type;
+        tmp.m_Icon = slot.m_Icon;
+        tmp.m_Action = slot.m_Action;
+        tmp.m_Durability = slot.m_Durability;
+        tmp.m_MaxDurability = slot.m_MaxDurability;
+        tmp.m_TreeType = slot.m_TreeType;
+        tmp.m_CollectableObject = slot.m_CollectableObject;
+        return tmp;
+    }
+    public ChestController.Slot ConvertFromInventorySlotToChestSlot(Slot slot)
+    {
+        ChestController.Slot tmp = new ChestController.Slot();
+        tmp.Count = slot.Count;
+        tmp.MaxCount = slot.MaxCount;
+        tmp.Type = slot.Type;
+        tmp.m_Icon = slot.m_Icon;
+        tmp.m_Action = slot.m_Action;
+        tmp.m_Durability = slot.m_Durability;
+        tmp.m_MaxDurability = slot.m_MaxDurability;
+        tmp.m_TreeType = slot.m_TreeType;
+        tmp.m_CollectableObject = slot.m_CollectableObject;
+        return tmp;
+    }
+    public void MoveFromChestToInventory(int ChestIdx, int InventoryIdx)
+    {
+        if(InventoryIdx == -1 || ChestIdx == -1)    return;
+        Slot tmp = ConvertFromChestSlotToInventorySlot(m_ChestUI.m_ChestController.ChestSlots[ChestIdx]);
+        m_ChestUI.m_ChestController.ChestSlots[ChestIdx] = ConvertFromInventorySlotToChestSlot(Slots[InventoryIdx]);
+        Slots[InventoryIdx] = tmp;
+        m_ChestUI.Setup();
+        m_ChestUI.SetupChest();
     }
 }

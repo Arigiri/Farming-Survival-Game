@@ -16,6 +16,8 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
     [SerializeField] private Slider m_CloneDurability;
     [SerializeField] private TextMeshProUGUI m_CloneQuantityText;
     [SerializeField] private ChestUI m_ChestUI;
+    [SerializeField] private Inventory_UI m_InventoryUI;
+    [SerializeField] private Image m_OtherCloneSlot;
 
     public Image thisImage; //Day la anh cua Slot
     public int thisSlotIdx;
@@ -29,29 +31,25 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
     // Update is called once per frame
     void Update()
     {
-        // if(m_CloneSlot != null && m_CloneSlot.gameObject.activeSelf == true && m_ObjectInformationPanel.m_SlotIdx != -1 && m_Player.GetCollectableCount(m_ObjectInformationPanel.m_SlotIdx) == 0)
-        // {
-        //     m_CloneSlot.GetComponent<DragDrop>().SetActiveFalse();
-        // }
-        // if(m_CurrDurability <= 0)
-        // {
-        //     m_Durability.gameObject.SetActive(false);
-        //     if(m_Inventory.Slots[SlotIdx].Count > 0)    m_QuantityText.text = m_Inventory.Slots[SlotIdx].Count.ToString();
-        //     else m_QuantityText.text = "";
-        // }
-        // else
-        // {
-        //     m_Durability.gameObject.SetActive(true);
-        //     try{
-        //         m_Durability.value = (float)m_Slot.m_Durability / (float)m_Slot.m_MaxDurability * 100f;
-        //     }
-        //     catch
-        //     {
-        //         // print(m_Durability);
-        //         // print(m_Slot);
-        //     }
-        //     m_QuantityText.text = "";
-        // }
+        if(m_ChestUI.GetCurrDurability(thisSlotIdx) <= 0)
+        {
+            m_Durability.gameObject.SetActive(false);
+            if(m_ChestUI.m_ChestController.ChestSlots[thisSlotIdx].Count > 0)    m_QuantityText.text = m_ChestUI.m_ChestController.ChestSlots[thisSlotIdx].Count.ToString();
+            else m_QuantityText.text = "";
+        }
+        else
+        {
+            m_Durability.gameObject.SetActive(true);
+            try{
+                m_Durability.value = (float)m_ChestUI.m_ChestController.ChestSlots[thisSlotIdx].m_Durability / (float)m_ChestUI.m_ChestController.ChestSlots[thisSlotIdx].m_MaxDurability * 100f;
+            }
+            catch
+            {
+                // print(m_Durability);
+                // print(m_Slot);
+            }
+            m_QuantityText.text = "";
+        }
     }
 
     public void SetItem(ChestController.Slot slot)
@@ -77,35 +75,56 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
-        // Debug.Log("OnDrop");
-        // if(eventData.pointerDrag != null)
-        // {
-        //     // Debug.Log(eventData.pointerDrag);
-        //     // int idx = m_ObjectInformationPanel.m_SlotIdx;
-        //     // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = m_FirstSlotPosition.position + new Vector3(135 * (idx % 9), -(135 * (idx / 9)), 0);
-        //     // m_ItemIcon.color = new Color(0.4f, 0.65f, 0.23f, 1);
-        //     // Debug.Log(SlotIdx);
-            
-        //     m_CloneSlot.GetComponent<DragDrop>().CheckDrop = true;
-        //     // print(m_InventoryUI.slots[m_ObjectInformationPanel.m_SlotIdx].GetCurrDurability());
-        //     if(m_InventoryUI.slots[m_ObjectInformationPanel.m_SlotIdx].GetCurrDurability() <= 0)
-        //     {
-        //         m_CloneDurability.gameObject.SetActive(false);
-        //         if(m_Inventory.Slots[m_ObjectInformationPanel.m_SlotIdx].Count > 0)    m_CloneQuantityText.text = m_Inventory.Slots[m_ObjectInformationPanel.m_SlotIdx].Count.ToString();
-        //     }
-        //     else
-        //     {
-        //         m_CloneDurability.gameObject.SetActive(true);
-        //         m_CloneQuantityText.text = "";
-        //     }
-        //     m_Player.InventorySwap(SlotIdx, m_ObjectInformationPanel.m_SlotIdx);
-        //     m_InventoryUI.Setup(false);
-        // }
+        Debug.Log("OnDrop");
+        if(eventData.pointerDrag != null)
+        {
+            // Debug.Log(eventData.pointerDrag);
+            // int idx = m_ObjectInformationPanel.m_SlotIdx;
+            // eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = m_FirstSlotPosition.position + new Vector3(135 * (idx % 9), -(135 * (idx / 9)), 0);
+            // m_ItemIcon.color = new Color(0.4f, 0.65f, 0.23f, 1);
+            // Debug.Log(SlotIdx);
+            var thisCloneSlot = GameObject.FindGameObjectWithTag("DragDrop");
+            thisCloneSlot.GetComponent<DragDrop>().CheckDrop = true;
+            // print(m_InventoryUI.slots[m_ObjectInformationPanel.m_SlotIdx].GetCurrDurability());
+            if(thisCloneSlot.GetComponent<DragDrop>().GetInventory_UI() != null) // cloneSlot duoc keo tu Inventory panel
+            {
+                if(m_InventoryUI.slots[thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()].GetCurrDurability() <= 0) // Vi tri cu cua cai cloneslot
+                {
+                    m_CloneDurability.gameObject.SetActive(false);
+                    if(m_InventoryUI.GetInventorySlotCount(thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()) > 0)    
+                        m_CloneQuantityText.text = m_InventoryUI.GetInventorySlotCount(thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()).ToString();
+                }
+                else
+                {
+                    m_CloneDurability.gameObject.SetActive(true);
+                    m_CloneQuantityText.text = "";
+                }
+                m_ChestUI.m_ChestController.MoveFromInventoryToChest(thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex(), thisSlotIdx);
+                m_ChestUI.SetupChest();
+                m_ChestUI.Setup();
+            }
+            else // Duoc keo noi bo trong ChestPanel
+            {
+                if(m_ChestUI.GetCurrDurability(thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()) <= 0) // Vi tri cu cua cai cloneslot
+                {
+                    m_CloneDurability.gameObject.SetActive(false);
+                    if(m_ChestUI.m_ChestController.ChestSlots[thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()].Count > 0)    
+                        m_CloneQuantityText.text = m_ChestUI.m_ChestController.ChestSlots[thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()].Count.ToString();
+                }
+                else
+                {
+                    m_CloneDurability.gameObject.SetActive(true);
+                    m_CloneQuantityText.text = "";
+                }
+                m_ChestUI.m_ChestController.Swap(thisSlotIdx, thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex());
+                m_ChestUI.SetupChest();
+            }
+        }
 
-        // // DragDrop obj = m_CloneSlot.GetComponent<DragDrop>();
-        // // obj.SetPosition(SlotIdx);
-        // // obj.CheckDrop = true;
-        // // m_CloneSlot.gameObject.SetActive(false);
+        // DragDrop obj = m_CloneSlot.GetComponent<DragDrop>();
+        // obj.SetPosition(SlotIdx);
+        // obj.CheckDrop = true;
+        // m_CloneSlot.gameObject.SetActive(false);
     }
     public void OnClick()
     {
@@ -116,10 +135,12 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
         }
         Image image = gameObject.GetComponent<Image>();
         image.color = new Color(1, 1, 1, 0.75f); // neu sua cai nay thi sua ca cai trong dragdrop
+        m_OtherCloneSlot.gameObject.SetActive(false);
+        m_InventoryUI.Setup(false);
     }
     public void OnClick1()
     {
-        // if(m_ItemIcon.sprite != null)
+        if(m_ItemIcon.sprite != null)
         {
             m_CloneSlot.gameObject.SetActive(true);
             DragDrop obj = m_CloneSlot.GetComponent<DragDrop>();
@@ -134,6 +155,10 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
                 
             }
             m_CloneQuantityText.text = m_QuantityText.text;
+        }
+        if(m_CloneSlot != null && m_CloneSlot.gameObject.activeSelf == true && m_ChestUI.m_ChestController.ChestSlots[thisSlotIdx].Count == 0)
+        {
+            m_CloneSlot.GetComponent<DragDrop>().SetActiveFalse();
         }
     }
     public string GetQuantityText()

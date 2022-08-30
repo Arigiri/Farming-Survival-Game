@@ -1765,6 +1765,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &43591028
@@ -1869,6 +1870,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &44619602
@@ -2260,6 +2263,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &53149145
@@ -3496,6 +3501,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!114 &99967195 stripped
@@ -4483,6 +4489,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &123536472
@@ -5211,6 +5218,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!224 &148792683
@@ -5987,6 +5995,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &165257973
@@ -8230,6 +8239,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1001 &261047074
@@ -10251,6 +10262,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &322361539
@@ -11095,6 +11107,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1001 &349023161
@@ -12274,6 +12287,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &397201985
@@ -15319,6 +15333,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &512217629
@@ -16214,6 +16230,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565643866}
   m_CullTransparentMesh: 1
+--- !u!1001 &570877772
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1576883063}
+    m_Modifications:
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03174956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115553630805296795, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362033048695491864, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_Name
+      value: Chest (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362033048695491864, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+      propertyPath: m_TagString
+      value: CollectableObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
 --- !u!114 &573944657 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3520182223037265059, guid: fbf331ee3092c3f41b4425995fc5a5ed, type: 3}
@@ -16333,6 +16430,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &576184579
@@ -16746,6 +16844,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!224 &585200006 stripped
@@ -17602,6 +17702,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &609252229
@@ -27051,6 +27152,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &699984647
@@ -27623,6 +27725,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &717374735
@@ -33956,6 +34059,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!224 &918627003 stripped
@@ -34200,7 +34304,7 @@ GameObject:
   - component: {fileID: 922080477}
   m_Layer: 0
   m_Name: Icon
-  m_TagString: Untagged
+  m_TagString: DragDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34704,6 +34808,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &940956492
@@ -38070,6 +38175,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1026108412
@@ -39164,6 +39270,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1062722758
@@ -40870,6 +40977,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!114 &1121883842
@@ -42535,6 +42643,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1150948752
@@ -42780,6 +42889,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1166599613
@@ -43156,6 +43266,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171482213}
   m_CullTransparentMesh: 1
+--- !u!4 &1174347833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2416732577681215217, guid: e2f19f8974b855f40a9c616f10bcbb40, type: 3}
+  m_PrefabInstance: {fileID: 570877772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1187042639
 GameObject:
   m_ObjectHideFlags: 0
@@ -43901,6 +44016,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!224 &1213147761
@@ -44195,6 +44312,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1222323689
@@ -45243,6 +45361,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1260598912
@@ -45371,6 +45490,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1261660550
@@ -46600,6 +46720,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!114 &1285991012 stripped
@@ -46791,6 +46913,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &1296634638
@@ -47746,6 +47870,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!224 &1348418125 stripped
@@ -48018,6 +48143,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &1364969539
@@ -49049,6 +49176,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1001 &1382597364
@@ -49465,6 +49593,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &1395635059
@@ -58373,6 +58503,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &1513334068
@@ -60087,6 +60219,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1570199076
@@ -60284,6 +60417,7 @@ Transform:
   - {fileID: 1980395534}
   - {fileID: 316319835}
   - {fileID: 867718558}
+  - {fileID: 1174347833}
   m_Father: {fileID: 761180278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61312,6 +61446,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1604252178
@@ -63761,6 +63896,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!224 &1694660840 stripped
@@ -64053,6 +64189,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1715806955
@@ -64281,6 +64418,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1729457709
@@ -74433,6 +74571,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1913248438
@@ -75609,6 +75748,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &1934770648
@@ -76205,7 +76345,7 @@ GameObject:
   - component: {fileID: 1965597325}
   m_Layer: 0
   m_Name: Icon
-  m_TagString: Untagged
+  m_TagString: DragDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78140,6 +78280,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &2027573032
@@ -79871,6 +80012,8 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 1988305513}
   m_CloneQuantityText: {fileID: 973190469}
   m_ChestUI: {fileID: 1505877843}
+  m_InventoryUI: {fileID: 1062730262}
+  m_OtherCloneSlot: {fileID: 1965597328}
   thisImage: {fileID: 0}
   thisSlotIdx: 0
 --- !u!1 &2063464579
@@ -80298,6 +80441,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &2077740957
@@ -80408,6 +80552,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 227459720}
   m_CloneQuantityText: {fileID: 718345063}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 922080479}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1001 &2083926602
@@ -81053,6 +81198,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &2094600955
@@ -81739,6 +81885,7 @@ MonoBehaviour:
   m_CloneDurability: {fileID: 0}
   m_CloneQuantityText: {fileID: 0}
   m_Inventory: {fileID: 673988939}
+  m_OtherCloneSlot: {fileID: 0}
   thisImage: {fileID: 0}
   SlotIdx: 0
 --- !u!1 &2110349126

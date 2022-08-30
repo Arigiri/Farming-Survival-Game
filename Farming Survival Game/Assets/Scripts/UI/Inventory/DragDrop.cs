@@ -104,9 +104,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if(CheckDrop == false)
         {
             gameObject.transform.position = StartPosition;
-            if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+            if(m_InventoryUI != null)
             {
-                gameObject.SetActive(false);
+                if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else 
+            {
+                if(m_CloneQuantity.text != m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText())
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
         else 
@@ -125,5 +135,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         gameObject.SetActive(false);
+    }
+    public Inventory_UI GetInventory_UI()
+    {
+        return m_InventoryUI;
+    }
+    public int GetCurrSlotIndex()
+    {
+        return CurrSlotIndex;
     }
 }
