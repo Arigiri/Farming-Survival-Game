@@ -158,6 +158,7 @@ public class TileController : MonoBehaviour
                if(Object.name == Building.name)
                {
                   var Chest = Object.GetComponent<ChestController>();
+                  Chest = new ChestController();
                   Chest.Init();
                   ChestOnMap[NewLocation] = Chest;
                }

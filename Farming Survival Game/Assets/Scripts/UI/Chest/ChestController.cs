@@ -12,6 +12,7 @@ public class ChestController : MonoBehaviour
     private ChestUI m_ChestUI;
     public List<Slot> ChestSlots = new List<Slot>();
     public int NumSlots;
+    private int x;
 
     public class Slot
     {
@@ -129,6 +130,8 @@ public class ChestController : MonoBehaviour
             Slot slot = new Slot();
             ChestSlots.Add(slot);
         }
+        x = Random.Range(1, 10000);
+        print(x);
     }
     public int GetChestNumSlot()
     {
@@ -144,6 +147,7 @@ public class ChestController : MonoBehaviour
     }
     public void OpenChest() // Mo ruong, ham nay chay moi lan mo ruong
     {
+        print(x);
         m_ChestUI.m_ChestController = this;
         m_ChestUI.TurnOnChestUI();
         // m_ChestUI.MakeItemContainer(ItemsContainer);
