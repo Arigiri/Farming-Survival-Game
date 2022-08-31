@@ -116,7 +116,7 @@ public class ChestSlotUI : MonoBehaviour, IDropHandler
                     m_CloneDurability.gameObject.SetActive(true);
                     m_CloneQuantityText.text = "";
                 }
-                m_ChestUI.m_ChestController.Swap(thisSlotIdx, thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex());
+                m_ChestUI.m_ChestController.Swap(thisSlotIdx, thisCloneSlot.GetComponent<DragDrop>().GetCurrSlotIndex()); //chuyen tu vi tri idx2 sang vi tri idx1
                 m_ChestUI.SetupChest();
             }
         }

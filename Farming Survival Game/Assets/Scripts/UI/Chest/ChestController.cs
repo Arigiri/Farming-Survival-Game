@@ -112,13 +112,26 @@ public class ChestController : MonoBehaviour
         // }
     }
 
-    public void Swap(int idx1, int idx2)
+    public void Swap(int idx1, int idx2) // chuyen tu idx2 sang idx1
     {
         if(idx1 == -1 || idx2 == -1)    return;
-        Slot tmp = ChestSlots[idx1];
-        ChestSlots[idx1] = ChestSlots[idx2];
-        ChestSlots[idx2] = tmp;
-        m_ChestUI.Setup();
+        if(GetCollectableType(idx1) != GetCollectableType(idx2))
+        {
+            Slot tmp = ChestSlots[idx1];
+            ChestSlots[idx1] = ChestSlots[idx2];
+            ChestSlots[idx2] = tmp;
+            m_ChestUI.Setup();
+        }
+        else 
+        {
+            int lackCount = ChestSlots[idx1].MaxCount - ChestSlots[idx1].Count;
+            int ItemMoveCount = Mathf.Min(lackCount, ChestSlots[idx2].Count);
+            ChestSlots[idx1].Count += ItemMoveCount;
+            ChestSlots[idx2].Count -= ItemMoveCount;
+            if(ChestSlots[idx2].Count == 0)    ChestSlots[idx2].ClearItem();
+            m_ChestUI.Setup();
+            m_ChestUI.SetupChest();
+        }
     }
     public void Init() // Ham nay chay dau tien luc dat ruong xuong dat
     {
@@ -201,9 +214,23 @@ public class ChestController : MonoBehaviour
     public void MoveFromInventoryToChest(int InventoryIdx, int ChestIdx)
     {
         if(InventoryIdx == -1 || ChestIdx == -1)    return;
-        Slot tmp = ConvertFromInventorySlotToChestSlot(m_Player.GetInventoryController().Slots[InventoryIdx]);
-        m_Player.GetInventoryController().Slots[InventoryIdx] = ConvertFromChestSlotToInventorySlot(ChestSlots[ChestIdx]);
-        ChestSlots[ChestIdx] = tmp;
-        m_ChestUI.Setup();
+        if(m_Player.GetCollectableType(InventoryIdx) != GetCollectableType(ChestIdx))
+        {
+            Slot tmp = ConvertFromInventorySlotToChestSlot(m_Player.GetInventoryController().Slots[InventoryIdx]);
+            m_Player.GetInventoryController().Slots[InventoryIdx] = ConvertFromChestSlotToInventorySlot(ChestSlots[ChestIdx]);
+            ChestSlots[ChestIdx] = tmp;
+            m_ChestUI.Setup();
+        }
+        else // cung mot do, uu tien chest
+        {
+            int lackCount = ChestSlots[ChestIdx].MaxCount - ChestSlots[ChestIdx].Count;
+            int ItemMoveCount = Mathf.Min(lackCount, m_Player.GetInventoryController().Slots[InventoryIdx].Count);
+            ChestSlots[ChestIdx].Count += ItemMoveCount;
+            m_Player.GetInventoryController().Slots[InventoryIdx].Count -= ItemMoveCount;
+            if(m_Player.GetInventoryController().Slots[InventoryIdx].Count == 0)    m_Player.GetInventoryController().Slots[InventoryIdx].ClearItem();
+            m_ChestUI.Setup();
+            m_ChestUI.SetupChest();
+        }
+        
     }
 }
