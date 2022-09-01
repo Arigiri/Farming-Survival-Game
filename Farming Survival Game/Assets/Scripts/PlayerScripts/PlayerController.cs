@@ -267,8 +267,7 @@ public class PlayerController : MonoBehaviour
     public bool AddItemToInventory(CollectableObjectController obj)
     {
         if(obj == null)  return false;
-        if(obj.tag == "CollectableObject" || obj.tag == "UnpickableObject") return m_Inventory.Add(obj);
-        return false;
+        return m_Inventory.Add(obj);
     }
 
     public int GetInventoryNumSlot()

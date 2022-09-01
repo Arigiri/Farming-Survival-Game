@@ -12,7 +12,6 @@ public class ChestController : MonoBehaviour
     private ChestUI m_ChestUI;
     public List<Slot> ChestSlots = new List<Slot>();
     public int NumSlots;
-    private int x;
 
     public class Slot
     {
@@ -143,8 +142,6 @@ public class ChestController : MonoBehaviour
             Slot slot = new Slot();
             ChestSlots.Add(slot);
         }
-        x = Random.Range(1, 10000);
-        print(x);
     }
     public int GetChestNumSlot()
     {
@@ -160,7 +157,6 @@ public class ChestController : MonoBehaviour
     }
     public void OpenChest() // Mo ruong, ham nay chay moi lan mo ruong
     {
-        print(x);
         m_ChestUI.m_ChestController = this;
         m_ChestUI.TurnOnChestUI();
         // m_ChestUI.MakeItemContainer(ItemsContainer);
@@ -168,21 +164,26 @@ public class ChestController : MonoBehaviour
 
     public void SelfDestroy() // Pha ruong va Lay ruong vao Inventory
     {
-        m_Player.AddItemToInventory(gameObject.GetComponent<CollectableObjectController>());
-        // DropItem();
-        transform.parent.gameObject.SetActive(false);
+        m_Player.AddItemToInventory(m_ChestUI.GetComponent<CollectableObjectController>()); // cai nay dung roi
+        DropItem();
         m_TileController.RemoveOnMapObject(transform.position);
     }
-    // private void DropItem()
-    // {
-    //     Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f);
-    //     foreach(CollectableObjectController item in ItemsContainer)
-    //     {
-    //         item.ResetAttribute(true);
-    //         Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f;
-    //         m_Player.DropAllFromObject(item, SpawnPoint + SpawnOffset, SpawnPoint);
-    //     }
-    // }
+    private void DropItem() // cai nay sai
+    {
+        Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f);
+        foreach(Slot slot in ChestSlots)
+        {
+            var item = slot.m_CollectableObject;
+            item.ResetAttribute(true); // cai nay de lam gi day?
+            Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f;
+            Vector3 ExactlySpawnPoint = SpawnPoint + SpawnOffset;
+            for(int i = 0; i < slot.Count; i++)
+            {
+                m_Player.DropAllFromObject(item, ExactlySpawnPoint, SpawnPoint);
+            }
+            
+        }
+    }
     public Slot ConvertFromInventorySlotToChestSlot(InventoryController.Slot slot)
     {
         Slot tmp = new Slot();

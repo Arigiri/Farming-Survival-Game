@@ -58080,6 +58080,7 @@ GameObject:
   - component: {fileID: 1505877845}
   - component: {fileID: 1505877844}
   - component: {fileID: 1505877843}
+  - component: {fileID: 1505877848}
   m_Layer: 5
   m_Name: ChestUI
   m_TagString: ChestUI
@@ -58231,6 +58232,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1505877848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505877842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bedae395a3e9f4a9dacb581f13eb84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTool: 0
+  m_Information: {fileID: 11400000, guid: 6a7f2e4bd249361419fe5a3ce5316dd5, type: 2}
+  Icon: {fileID: 94207079, guid: 13fec995b15470842adad86347aff014, type: 3}
+  CollectableOrNot: 0
+  rb2d: {fileID: 0}
+  GetCollideWith: {fileID: 0}
 --- !u!1 &1507355759
 GameObject:
   m_ObjectHideFlags: 0
