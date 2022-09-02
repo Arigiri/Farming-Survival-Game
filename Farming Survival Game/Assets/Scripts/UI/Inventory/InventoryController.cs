@@ -222,4 +222,8 @@ public class InventoryController : MonoBehaviour
             m_ChestUI.SetupChest();
         }
     }
+    public Inventory_UI GetInventory_UI()
+    {
+        return m_InventoryUI;
+    }
 }

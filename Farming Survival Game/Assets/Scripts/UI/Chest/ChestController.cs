@@ -232,6 +232,64 @@ public class ChestController : MonoBehaviour
             m_ChestUI.Setup();
             m_ChestUI.SetupChest();
         }
-        
+    }
+
+    public void MoveItemToOtherPanel(int idx) // Chuyen nhanh Item giua Chest Panel va Inventory Panel
+    {
+        if(m_ChestUI.gameObject.activeSelf == false)    return;
+        if(GameObject.FindGameObjectWithTag("DragDrop").GetComponent<DragDrop>().GetInventory_UI() != null) // chuyen tu Inventory panel san Chest Panel
+        {
+            foreach(Slot slot in ChestSlots)
+            {
+                if(slot.Type == m_Player.GetCollectableType(idx))
+                {
+                    int lackCount = slot.MaxCount - slot.Count;
+                    int ItemMoveCount = Mathf.Min(lackCount, m_Player.GetInventoryController().Slots[idx].Count);
+                    slot.Count += ItemMoveCount;
+                    m_Player.GetInventoryController().Slots[idx].Count -= ItemMoveCount;
+                    if(m_Player.GetInventoryController().Slots[idx].Count == 0)    m_Player.GetInventoryController().Slots[idx].ClearItem();
+                    m_ChestUI.Setup();
+                    m_ChestUI.SetupChest();
+                }
+            }
+            for(int i = 0; i < ChestSlots.Count; i++)
+            {
+                var slot = ChestSlots[i];
+                if(slot.Type == CollectableType.NONE)
+                {
+                    MoveFromInventoryToChest(idx, i);
+                    if(m_Player.GetInventoryController().Slots[idx].Count == 0)    m_Player.GetInventoryController().Slots[idx].ClearItem();
+                    m_ChestUI.Setup();
+                    m_ChestUI.SetupChest();
+                }
+            }
+        }
+        else // chuyen tu Chest Panel sang Inventory Panel
+        {
+            foreach(InventoryController.Slot slot in m_Player.GetInventoryController().Slots)
+            {
+                if(slot.Type == GetCollectableType(idx))
+                {
+                    int lackCount = slot.MaxCount - slot.Count;
+                    int ItemMoveCount = Mathf.Min(lackCount, ChestSlots[idx].Count);
+                    slot.Count += ItemMoveCount;
+                    ChestSlots[idx].Count -= ItemMoveCount;
+                    if(ChestSlots[idx].Count == 0)    ChestSlots[idx].ClearItem();
+                    m_ChestUI.Setup();
+                    m_ChestUI.SetupChest();
+                }
+            }
+            for(int i = 0; i < m_Player.GetInventoryController().Slots.Count; i++)
+            {
+                var slot = m_Player.GetInventoryController().Slots[i];
+                if(slot.Type == CollectableType.NONE)
+                {   
+                    m_Player.GetInventoryController().MoveFromChestToInventory(idx, i);
+                    if(ChestSlots[idx].Count == 0)    ChestSlots[idx].ClearItem();
+                    m_ChestUI.Setup();
+                    m_ChestUI.SetupChest();
+                }
+            }
+        }
     }
 }
