@@ -186,7 +186,7 @@ public class Slot_UI : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         if(m_ObjectInformationPanel == null)    return;
-        Debug.Log("OnDrop");
+        // Debug.Log("OnDrop");
         if(eventData.pointerDrag != null)
         {
             // Debug.Log(eventData.pointerDrag);

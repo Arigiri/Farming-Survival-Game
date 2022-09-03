@@ -30,11 +30,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         gameObject.SetActive(false);
     }
 
-    private void OnEnable()
-    {
-        print("OnEnable");
-    }
-
     private void Update() 
     {
         if(m_InventoryUI != null)
@@ -88,7 +83,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("OnBeginDrag");
+        // Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         StartPosition = gameObject.transform.position;
@@ -97,13 +92,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
+        // Debug.Log("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+        // Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         if(CheckDrop == false)
@@ -143,7 +138,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             clicked = 0;
             clicktime = 0;
-            Debug.Log("Double CLick");
+            // Debug.Log("Double CLick");
             GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>().m_ChestController.MoveItemToOtherPanel(CurrSlotIndex);
  
         }
