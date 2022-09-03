@@ -12,5 +12,5 @@ public class ScriptableLevel : ScriptableObject {
 [Serializable]
 public class SavedTile {
     public Vector3Int Position;
-    public int TileIndex;
+    public TileBase Tile;
 }

@@ -24,10 +24,8 @@ public class TilemapManager : MonoBehaviour {
             newLevel.name = tilemap.name;
 
             newLevel.TileMap = GetTilesFromMap(tilemap).ToList();
-            // TileStorer.TileList.AddRange(TileList);
             ScriptableObjectUtility.SaveLevelFile(newLevel);
         }
-        ScriptableObjectUtility.SaveTileList(TileStorer);
        
 
 
@@ -38,10 +36,9 @@ public class TilemapManager : MonoBehaviour {
             foreach (var pos in map.cellBounds.allPositionsWithin) {
                 if (map.HasTile(pos)) {
                     var levelTile = map.GetTile(pos);
-                    if(TileStorer.TileList.Contains(levelTile) == false)TileStorer.TileList.Add(levelTile);
                     yield return new SavedTile() {
                         Position = pos,
-                        TileIndex = TileStorer.TileList.IndexOf(levelTile)
+                        Tile = levelTile
                     };
                 }
             }
@@ -63,7 +60,6 @@ public class TilemapManager : MonoBehaviour {
             return;
         }
         ClearMap();
-        TileStorer.ReadTileList(jsonFile.text);
         foreach(var Level in level)
         {
             Tilemap m_Tilemap = null;
@@ -78,7 +74,7 @@ public class TilemapManager : MonoBehaviour {
             if(m_Tilemap == null)continue;
             foreach(var savedTile in Level.TileMap)
             {
-                m_Tilemap.SetTile(savedTile.Position, TileStorer.TileList.list[savedTile.TileIndex]);
+                m_Tilemap.SetTile(savedTile.Position, savedTile.Tile);
             }
         }
 
@@ -107,11 +103,6 @@ public static class ScriptableObjectUtility {
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-    }
-
-    public static void SaveTileList(TileBaseListStorer tilelist)
-    {
-        tilelist.SaveTileList();
     }
 
     public static void RefreshEditorProjectWindow() 
