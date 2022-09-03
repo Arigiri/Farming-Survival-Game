@@ -109,15 +109,16 @@ public class CraftingInformationPanelUI : MonoBehaviour
             float ItemCount = 0f;
             try
             {
-                ItemCount = CheckCount[item];
+                ItemCount = CheckCount[item]; 
             }
-            catch
-            {
-                continue;
+            catch 
+            {//ko ton tai nguyen lieu can tim trong invent 
+                result = 10000;
+                break;
             }
-            // print(result);
             result = Mathf.Min(Mathf.FloorToInt(ItemCount/count), result);
         }
+        print(result);
         return result == 10000 ? 0 : result;
     }
 }

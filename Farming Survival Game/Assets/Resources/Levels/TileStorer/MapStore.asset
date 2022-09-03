@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc19bbb52c58174abb114b55cba4d3d, type: 3}
   m_Name: MapStore
   m_EditorClassIdentifier: 
-  TileList: []
+  TileList:
+    list:
+    - {fileID: 11400000, guid: 14a7846aa305fc54bb976ed9d64f475b, type: 2}
+    - {fileID: 2023132258, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: 1366909912, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: 1075907594, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: -662426487, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: -904117624, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: -1845866800, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: -1088857264, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: 153992366, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}
+    - {fileID: 936582465, guid: 8c45c1bbd23d02a499169f7520cfc13b, type: 3}

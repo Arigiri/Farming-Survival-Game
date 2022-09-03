@@ -11,11 +11,12 @@ public class TilemapManager : MonoBehaviour {
     [SerializeField] private Tilemap[] _TileMapsToSave;
     [SerializeField] private ScriptableLevel[] _Levels;
     [SerializeField] private Tilemap[] _TileMapsToLoad;
+    [SerializeField] private TextAsset jsonFile;
     private List<TileBase> TileList;
     public TileBaseListStorer TileStorer;
 
     public void SaveMap() {
-        
+        TileStorer.TileList.Clear();
         foreach(var tilemap in _TileMapsToSave)
         {
             var newLevel = ScriptableObject.CreateInstance<ScriptableLevel>();
@@ -26,6 +27,7 @@ public class TilemapManager : MonoBehaviour {
             // TileStorer.TileList.AddRange(TileList);
             ScriptableObjectUtility.SaveLevelFile(newLevel);
         }
+        ScriptableObjectUtility.SaveTileList(TileStorer);
        
 
 
@@ -61,6 +63,7 @@ public class TilemapManager : MonoBehaviour {
             return;
         }
         ClearMap();
+        TileStorer.ReadTileList(jsonFile.text);
         foreach(var Level in level)
         {
             Tilemap m_Tilemap = null;
@@ -75,7 +78,7 @@ public class TilemapManager : MonoBehaviour {
             if(m_Tilemap == null)continue;
             foreach(var savedTile in Level.TileMap)
             {
-                m_Tilemap.SetTile(savedTile.Position, TileStorer.TileList[savedTile.TileIndex]);
+                m_Tilemap.SetTile(savedTile.Position, TileStorer.TileList.list[savedTile.TileIndex]);
             }
         }
 
@@ -88,6 +91,10 @@ public class TilemapManager : MonoBehaviour {
 
 public static class ScriptableObjectUtility {
     public static void SaveLevelFile(ScriptableLevel level) {
+        try{
+            AssetDatabase.DeleteAsset($"Assets/Resources/Levels/{level.name}.asset");
+        }
+        catch{}
         AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
 
         AssetDatabase.SaveAssets();
@@ -104,11 +111,12 @@ public static class ScriptableObjectUtility {
 
     public static void SaveTileList(TileBaseListStorer tilelist)
     {
-        AssetDatabase.CreateAsset(tilelist, $"Assets/Resources/Levels/TileList.asset");
+        tilelist.SaveTileList();
+    }
 
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+    public static void RefreshEditorProjectWindow() 
+    {
+        UnityEditor.AssetDatabase.Refresh();
     }
 }
-
 #endif
