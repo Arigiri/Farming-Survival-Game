@@ -13,6 +13,7 @@ public class ChestUI : MonoBehaviour
     private CollectableObjectController[] ItemsContainer = new CollectableObjectController[12];
     public ChestController m_ChestController;
     public int CurrSlotIdx;
+    public bool flag;
     void Awake() 
     {
         for(int i = 0; i < InventorySlots.Count; i++)

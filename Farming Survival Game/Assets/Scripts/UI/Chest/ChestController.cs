@@ -157,6 +157,11 @@ public class ChestController : MonoBehaviour
     }
     public void OpenChest() // Mo ruong, ham nay chay moi lan mo ruong
     {
+        if(m_ChestUI.flag == true)
+        {
+            SelfDestroy();
+            return;
+        }
         m_ChestUI.m_ChestController = this;
         m_ChestUI.TurnOnChestUI();
         // m_ChestUI.MakeItemContainer(ItemsContainer);
@@ -166,11 +171,12 @@ public class ChestController : MonoBehaviour
     {
         m_Player.AddItemToInventory(m_ChestUI.GetComponent<CollectableObjectController>()); // cai nay dung roi
         DropItem();
-        m_TileController.RemoveOnMapObject(transform.position);
+        m_TileController.RemoveOnMapObject(transform.position); // cai nay sai, vi chestController khong co transform.position
     }
     private void DropItem() // cai nay sai
     {
-        Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f);
+        Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f); // cai nay sai, vi chestController khong co transform.position
+        
         foreach(Slot slot in ChestSlots)
         {
             var item = slot.m_CollectableObject;
