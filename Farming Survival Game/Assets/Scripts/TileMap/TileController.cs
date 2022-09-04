@@ -159,7 +159,7 @@ public class TileController : MonoBehaviour
                {
                   var Chest = Object.GetComponent<ChestController>();
                   Chest = new ChestController();
-                  Chest.Init();
+                  Chest.Init(Position);
                   ChestOnMap[NewLocation] = Chest;
                }
             }

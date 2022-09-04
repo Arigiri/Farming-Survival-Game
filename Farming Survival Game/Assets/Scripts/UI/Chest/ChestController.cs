@@ -12,6 +12,7 @@ public class ChestController : MonoBehaviour
     private ChestUI m_ChestUI;
     public List<Slot> ChestSlots = new List<Slot>();
     public int NumSlots;
+    private Vector3 thisPosition;
 
     public class Slot
     {
@@ -132,10 +133,12 @@ public class ChestController : MonoBehaviour
             m_ChestUI.SetupChest();
         }
     }
-    public void Init() // Ham nay chay dau tien luc dat ruong xuong dat
+    public void Init(Vector3 thisChestPosition) // Ham nay chay dau tien luc dat ruong xuong dat
     {
+        thisPosition = thisChestPosition;
         m_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         m_ChestUI = GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>();
+        m_TileController = FindObjectOfType<TileController>();
         NumSlots = 12;
         for(int i = 0; i < NumSlots; i++)
         {
@@ -157,11 +160,11 @@ public class ChestController : MonoBehaviour
     }
     public void OpenChest() // Mo ruong, ham nay chay moi lan mo ruong
     {
-        if(m_ChestUI.flag == true)
-        {
-            SelfDestroy();
-            return;
-        }
+        // if(m_ChestUI.flag == true)
+        // {
+        //     SelfDestroy();
+        //     return;
+        // }
         m_ChestUI.m_ChestController = this;
         m_ChestUI.TurnOnChestUI();
         // m_ChestUI.MakeItemContainer(ItemsContainer);
@@ -169,16 +172,18 @@ public class ChestController : MonoBehaviour
 
     public void SelfDestroy() // Pha ruong va Lay ruong vao Inventory
     {
-        m_Player.AddItemToInventory(m_ChestUI.GetComponent<CollectableObjectController>()); // cai nay dung roi
+        // m_Player.AddItemToInventory(m_ChestUI.GetComponent<CollectableObjectController>()); // cai nay dung roi
         DropItem();
-        m_TileController.RemoveOnMapObject(transform.position); // cai nay sai, vi chestController khong co transform.position
+        Vector3Int NewLocation = m_TileController.m_TileMap.WorldToCell(thisPosition);
+        m_TileController.m_CropTileMap.SetTile(NewLocation, null);
     }
-    private void DropItem() // cai nay sai
+    private void DropItem()
     {
-        Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(transform.position, 0.35f, 0.5f); // cai nay sai, vi chestController khong co transform.position
+        Vector3 SpawnPoint = m_Player.RandomPointInAnnulus(thisPosition, 0.35f, 0.5f);
         
         foreach(Slot slot in ChestSlots)
         {
+            if(slot.Count == 0) continue;
             var item = slot.m_CollectableObject;
             item.ResetAttribute(true); // cai nay de lam gi day?
             Vector3 SpawnOffset = UnityEngine.Random.insideUnitCircle * 0.5f;
@@ -187,8 +192,12 @@ public class ChestController : MonoBehaviour
             {
                 m_Player.DropAllFromObject(item, ExactlySpawnPoint, SpawnPoint);
             }
-            
         }
+        var item1 = m_ChestUI.GetComponent<CollectableObjectController>();
+        item1.ResetAttribute(true); // cai nay de lam gi day?
+        Vector3 SpawnOffset1 = UnityEngine.Random.insideUnitCircle * 0.5f;
+        Vector3 ExactlySpawnPoint1 = SpawnPoint + SpawnOffset1;
+        m_Player.DropAllFromObject(item1, ExactlySpawnPoint1, SpawnPoint);
     }
     public Slot ConvertFromInventorySlotToChestSlot(InventoryController.Slot slot)
     {
