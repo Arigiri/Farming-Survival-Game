@@ -11,7 +11,6 @@ public class TilemapManager : MonoBehaviour {
     [SerializeField] private Tilemap[] _TileMapsToSave;
     [SerializeField] private ScriptableLevel[] _Levels;
     [SerializeField] private Tilemap[] _TileMapsToLoad;
-    [SerializeField] private TextAsset jsonFile;
     private List<TileBase> TileList;
     public TileBaseListStorer TileStorer;
 
