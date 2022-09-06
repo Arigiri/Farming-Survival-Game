@@ -35,6 +35,12 @@ public class TileController : MonoBehaviour
       Location = m_TileMap.WorldToCell(MousePosition);
       m_TileMap.SetTile(Location,TileSelect);
 
+      if(Input.GetMouseButtonDown(0))
+      {
+         // print(OnMapBuilding.Chest.ToString());
+         // print(m_OnMapBuildingTiles[0].name);
+         // print(OnMapBuilding.Chest.ToString() == m_OnMapBuildingTiles[0].name);
+      }
    }
 
    
@@ -152,7 +158,8 @@ public class TileController : MonoBehaviour
                if(Object.name == Building.name)
                {
                   var Chest = Object.GetComponent<ChestController>();
-                  Chest.Init();
+                  Chest = new ChestController();
+                  Chest.Init(Position);
                   ChestOnMap[NewLocation] = Chest;
                }
             }

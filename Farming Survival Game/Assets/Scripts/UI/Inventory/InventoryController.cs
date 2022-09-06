@@ -11,7 +11,17 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private TransparentObject m_TransparentObject;
     public List<Slot> Slots = new List<Slot>();
     public int NumSlots;
+    private ChestUI m_ChestUI;
 
+    private void Awake() 
+    {
+        for(int i = 0; i < NumSlots; i++)
+        {
+            Slot slot = new Slot();
+            Slots.Add(slot);
+        }
+        m_ChestUI = GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>();    
+    }
     private void Update()
     {
         if(m_InventoryUI.gameObject.activeSelf == true)
@@ -95,18 +105,6 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-  
-    
-    void Awake()
-    {
-        // print(NumSlots);
-        for(int i = 0; i < NumSlots; i++)
-        {
-            Slot slot = new Slot();
-            Slots.Add(slot);
-        }
-    }
-
     public bool Add(CollectableObjectController Object) // kiem tra co add do vao inventory thanh cong khong
     {
         bool Flag = false;
@@ -150,12 +148,82 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void Swap(int idx1, int idx2)
+    public void Swap(int idx1, int idx2) // chuyen tu idx2 sang idx1
     {
         if(idx1 == -1 || idx2 == -1)    return;
-        Slot tmp = Slots[idx1];
-        Slots[idx1] = Slots[idx2];
-        Slots[idx2] = tmp;
-        m_InventoryUI.Setup(false);
+        if(GetCollectableType(idx1) != GetCollectableType(idx2))
+        {
+            Slot tmp = Slots[idx1];
+            Slots[idx1] = Slots[idx2];
+            Slots[idx2] = tmp;
+            m_InventoryUI.Setup(false);
+        }
+        else 
+        {
+            int lackCount = Slots[idx1].MaxCount - Slots[idx1].Count;
+            int ItemMoveCount = Mathf.Min(lackCount, Slots[idx2].Count);
+            Slots[idx1].Count += ItemMoveCount;
+            Slots[idx2].Count -= ItemMoveCount;
+            if(Slots[idx2].Count == 0)    Slots[idx2].ClearItem();
+            m_InventoryUI.Setup(false);
+        }
+    }
+    public CollectableType GetCollectableType(int idx)
+    {
+        return Slots[idx].Type;
+    }
+    public Slot ConvertFromChestSlotToInventorySlot(ChestController.Slot slot)
+    {
+        Slot tmp = new Slot();
+        tmp.Count = slot.Count;
+        tmp.MaxCount = slot.MaxCount;
+        tmp.Type = slot.Type;
+        tmp.m_Icon = slot.m_Icon;
+        tmp.m_Action = slot.m_Action;
+        tmp.m_Durability = slot.m_Durability;
+        tmp.m_MaxDurability = slot.m_MaxDurability;
+        tmp.m_TreeType = slot.m_TreeType;
+        tmp.m_CollectableObject = slot.m_CollectableObject;
+        return tmp;
+    }
+    public ChestController.Slot ConvertFromInventorySlotToChestSlot(Slot slot)
+    {
+        ChestController.Slot tmp = new ChestController.Slot();
+        tmp.Count = slot.Count;
+        tmp.MaxCount = slot.MaxCount;
+        tmp.Type = slot.Type;
+        tmp.m_Icon = slot.m_Icon;
+        tmp.m_Action = slot.m_Action;
+        tmp.m_Durability = slot.m_Durability;
+        tmp.m_MaxDurability = slot.m_MaxDurability;
+        tmp.m_TreeType = slot.m_TreeType;
+        tmp.m_CollectableObject = slot.m_CollectableObject;
+        return tmp;
+    }
+    public void MoveFromChestToInventory(int ChestIdx, int InventoryIdx)
+    {
+        if(InventoryIdx == -1 || ChestIdx == -1)    return;
+        if(m_ChestUI.m_ChestController.GetCollectableType(ChestIdx) != GetCollectableType(InventoryIdx))
+        {
+            Slot tmp = ConvertFromChestSlotToInventorySlot(m_ChestUI.m_ChestController.ChestSlots[ChestIdx]);
+            m_ChestUI.m_ChestController.ChestSlots[ChestIdx] = ConvertFromInventorySlotToChestSlot(Slots[InventoryIdx]);
+            Slots[InventoryIdx] = tmp;
+            m_ChestUI.Setup();
+            m_ChestUI.SetupChest();
+        }
+        else 
+        {
+            int lackCount = Slots[InventoryIdx].MaxCount - Slots[InventoryIdx].Count;
+            int ItemMoveCount = Mathf.Min(lackCount, m_ChestUI.m_ChestController.ChestSlots[ChestIdx].Count);
+            Slots[InventoryIdx].Count += ItemMoveCount;
+            m_ChestUI.m_ChestController.ChestSlots[ChestIdx].Count -= ItemMoveCount;
+            if(m_ChestUI.m_ChestController.ChestSlots[ChestIdx].Count == 0)    m_ChestUI.m_ChestController.ChestSlots[ChestIdx].ClearItem();
+            m_ChestUI.Setup();
+            m_ChestUI.SetupChest();
+        }
+    }
+    public Inventory_UI GetInventory_UI()
+    {
+        return m_InventoryUI;
     }
 }

@@ -99,4 +99,8 @@ public class Inventory_UI : MonoBehaviour
             slots[i].SetDurability(slot.m_Durability);  
         }
     }
+    public int GetInventorySlotCount(int idx)
+    {
+        return m_Player.GetSlot(idx).Count;
+    }
 }

@@ -10,6 +10,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     [SerializeField] private Canvas canvas;
     [SerializeField] private Inventory_UI m_InventoryUI;
     [SerializeField] private TextMeshProUGUI m_CloneQuantity;
+    [SerializeField] private ChestUI m_ChestUI;
     private Vector3 FirstSlotPosition;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -31,25 +32,52 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private void Update() 
     {
-        if(gameObject.activeSelf == true && m_InventoryUI.gameObject.activeSelf == false)
+        if(m_InventoryUI != null)
         {
-            // Debug.Log("Panik!!!");
-            SetActiveFalse();
-        }
-        if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
-        {
-            m_CloneQuantity.text = m_InventoryUI.slots[CurrSlotIndex].GetQuantityText();
-        }
+            if(gameObject.activeSelf == true && m_InventoryUI.gameObject.activeSelf == false)
+            {
+                // Debug.Log("Panik!!!");
+                SetActiveFalse();
+            }
+            if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+            {
+                m_CloneQuantity.text = m_InventoryUI.slots[CurrSlotIndex].GetQuantityText();
+            }
 
-        if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            if(m_InventoryUI.slots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            {
+                SetActiveFalse();
+            }
+        }
+        
+        if(m_ChestUI != null)
         {
-            SetActiveFalse();
+            if(gameObject.activeSelf == true && m_ChestUI.gameObject.activeSelf == false)
+            {
+                // Debug.Log("Panik!!!");
+                SetActiveFalse();
+            }
+            if(m_CloneQuantity.text != m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText())
+            {
+                m_CloneQuantity.text = m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText();
+            }
+
+            if(m_ChestUI.ChestSlots[CurrSlotIndex].thisImage.color != new Color(1, 1, 1, 0.75f))
+            {
+                SetActiveFalse();
+            }
         }
     }
 
     public void SetPosition(int idx)
     {
         gameObject.transform.position = FirstSlotPosition + new Vector3(135 * (idx % 9), -(135 * (idx / 9)), 0);
+        CurrSlotIndex = idx;
+    }
+
+    public void SetPositionOnChestUI(int idx)
+    {
+        gameObject.transform.position = FirstSlotPosition + new Vector3(135 * (idx % 4), -(135 * (idx / 4)), 0);
         CurrSlotIndex = idx;
     }
 
@@ -76,9 +104,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if(CheckDrop == false)
         {
             gameObject.transform.position = StartPosition;
-            if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+            if(m_InventoryUI != null)
             {
-                gameObject.SetActive(false);
+                if(m_CloneQuantity.text != m_InventoryUI.slots[CurrSlotIndex].GetQuantityText())
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else 
+            {
+                if(m_CloneQuantity.text != m_ChestUI.ChestSlots[CurrSlotIndex].GetQuantityText())
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
         else 
@@ -87,9 +125,26 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    float clicked = 0;
+    float clicktime = 0;
+    float clickdelay = 0.5f;
+ 
+    public void OnPointerDown(PointerEventData data)
     {
-        // Debug.Log("OnPointerDown");
+        print("OnPointerDown");
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
+ 
+        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            // Debug.Log("Double CLick");
+            GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>().m_ChestController.MoveItemToOtherPanel(CurrSlotIndex);
+ 
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+ 
     }
 
     public void SetActiveFalse() // reset Clone truoc khi xet active false
@@ -97,5 +152,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         gameObject.SetActive(false);
+    }
+    public Inventory_UI GetInventory_UI()
+    {
+        return m_InventoryUI;
+    }
+    public int GetCurrSlotIndex()
+    {
+        return CurrSlotIndex;
     }
 }

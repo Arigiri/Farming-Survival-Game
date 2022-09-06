@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator m_Animator;
     [SerializeField] private InputAction m_InputAction;
     [SerializeField] private float m_movespeed;
-    [SerializeField] private InventoryController m_Inventory;
+    [SerializeField] private InventoryController    m_Inventory;
     [SerializeField] private GameObject m_ChopAnimation;
     [SerializeField] private AttributeController m_AttributeController;
     [SerializeField] private CollectableObjectsPool m_CollectableObjectsPool;
@@ -277,8 +277,7 @@ public class PlayerController : MonoBehaviour
     public bool AddItemToInventory(CollectableObjectController obj)
     {
         if(obj == null)  return false;
-        if(obj.tag == "CollectableObject" || obj.tag == "UnpickableObject") return m_Inventory.Add(obj);
-        return false;
+        return m_Inventory.Add(obj);
     }
 
     public int GetInventoryNumSlot()
@@ -323,7 +322,7 @@ public class PlayerController : MonoBehaviour
 
     public void DropAllItem(CollectableObjectController item, Vector3 spawnPoint)
     {
-         print(item.GetCurrDurability());
+        // print(item.GetCurrDurability());
         Vector3 spawnLocation = transform.position;
         CollectableObjectController droppedItem = m_CollectableObjectsPool.m_Pool[item.GetCollectableType()].Spawn(spawnPoint,null, item);//Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
         droppedItem.rb2d.AddForce((spawnPoint - spawnLocation) * 3f, ForceMode2D.Impulse);
@@ -393,6 +392,10 @@ public class PlayerController : MonoBehaviour
     public Action GetAction()
     {
         return m_Action;
+    }
+    public Vector2 GetMoveOrNot()
+    {
+        return m_MoveDirection;
     }
 
 }

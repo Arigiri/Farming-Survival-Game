@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemsContainer: []
-  m_Action: 7
-  m_Player: {fileID: 0}
+  m_Action: 8
+  m_ChestUI: {fileID: 3527722082236356694, guid: fa441b555d321d9418200c594c3a93fc, type: 3}
   m_MaxLengthInteractive: 0
-  m_TileMap: {fileID: 0}

@@ -92,7 +92,7 @@ public class PlayerActionController : MonoBehaviour
                 Vector3Int NewLocation = m_TileController.m_TileMap.WorldToCell(CropPosition);
                 switch(GetCurrTargetTile())
                 {
-                    case "Chest": m_TileController.ChestOnMap[NewLocation].CanOpenChest();break;
+                    case "Chest": m_TileController.ChestOnMap[NewLocation].OpenChest();break;
                     default : print("Quen Setup Ten Tile Kia!!!"); break;
                 } break;
             default : print("Quen Setup Kia!!!"); break;            

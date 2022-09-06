@@ -104,11 +104,14 @@ public class ToolBarController : MonoBehaviour
             CollectableObjectController itemToDrop = ItemGameManager.instance.itemManager.GetItemByType(m_Slots[ActiveSlot].Type);
             if(itemToDrop != null)
             {
+                // print(itemToDrop.name);
+                // print(itemToDrop.IsTool);
                 itemToDrop.SetDurability(m_Slots[ActiveSlot].m_Durability);
                 m_Player.DropItemAhead(itemToDrop);
                 m_Player.GetInventoryController().Remove(ActiveSlot);
                 m_InventoryUI.Setup(true);
                 m_Player.m_CraftingPanelUI.ResetText();
+                GameObject.FindGameObjectWithTag("ChestUI").GetComponent<ChestUI>().Setup();
             }
         }
         // print(ActiveSlot);
