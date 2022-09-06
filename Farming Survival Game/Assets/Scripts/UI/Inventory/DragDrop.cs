@@ -131,6 +131,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
  
     public void OnPointerDown(PointerEventData data)
     {
+        print("OnPointerDown");
         clicked++;
         if (clicked == 1) clicktime = Time.time;
  
