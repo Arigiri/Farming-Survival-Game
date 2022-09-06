@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CollectableObjectsPool m_CollectableObjectsPool;
     [SerializeField] private AttributeUIController m_AttributeUIController;
     [SerializeField] private PlayerActionController m_PlayerActionController;
+    [SerializeField] private GameManager m_GameManager;
 
     private Vector2 m_MoveDirection = Vector2.zero;
     private Rigidbody2D rb;
@@ -109,10 +110,13 @@ public class PlayerController : MonoBehaviour
         {
             if(IsWorking == false)Run(CurrDirection);
             SetAction(Action.None); //reset action
+            m_GameManager.SetState(m_GameManager.GetCurrState());
             CanAction = false;
         }
         else if(IsWorking == false)
+        {
             Idle(OldDirection);
+        }
     }
     private void DoSomeAction()
     {

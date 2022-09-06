@@ -117,27 +117,30 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1;
-            SetCurrState(State);
-            PausePanel.SetActive(State == GameState.Pause);
-            DeadScreen.SetActive(State == GameState.Death);
-            MenuPanel.SetActive(State == GameState.Menu);
-            PlayScreen.SetActive(State == GameState.Play);
-            MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
-            PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
-            SettingsPanel.SetActive(State == GameState.Settings);
-            MenuBackgroundButtons.SetActive(true);
-            SetActivePlayer(State);
-            ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
-            m_AttributeUI.gameObject.SetActive(State == GameState.Play);
-            m_InventoryUI.gameObject.SetActive(false);
-            CraftingUI.gameObject.SetActive(false);
-            if(State == GameState.Play || State == GameState.Pause) m_DayNightSystem.SetActive(true);
-            else m_DayNightSystem.SetActive(false);
-            m_Player.Active = true;
+            ShowPlayScreen(State);
         }
     }
-
+    public void ShowPlayScreen(GameState State)
+    {
+        Time.timeScale = 1;
+        SetCurrState(State);
+        PausePanel.SetActive(State == GameState.Pause);
+        DeadScreen.SetActive(State == GameState.Death);
+        MenuPanel.SetActive(State == GameState.Menu);
+        PlayScreen.SetActive(State == GameState.Play);
+        MenuControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+        PauseControllerPanel.SetActive(State == GameState.MenuControllerSetiing);
+        SettingsPanel.SetActive(State == GameState.Settings);
+        MenuBackgroundButtons.SetActive(true);
+        SetActivePlayer(State);
+        ObjectPools.SetActive(State == GameState.Play || State == GameState.Pause);
+        m_AttributeUI.gameObject.SetActive(State == GameState.Play);
+        m_InventoryUI.gameObject.SetActive(false);
+        CraftingUI.gameObject.SetActive(false);
+        if(State == GameState.Play || State == GameState.Pause) m_DayNightSystem.SetActive(true);
+        else m_DayNightSystem.SetActive(false);
+        m_Player.Active = true;
+    }
     public bool BackState() // quay lai gamestate truoc do
     {
         if(GameStateIndex <= 1)
