@@ -11,6 +11,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     [SerializeField] private Inventory_UI m_InventoryUI;
     [SerializeField] private TextMeshProUGUI m_CloneQuantity;
     [SerializeField] private ChestUI m_ChestUI;
+    [SerializeField] private bool IsInventory;
     private Vector3 FirstSlotPosition;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -131,6 +132,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
  
     public void OnPointerDown(PointerEventData data)
     {
+        if(IsInventory)  return;
         print("OnPointerDown");
         clicked++;
         if (clicked == 1) clicktime = Time.time;
