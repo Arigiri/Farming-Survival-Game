@@ -12809,7 +12809,7 @@ MonoBehaviour:
   m_Description: {fileID: 1433811965}
   m_ItemName: {fileID: 647654141}
   m_Icon: {fileID: 671335029}
-  m_Inventory: {fileID: 0}
+  m_Inventory: {fileID: 673988939}
   m_FoodText: {fileID: 769945902}
   m_StaminaText: {fileID: 306978542}
   m_Food: {fileID: 417986835}
