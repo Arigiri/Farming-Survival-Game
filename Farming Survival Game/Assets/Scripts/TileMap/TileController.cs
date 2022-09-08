@@ -23,7 +23,7 @@ public class TileController : MonoBehaviour
    Vector3Int Location = Vector3Int.zero;
    private List<Vector3Int> OnMapObjectsList = new List<Vector3Int>();
    public Dictionary<Vector3Int, PlantController> PlantOnMap = new Dictionary<Vector3Int, PlantController>();
-   public Dictionary<Vector3Int, ChestController> ChestOnMap = new Dictionary<Vector3Int, ChestController>();
+   public Dictionary<Vector3Int, GameObject> ObjectOnMap = new Dictionary<Vector3Int, GameObject>();
 
    private void Start() {
       // m_UnWateredCropTile.gameObject.transform.localScale = new Vector3(0.15f, 0.15f, 0);
@@ -114,7 +114,7 @@ public class TileController : MonoBehaviour
 
       if(m_WateredCropTileMap.GetTile(NewLocation) != null)StartCoroutine(GrowUpPlant(NewLocation, 0));      
    }
-    IEnumerator GrowUpPlant(Vector3Int NewLocation, int GrowState)
+   IEnumerator GrowUpPlant(Vector3Int NewLocation, int GrowState)
    {
       var Plant = PlantOnMap[NewLocation];
       if(GrowState < Plant.GetMaxSize() - 1)
@@ -124,7 +124,16 @@ public class TileController : MonoBehaviour
          yield return GrowUpPlant(NewLocation, GrowState + 1);
       }
    }
-   
+   public void ClearTile(Vector3 Position)
+   {
+      Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
+      m_CropTileMap.SetTile(NewLocation, null);
+      print(ObjectOnMap[NewLocation]);
+      if(ObjectOnMap[NewLocation].GetComponent<ChestController>() != null)
+      {
+         ObjectOnMap[NewLocation].GetComponent<ChestController>().SelfDestroy();
+      }
+   }
    public void SetTreeTile(Vector3 Position)
    {
       Vector3Int NewLocation = m_TileMap.WorldToCell(Position);
@@ -157,10 +166,16 @@ public class TileController : MonoBehaviour
             {
                if(Object.name == Building.name)
                {
-                  var Chest = Object.GetComponent<ChestController>();
-                  Chest = new ChestController();
-                  Chest.Init(Position);
-                  ChestOnMap[NewLocation] = Chest;
+                  if(Object.name == "Chest")
+                  {
+                     var Chest = Instantiate(Object);
+                     Chest.SetActive(false);
+                     var NewChest = Chest.GetComponent<ChestController>();
+                     NewChest.Init(Position);
+                     ObjectOnMap[NewLocation] = Chest;
+                     print(NewLocation);
+                     print(ObjectOnMap[NewLocation]);
+                  }
                }
             }
             m_CropTileMap.SetTile(NewLocation, Building);

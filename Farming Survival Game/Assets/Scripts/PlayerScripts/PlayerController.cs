@@ -123,12 +123,12 @@ public class PlayerController : MonoBehaviour
         if(IsInteracting)return;
         if(Input.anyKeyDown)
         {
+            var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(InputManager.instance.GetKeyDown(KeybindingActions.Interact))
             {
                 CanAction = true;
                 // try
                 // {
-                var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if(m_PlayerActionController.CanInteractive())
                 {
                     //Mo ruong, len giuong ...
@@ -196,6 +196,21 @@ public class PlayerController : MonoBehaviour
                 //     print("??? Loi dau the");
                 // }
                 
+            }
+            if(InputManager.instance.GetKeyDown(KeybindingActions.Destroy))
+            {
+                if(m_PlayerActionController.CanInteractive())
+                {
+                    var NewAction = m_PlayerActionController.GetActionFromTile(Position);
+                    if(NewAction != Action.None)
+                    {
+                        m_AttributeUIController.SetAction(Action.Destroy);
+                        m_AttributeUIController.MakeProgressBar(0.2f);
+                        m_PlayerActionController.SetCropPosition(Position);
+                        IsInteracting = true; 
+                        IsWorking = true;
+                    }
+                }
             }
         }
     }

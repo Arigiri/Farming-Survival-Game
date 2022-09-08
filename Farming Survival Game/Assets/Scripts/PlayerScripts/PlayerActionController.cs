@@ -92,9 +92,10 @@ public class PlayerActionController : MonoBehaviour
                 Vector3Int NewLocation = m_TileController.m_TileMap.WorldToCell(CropPosition);
                 switch(GetCurrTargetTile())
                 {
-                    case "Chest": m_TileController.ChestOnMap[NewLocation].OpenChest();break;
+                    case "Chest": m_TileController.ObjectOnMap[NewLocation].GetComponent<ChestController>().OpenChest();break;
                     default : print("Quen Setup Ten Tile Kia!!!"); break;
                 } break;
+            case Action.Destroy: m_TileController.ClearTile(CropPosition); break;
             default : print("Quen Setup Kia!!!"); break;            
         }
         if(m_Player.IsInteracting == false)m_Player.GetInventoryController().Slots[m_ToolBar.GetActiveSlot()].m_Durability --;
@@ -177,4 +178,5 @@ public enum Action
     GrowSapling = 7,
     Interact = 8,// Tuong tac voi cac do vi du nhu ruong
     Place = 9,
+    Destroy = 10
 }

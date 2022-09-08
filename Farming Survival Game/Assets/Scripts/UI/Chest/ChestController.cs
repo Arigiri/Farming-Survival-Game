@@ -173,6 +173,7 @@ public class ChestController : MonoBehaviour
     public void SelfDestroy() // Pha ruong va Lay ruong vao Inventory
     {
         // m_Player.AddItemToInventory(m_ChestUI.GetComponent<CollectableObjectController>()); // cai nay dung roi
+        print("DropItem");
         DropItem();
         Vector3Int NewLocation = m_TileController.m_TileMap.WorldToCell(thisPosition);
         m_TileController.m_CropTileMap.SetTile(NewLocation, null);

@@ -45,3 +45,5 @@ MonoBehaviour:
     keyCode: 48
   - keybindingActions: 5
     keyCode: 114
+  - keybindingActions: 17
+    keyCode: 102

@@ -17,5 +17,6 @@ public enum KeybindingActions
     Num8,
     Num9,
     Num0,
+    Destroy,
 
 }
