@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6548579914d7d4644a8bd1ea529fcdea
+guid: 47ba858cdeb18194ebdc51673f762723
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,248 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AppleTree_allSeasons_0
+      name: pig_walk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 256
-        width: 87
-        height: 127
+        x: 54
+        y: 421
+        width: 21
+        height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6fabfede5abdb488f8bf7728b99511
-      internalID: 2059299436
+      spriteID: 0804e364af683a14b9f3163687438de4
+      internalID: 1346704493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_1
+      name: pig_walk_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 255
-        width: 73
-        height: 128
+        x: 182
+        y: 423
+        width: 21
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee4472456666a94aa15132e2f59f2d9
-      internalID: 1150341715
+      spriteID: 78cdb923f2e6105418c12d1a753703c8
+      internalID: -117069322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_2
+      name: pig_walk_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 252
-        width: 93
-        height: 131
+        x: 310
+        y: 421
+        width: 21
+        height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5daeeda6ab705dd4c8877dd03645601b
-      internalID: -1079725212
+      spriteID: 84cdad30d96212b418abd93f4055319b
+      internalID: -1266124556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_3
+      name: pig_walk_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 423
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1451f111635f54143b38a50bc0cbfeb9
+      internalID: -1576756464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 300
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f11340dc9c257e42bed2a102caedbf4
+      internalID: 1762451241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 301
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2e984392151d94caac788242fb2611
+      internalID: 1181437018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_6
       rect:
         serializedVersion: 2
         x: 290
-        y: 257
-        width: 95
-        height: 127
-      alignment: 9
-      pivot: {x: 0.48630694, y: 0.2496285}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8.5, y: -59.5}
-        - {x: -21.5, y: -57.5}
-        - {x: -26.5, y: -44.5}
-        - {x: -12.5, y: -34.5}
-        - {x: -13.5, y: -18.5}
-        - {x: -11.5, y: -21.5}
-        - {x: -5.5, y: -21.5}
-        - {x: -3.7319946, y: -22.748016}
-        - {x: 1.5, y: -24.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -36.5}
-        - {x: 11.5, y: -42.5}
-        - {x: 19.5, y: -49.5}
-        - {x: 11.5, y: -57.5}
-        - {x: 0.5, y: -61.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2037590a82a004a95813bcbdb1b43e
-      internalID: 1303858672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_4
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 255
-        width: 93
-        height: 128
+        y: 300
+        width: 55
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5279efb73c008b640ab872019def9682
-      internalID: -1151509493
+      spriteID: 1bb4554b73a09df41b280d690a00347f
+      internalID: 1240906231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_5
+      name: pig_walk_7
       rect:
         serializedVersion: 2
-        x: 4
-        y: 155
-        width: 95
-        height: 93
+        x: 418
+        y: 301
+        width: 55
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724a18343d64a8b49ade840148a77e9a
-      internalID: -74249047
+      spriteID: da78bc023063ba14abc86801c4d8793f
+      internalID: -384930732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_6
+      name: pig_walk_8
       rect:
         serializedVersion: 2
-        x: 108
-        y: 153
-        width: 77
-        height: 99
+        x: 54
+        y: 164
+        width: 21
+        height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6014d45a8b6e97845a3ce9da2b9d0eee
-      internalID: -689606611
+      spriteID: bd75877c30e5aef4ba7bf5221c9037e4
+      internalID: 108369370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_7
+      name: pig_walk_9
       rect:
         serializedVersion: 2
-        x: 195
-        y: 148
-        width: 91
-        height: 103
+        x: 182
+        y: 166
+        width: 21
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4af9c35332fc1940b72014e8819467c
-      internalID: -107885518
+      spriteID: c2a6bb55fbc620b498632774d2c3d6a7
+      internalID: 33599739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_8
+      name: pig_walk_10
       rect:
         serializedVersion: 2
-        x: 293
-        y: 151
-        width: 92
-        height: 102
+        x: 310
+        y: 164
+        width: 21
+        height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289b95f37d3d0ec4181f5b93dc3ebffc
-      internalID: -1554385147
+      spriteID: caf43afd01d9e224bb3c7ca6f5cb78d8
+      internalID: -1277725820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_9
+      name: pig_walk_11
       rect:
         serializedVersion: 2
-        x: 388
-        y: 153
-        width: 89
-        height: 96
+        x: 438
+        y: 166
+        width: 21
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7129ac7da6eb9ba46a8f6ac8b011e70d
-      internalID: 792383332
+      spriteID: 2d2104c5c94e7c9468e1a761fdf3440b
+      internalID: -1330881273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_10
+      name: pig_walk_12
       rect:
         serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
-        height: 47
+        x: 39
+        y: 44
+        width: 55
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148dfc2aa82965147911e4bc66988111
-      internalID: 1577927546
+      spriteID: 1bd98e95349d8254296609877d99d43a
+      internalID: 539724531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 45
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78130f4867e8cc479b6dcef4b17d6f7
+      internalID: -325321828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_14
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 44
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c0542454afde740bc0cda78db3e58a
+      internalID: 881180836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_walk_15
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 45
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3a9702b4b875f4eb2ff2fc37ef3921
+      internalID: 420320453
       vertices: []
       indices: 
       edges: []
@@ -373,17 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AppleTree_allSeasons_0: 2059299436
-      AppleTree_allSeasons_8: -1554385147
-      AppleTree_allSeasons_9: 792383332
-      AppleTree_allSeasons_3: 1303858672
-      AppleTree_allSeasons_10: 1577927546
-      AppleTree_allSeasons_6: -689606611
-      AppleTree_allSeasons_4: -1151509493
-      AppleTree_allSeasons_5: -74249047
-      AppleTree_allSeasons_1: 1150341715
-      AppleTree_allSeasons_7: -107885518
-      AppleTree_allSeasons_2: -1079725212
+      pig_walk_11: -1330881273
+      pig_walk_3: -1576756464
+      pig_walk_6: 1240906231
+      pig_walk_14: 881180836
+      pig_walk_1: -117069322
+      pig_walk_9: 33599739
+      pig_walk_15: 420320453
+      pig_walk_4: 1762451241
+      pig_walk_5: 1181437018
+      pig_walk_7: -384930732
+      pig_walk_0: 1346704493
+      pig_walk_12: 539724531
+      pig_walk_10: -1277725820
+      pig_walk_2: -1266124556
+      pig_walk_8: 108369370
+      pig_walk_13: -325321828
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

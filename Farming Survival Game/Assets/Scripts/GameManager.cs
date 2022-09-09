@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_ControllerText;
     [SerializeField] private ControllerSystem m_ControllerSystem;
     [SerializeField] private ChestUI m_ChestUI;
+    [SerializeField] private List<GameObject> UIList;
     private GameState CurrState; // bo khong dung nua, currstate thay bang GetCurrState()
     [SerializeField] private GameState[] GameStateList = new GameState[100];
     private int GameStateIndex; // cac gamestate duoc luu tu 0 den GameStateIndex - 1. Tuc GameStateIndex chua co gi
@@ -39,7 +40,17 @@ public class GameManager : MonoBehaviour
     {
         SetState(GameState.Menu);
     }
-
+    public bool IsActiveUI() //kiem tra xem co UI nao dang active ko
+    {
+        foreach(var gameobject in UIList)
+        {
+            if(gameobject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     // Update is called once per frame
     void Update()
     {

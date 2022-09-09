@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6548579914d7d4644a8bd1ea529fcdea
+guid: adf89e82ef93ed84c8d1963cf8e6c3b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,248 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AppleTree_allSeasons_0
+      name: chicken_walk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 256
-        width: 87
-        height: 127
+        x: 6
+        y: 101
+        width: 20
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6fabfede5abdb488f8bf7728b99511
-      internalID: 2059299436
+      spriteID: 312f9ee2998f51e468e18b4d51a570de
+      internalID: 95251269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_1
+      name: chicken_walk_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 255
-        width: 73
-        height: 128
+        x: 38
+        y: 99
+        width: 20
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee4472456666a94aa15132e2f59f2d9
-      internalID: 1150341715
+      spriteID: 2f7d805c17c7bbd478381d554cf245bc
+      internalID: 473355612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_2
+      name: chicken_walk_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 252
-        width: 93
-        height: 131
+        x: 70
+        y: 101
+        width: 20
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5daeeda6ab705dd4c8877dd03645601b
-      internalID: -1079725212
+      spriteID: 4e28c60e798922e4bafccaa10c7bafaa
+      internalID: -1307823780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_3
+      name: chicken_walk_3
       rect:
         serializedVersion: 2
-        x: 290
-        y: 257
-        width: 95
-        height: 127
-      alignment: 9
-      pivot: {x: 0.48630694, y: 0.2496285}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8.5, y: -59.5}
-        - {x: -21.5, y: -57.5}
-        - {x: -26.5, y: -44.5}
-        - {x: -12.5, y: -34.5}
-        - {x: -13.5, y: -18.5}
-        - {x: -11.5, y: -21.5}
-        - {x: -5.5, y: -21.5}
-        - {x: -3.7319946, y: -22.748016}
-        - {x: 1.5, y: -24.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -36.5}
-        - {x: 11.5, y: -42.5}
-        - {x: 19.5, y: -49.5}
-        - {x: 11.5, y: -57.5}
-        - {x: 0.5, y: -61.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2037590a82a004a95813bcbdb1b43e
-      internalID: 1303858672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_4
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 255
-        width: 93
-        height: 128
+        x: 102
+        y: 99
+        width: 20
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5279efb73c008b640ab872019def9682
-      internalID: -1151509493
+      spriteID: 8ebdb9d9900fea14a97e1421debbdcc6
+      internalID: 1335556230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_5
+      name: chicken_walk_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 155
-        width: 95
-        height: 93
+        x: 1
+        y: 67
+        width: 30
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724a18343d64a8b49ade840148a77e9a
-      internalID: -74249047
+      spriteID: 8f0045969a061224a923648a4249c5ee
+      internalID: 1876848799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_6
+      name: chicken_walk_5
       rect:
         serializedVersion: 2
-        x: 108
-        y: 153
-        width: 77
-        height: 99
+        x: 32
+        y: 67
+        width: 31
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6014d45a8b6e97845a3ce9da2b9d0eee
-      internalID: -689606611
+      spriteID: b4fee54cf57eaad428eeec50821c1c18
+      internalID: 992160770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_7
+      name: chicken_walk_6
       rect:
         serializedVersion: 2
-        x: 195
-        y: 148
-        width: 91
-        height: 103
+        x: 65
+        y: 66
+        width: 30
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4af9c35332fc1940b72014e8819467c
-      internalID: -107885518
+      spriteID: 054c922ed62ba0c4c85ce4dd28deb265
+      internalID: -355228589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_8
+      name: chicken_walk_7
       rect:
         serializedVersion: 2
-        x: 293
-        y: 151
-        width: 92
-        height: 102
+        x: 96
+        y: 66
+        width: 31
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289b95f37d3d0ec4181f5b93dc3ebffc
-      internalID: -1554385147
+      spriteID: 97282563ac08c3c4984a3f9f3f75ba71
+      internalID: 1714641745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_9
+      name: chicken_walk_8
       rect:
         serializedVersion: 2
-        x: 388
-        y: 153
-        width: 89
-        height: 96
+        x: 6
+        y: 36
+        width: 20
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7129ac7da6eb9ba46a8f6ac8b011e70d
-      internalID: 792383332
+      spriteID: 74c4fed2a7275ad498c4bba2cf256243
+      internalID: 2122860904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_10
+      name: chicken_walk_9
       rect:
         serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
-        height: 47
+        x: 38
+        y: 33
+        width: 20
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148dfc2aa82965147911e4bc66988111
-      internalID: 1577927546
+      spriteID: 0a3277f97ae2da549a8d8de681a8eb52
+      internalID: 663912274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 36
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f928bd9161fc1846a91085cd0ed60e9
+      internalID: 1426204071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 33
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b05216faa8928e488830f6946df81db
+      internalID: 1552772203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d7cbf801a0e024c8a2edefdc031fd5
+      internalID: -1081159172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf24eba9751598b43b878941cc3f7b92
+      internalID: -742191824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 2
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fe0a4ac054f2943985df18a1d5f235
+      internalID: -1079873384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_walk_15
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 2
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf54c9b9bf0c954fb92c911be5244a9
+      internalID: 15015210
       vertices: []
       indices: 
       edges: []
@@ -373,17 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AppleTree_allSeasons_0: 2059299436
-      AppleTree_allSeasons_8: -1554385147
-      AppleTree_allSeasons_9: 792383332
-      AppleTree_allSeasons_3: 1303858672
-      AppleTree_allSeasons_10: 1577927546
-      AppleTree_allSeasons_6: -689606611
-      AppleTree_allSeasons_4: -1151509493
-      AppleTree_allSeasons_5: -74249047
-      AppleTree_allSeasons_1: 1150341715
-      AppleTree_allSeasons_7: -107885518
-      AppleTree_allSeasons_2: -1079725212
+      chicken_walk_10: 1426204071
+      chicken_walk_8: 2122860904
+      chicken_walk_5: 992160770
+      chicken_walk_9: 663912274
+      chicken_walk_15: 15015210
+      chicken_walk_7: 1714641745
+      chicken_walk_4: 1876848799
+      chicken_walk_11: 1552772203
+      chicken_walk_6: -355228589
+      chicken_walk_1: 473355612
+      chicken_walk_12: -1081159172
+      chicken_walk_13: -742191824
+      chicken_walk_14: -1079873384
+      chicken_walk_3: 1335556230
+      chicken_walk_2: -1307823780
+      chicken_walk_0: 95251269
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

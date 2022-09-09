@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6548579914d7d4644a8bd1ea529fcdea
+guid: 3ded85ad393f11d4b839f17c9df8f944
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,248 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AppleTree_allSeasons_0
+      name: cow_walk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 256
-        width: 87
-        height: 127
+        x: 51
+        y: 400
+        width: 27
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6fabfede5abdb488f8bf7728b99511
-      internalID: 2059299436
+      spriteID: 78cc6dd5bec055f489c1342499672493
+      internalID: 642431185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_1
+      name: cow_walk_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 255
-        width: 73
-        height: 128
+        x: 179
+        y: 402
+        width: 27
+        height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee4472456666a94aa15132e2f59f2d9
-      internalID: 1150341715
+      spriteID: 954fa9154ea417e49a20b45a4e394306
+      internalID: -1350573936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_2
+      name: cow_walk_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 252
-        width: 93
-        height: 131
+        x: 307
+        y: 400
+        width: 27
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5daeeda6ab705dd4c8877dd03645601b
-      internalID: -1079725212
+      spriteID: c27c703292b696141aa44349b95ca263
+      internalID: -1636186645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_3
+      name: cow_walk_3
       rect:
         serializedVersion: 2
-        x: 290
-        y: 257
-        width: 95
-        height: 127
-      alignment: 9
-      pivot: {x: 0.48630694, y: 0.2496285}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8.5, y: -59.5}
-        - {x: -21.5, y: -57.5}
-        - {x: -26.5, y: -44.5}
-        - {x: -12.5, y: -34.5}
-        - {x: -13.5, y: -18.5}
-        - {x: -11.5, y: -21.5}
-        - {x: -5.5, y: -21.5}
-        - {x: -3.7319946, y: -22.748016}
-        - {x: 1.5, y: -24.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -36.5}
-        - {x: 11.5, y: -42.5}
-        - {x: 19.5, y: -49.5}
-        - {x: 11.5, y: -57.5}
-        - {x: 0.5, y: -61.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2037590a82a004a95813bcbdb1b43e
-      internalID: 1303858672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_4
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 255
-        width: 93
-        height: 128
+        x: 435
+        y: 402
+        width: 27
+        height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5279efb73c008b640ab872019def9682
-      internalID: -1151509493
+      spriteID: efefc90426d8cdf4f9983449f74a8a50
+      internalID: 478339536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_5
+      name: cow_walk_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 155
-        width: 95
-        height: 93
+        x: 20
+        y: 295
+        width: 71
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724a18343d64a8b49ade840148a77e9a
-      internalID: -74249047
+      spriteID: aa7b592acaeb52b4bbe61fcdaedea8ba
+      internalID: 452684483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_6
+      name: cow_walk_5
       rect:
         serializedVersion: 2
-        x: 108
-        y: 153
-        width: 77
-        height: 99
+        x: 148
+        y: 296
+        width: 71
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6014d45a8b6e97845a3ce9da2b9d0eee
-      internalID: -689606611
+      spriteID: 3f2e64d2f7e405c4790d1f878a3db8f4
+      internalID: -1825266757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_7
+      name: cow_walk_6
       rect:
         serializedVersion: 2
-        x: 195
-        y: 148
-        width: 91
-        height: 103
+        x: 276
+        y: 295
+        width: 71
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4af9c35332fc1940b72014e8819467c
-      internalID: -107885518
+      spriteID: 259217eb74b3a4e4298f42987eaf3fdb
+      internalID: -1755894088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_8
+      name: cow_walk_7
       rect:
         serializedVersion: 2
-        x: 293
-        y: 151
-        width: 92
-        height: 102
+        x: 404
+        y: 297
+        width: 71
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289b95f37d3d0ec4181f5b93dc3ebffc
-      internalID: -1554385147
+      spriteID: 7f7b4007a9d6c0546a4f2798cdfd2388
+      internalID: 913768035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_9
+      name: cow_walk_8
       rect:
         serializedVersion: 2
-        x: 388
-        y: 153
-        width: 89
-        height: 96
+        x: 51
+        y: 152
+        width: 27
+        height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7129ac7da6eb9ba46a8f6ac8b011e70d
-      internalID: 792383332
+      spriteID: 536a492c07d975c4d8834dd80fda97c1
+      internalID: 158329264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_10
+      name: cow_walk_9
       rect:
         serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
-        height: 47
+        x: 179
+        y: 154
+        width: 27
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148dfc2aa82965147911e4bc66988111
-      internalID: 1577927546
+      spriteID: e831e45b98e5b45439029fd016601e4a
+      internalID: 1147941697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_10
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 152
+        width: 27
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9c63bd32a73694492eacd4676264b1
+      internalID: 34243579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_11
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 154
+        width: 27
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144267e5e940fd3409762f55a41250a4
+      internalID: 1017743921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_12
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 39
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a613b26e31f5144b8cc4160a876ed8
+      internalID: 1842279017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_13
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 40
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf2f04a9520a31489e09c13c31d2260
+      internalID: 1496650389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 39
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ff501e0e7791741ab55c6e9df662c5
+      internalID: 1656005557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_walk_15
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 41
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5aac01d378c8074bafd4f4b2752a1e9
+      internalID: -966146179
       vertices: []
       indices: 
       edges: []
@@ -373,17 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AppleTree_allSeasons_0: 2059299436
-      AppleTree_allSeasons_8: -1554385147
-      AppleTree_allSeasons_9: 792383332
-      AppleTree_allSeasons_3: 1303858672
-      AppleTree_allSeasons_10: 1577927546
-      AppleTree_allSeasons_6: -689606611
-      AppleTree_allSeasons_4: -1151509493
-      AppleTree_allSeasons_5: -74249047
-      AppleTree_allSeasons_1: 1150341715
-      AppleTree_allSeasons_7: -107885518
-      AppleTree_allSeasons_2: -1079725212
+      cow_walk_9: 1147941697
+      cow_walk_4: 452684483
+      cow_walk_0: 642431185
+      cow_walk_13: 1496650389
+      cow_walk_14: 1656005557
+      cow_walk_15: -966146179
+      cow_walk_11: 1017743921
+      cow_walk_8: 158329264
+      cow_walk_6: -1755894088
+      cow_walk_1: -1350573936
+      cow_walk_2: -1636186645
+      cow_walk_3: 478339536
+      cow_walk_10: 34243579
+      cow_walk_5: -1825266757
+      cow_walk_7: 913768035
+      cow_walk_12: 1842279017
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

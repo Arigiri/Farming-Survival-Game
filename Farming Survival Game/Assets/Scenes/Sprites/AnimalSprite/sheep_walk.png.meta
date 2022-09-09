@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6548579914d7d4644a8bd1ea529fcdea
+guid: 159faf17836442940944aefb56c5c900
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,248 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AppleTree_allSeasons_0
+      name: sheep_walk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 256
-        width: 87
-        height: 127
+        x: 50
+        y: 423
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6fabfede5abdb488f8bf7728b99511
-      internalID: 2059299436
+      spriteID: 20f539d1ec551a24d8f2bea5e7737c8f
+      internalID: -1346763189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_1
+      name: sheep_walk_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 255
-        width: 73
-        height: 128
+        x: 178
+        y: 425
+        width: 27
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee4472456666a94aa15132e2f59f2d9
-      internalID: 1150341715
+      spriteID: f07fac184f2083643970c984bc4ea94a
+      internalID: -227938125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_2
+      name: sheep_walk_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 252
-        width: 93
-        height: 131
+        x: 306
+        y: 423
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5daeeda6ab705dd4c8877dd03645601b
-      internalID: -1079725212
+      spriteID: 3797d849a0a37f04593d7af489a9feee
+      internalID: 309876260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_3
+      name: sheep_walk_3
       rect:
         serializedVersion: 2
-        x: 290
-        y: 257
-        width: 95
-        height: 127
-      alignment: 9
-      pivot: {x: 0.48630694, y: 0.2496285}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8.5, y: -59.5}
-        - {x: -21.5, y: -57.5}
-        - {x: -26.5, y: -44.5}
-        - {x: -12.5, y: -34.5}
-        - {x: -13.5, y: -18.5}
-        - {x: -11.5, y: -21.5}
-        - {x: -5.5, y: -21.5}
-        - {x: -3.7319946, y: -22.748016}
-        - {x: 1.5, y: -24.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -36.5}
-        - {x: 11.5, y: -42.5}
-        - {x: 19.5, y: -49.5}
-        - {x: 11.5, y: -57.5}
-        - {x: 0.5, y: -61.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2037590a82a004a95813bcbdb1b43e
-      internalID: 1303858672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_4
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 255
-        width: 93
-        height: 128
+        x: 434
+        y: 425
+        width: 27
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5279efb73c008b640ab872019def9682
-      internalID: -1151509493
+      spriteID: 17605c5c2f7067943822efb2848c0f19
+      internalID: -1695929400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_5
+      name: sheep_walk_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 155
-        width: 95
-        height: 93
+        x: 37
+        y: 302
+        width: 49
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724a18343d64a8b49ade840148a77e9a
-      internalID: -74249047
+      spriteID: 095ccc7d1509f1247b4b6876c0a321e1
+      internalID: 187408638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_6
+      name: sheep_walk_5
       rect:
         serializedVersion: 2
-        x: 108
-        y: 153
-        width: 77
-        height: 99
+        x: 165
+        y: 302
+        width: 49
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6014d45a8b6e97845a3ce9da2b9d0eee
-      internalID: -689606611
+      spriteID: 84a4232a5593d8b43b950da809841876
+      internalID: -1231997070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_7
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 148
-        width: 91
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4af9c35332fc1940b72014e8819467c
-      internalID: -107885518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_8
+      name: sheep_walk_6
       rect:
         serializedVersion: 2
         x: 293
-        y: 151
-        width: 92
-        height: 102
+        y: 301
+        width: 49
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289b95f37d3d0ec4181f5b93dc3ebffc
-      internalID: -1554385147
+      spriteID: 49fc9ea3063996641a9a22c689cc2379
+      internalID: -1308423255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_9
+      name: sheep_walk_7
       rect:
         serializedVersion: 2
-        x: 388
-        y: 153
-        width: 89
-        height: 96
+        x: 421
+        y: 302
+        width: 49
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7129ac7da6eb9ba46a8f6ac8b011e70d
-      internalID: 792383332
+      spriteID: 8294bf98f6d6eab42aa3628a6721e66e
+      internalID: 1833511859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AppleTree_allSeasons_10
+      name: sheep_walk_8
       rect:
         serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
-        height: 47
+        x: 50
+        y: 167
+        width: 27
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148dfc2aa82965147911e4bc66988111
-      internalID: 1577927546
+      spriteID: 32274ddee56bee649b987fc65d2e7837
+      internalID: -786322535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 169
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e25c5904e2c0014483acecc17763b47
+      internalID: -58289409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 167
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feebc650d80725e4984921d10c27401e
+      internalID: 1229998611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_11
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 169
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4839699a427eddb4db8772b3bbf4cfd3
+      internalID: -1023119054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 46
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eba860b975b9c2469cd16e0a51fe0a8
+      internalID: -1158383696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 46
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd828fad8b795046bd3c43cd7a370af
+      internalID: -681366669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_14
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 45
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7729d568b16a21a4c984cf2e2e6acbb9
+      internalID: 1559985598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_walk_15
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 46
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da5ab28f1d58cf43ae50ce5ac424c2d
+      internalID: -2146835995
       vertices: []
       indices: 
       edges: []
@@ -373,17 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AppleTree_allSeasons_0: 2059299436
-      AppleTree_allSeasons_8: -1554385147
-      AppleTree_allSeasons_9: 792383332
-      AppleTree_allSeasons_3: 1303858672
-      AppleTree_allSeasons_10: 1577927546
-      AppleTree_allSeasons_6: -689606611
-      AppleTree_allSeasons_4: -1151509493
-      AppleTree_allSeasons_5: -74249047
-      AppleTree_allSeasons_1: 1150341715
-      AppleTree_allSeasons_7: -107885518
-      AppleTree_allSeasons_2: -1079725212
+      sheep_walk_13: -681366669
+      sheep_walk_14: 1559985598
+      sheep_walk_8: -786322535
+      sheep_walk_6: -1308423255
+      sheep_walk_3: -1695929400
+      sheep_walk_11: -1023119054
+      sheep_walk_4: 187408638
+      sheep_walk_5: -1231997070
+      sheep_walk_9: -58289409
+      sheep_walk_15: -2146835995
+      sheep_walk_7: 1833511859
+      sheep_walk_10: 1229998611
+      sheep_walk_12: -1158383696
+      sheep_walk_0: -1346763189
+      sheep_walk_2: 309876260
+      sheep_walk_1: -227938125
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

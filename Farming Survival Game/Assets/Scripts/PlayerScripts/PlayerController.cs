@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     private void DoSomeAction()
     {
         if(IsInteracting)return;
-        if(Input.anyKeyDown)
+        if(Input.anyKeyDown && m_GameManager.IsActiveUI() == false)
         {
             var Position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(InputManager.instance.GetKeyDown(KeybindingActions.Interact))
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //Mo ruong, len giuong ...
                     var NewAction = m_PlayerActionController.GetActionFromTile(Position);
-                    if(NewAction != Action.None)
+                    if(NewAction != Action.None)    
                     {
                         m_AttributeUIController.SetAction(NewAction);
                         m_AttributeUIController.MakeProgressBar(0.2f);

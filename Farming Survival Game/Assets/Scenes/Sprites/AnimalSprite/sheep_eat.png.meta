@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6548579914d7d4644a8bd1ea529fcdea
+guid: 33ea4d0f2906d7e4188a0eaa653bae0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +101,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,248 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AppleTree_allSeasons_0
+      name: sheep_eat_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 256
-        width: 87
-        height: 127
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f6fabfede5abdb488f8bf7728b99511
-      internalID: 2059299436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_1
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 255
-        width: 73
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ee4472456666a94aa15132e2f59f2d9
-      internalID: 1150341715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_2
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 252
-        width: 93
-        height: 131
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5daeeda6ab705dd4c8877dd03645601b
-      internalID: -1079725212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_3
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 257
-        width: 95
-        height: 127
-      alignment: 9
-      pivot: {x: 0.48630694, y: 0.2496285}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8.5, y: -59.5}
-        - {x: -21.5, y: -57.5}
-        - {x: -26.5, y: -44.5}
-        - {x: -12.5, y: -34.5}
-        - {x: -13.5, y: -18.5}
-        - {x: -11.5, y: -21.5}
-        - {x: -5.5, y: -21.5}
-        - {x: -3.7319946, y: -22.748016}
-        - {x: 1.5, y: -24.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -26.5}
-        - {x: 7.5, y: -36.5}
-        - {x: 11.5, y: -42.5}
-        - {x: 19.5, y: -49.5}
-        - {x: 11.5, y: -57.5}
-        - {x: 0.5, y: -61.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2037590a82a004a95813bcbdb1b43e
-      internalID: 1303858672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_4
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 255
-        width: 93
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5279efb73c008b640ab872019def9682
-      internalID: -1151509493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_5
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 155
-        width: 95
-        height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 724a18343d64a8b49ade840148a77e9a
-      internalID: -74249047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_6
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 153
-        width: 77
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6014d45a8b6e97845a3ce9da2b9d0eee
-      internalID: -689606611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_7
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 148
-        width: 91
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4af9c35332fc1940b72014e8819467c
-      internalID: -107885518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_8
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 151
-        width: 92
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 289b95f37d3d0ec4181f5b93dc3ebffc
-      internalID: -1554385147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_9
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 153
-        width: 89
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7129ac7da6eb9ba46a8f6ac8b011e70d
-      internalID: 792383332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AppleTree_allSeasons_10
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
+        x: 50
+        y: 425
+        width: 27
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148dfc2aa82965147911e4bc66988111
-      internalID: 1577927546
+      spriteID: 8c92095578491f74db2117aa5527d55a
+      internalID: -1291683309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 425
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9170539cff182634682bd1f0da34bcc8
+      internalID: 1514725705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 425
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7362f6f4729d64d970bf3084e15a02
+      internalID: 558973981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_3
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 425
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bce6757238a6be4089e0083fce7ca43
+      internalID: 1213380259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 301
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f23a53ccbe0f0c4d86de9bcd5ca893b
+      internalID: 1247936373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 301
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82af98b8fe49d344e9bf26dcd27f82a7
+      internalID: -1567294516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 301
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0512dbc164b91d04bb77ae0f58a7cf65
+      internalID: -260570716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_7
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 301
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aedd7700cfb4f246826b20daf58cfc6
+      internalID: -2058558292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 169
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb02a0ddaa51a3e49908df30e3127d5f
+      internalID: -1207414347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 169
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2a024c6ed993342b8c8244416c9199
+      internalID: 683592899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 164
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d876903501a3fd147a257bc9dda823c0
+      internalID: -1864755321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_11
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 164
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f89312c8c67824e896461535d87084
+      internalID: -1903592882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 45
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97c7e26278096e4a853ed1dbb3ce1f8
+      internalID: -1807371239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 45
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e704862bb337f4bac1b330340113ee
+      internalID: -1822402311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_14
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 45
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49f17bff97da5d4ba60243eec455d4f
+      internalID: 1854903460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheep_eat_15
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 45
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f89a34b98af8542891ca1350cbde83
+      internalID: -1728352252
       vertices: []
       indices: 
       edges: []
@@ -373,17 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AppleTree_allSeasons_0: 2059299436
-      AppleTree_allSeasons_8: -1554385147
-      AppleTree_allSeasons_9: 792383332
-      AppleTree_allSeasons_3: 1303858672
-      AppleTree_allSeasons_10: 1577927546
-      AppleTree_allSeasons_6: -689606611
-      AppleTree_allSeasons_4: -1151509493
-      AppleTree_allSeasons_5: -74249047
-      AppleTree_allSeasons_1: 1150341715
-      AppleTree_allSeasons_7: -107885518
-      AppleTree_allSeasons_2: -1079725212
+      sheep_eat_8: -1207414347
+      sheep_eat_0: -1291683309
+      sheep_eat_9: 683592899
+      sheep_eat_13: -1822402311
+      sheep_eat_14: 1854903460
+      sheep_eat_10: -1864755321
+      sheep_eat_12: -1807371239
+      sheep_eat_3: 1213380259
+      sheep_eat_7: -2058558292
+      sheep_eat_11: -1903592882
+      sheep_eat_15: -1728352252
+      sheep_eat_1: 1514725705
+      sheep_eat_2: 558973981
+      sheep_eat_4: 1247936373
+      sheep_eat_6: -260570716
+      sheep_eat_5: -1567294516
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
