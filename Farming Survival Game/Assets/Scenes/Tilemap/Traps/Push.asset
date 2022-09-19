@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Push
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -141077319, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -362336556, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -856083232, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -1348569990, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: 1603746122, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: 2141441435, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: 1789508478, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -19036207, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: 211136932, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -1997118512, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  - {fileID: -346825949, guid: 572266065e068174ba2688b2d4276fb6, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

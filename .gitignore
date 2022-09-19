@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 Farming Survival Game/Assets/Scenes/MainSence.unity
 Farming Survival Game/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+*.unity
+Farming Survival Game/Assets/Scenes/Game.unity
+*.unity

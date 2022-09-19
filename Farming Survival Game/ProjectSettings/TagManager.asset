@@ -50,3 +50,15 @@ TagManager:
   - name: Map
     uniqueID: 3437258541
     locked: 0
+  - name: Shadow
+    uniqueID: 1557081181
+    locked: 0
+  - name: Ground
+    uniqueID: 3765205213
+    locked: 0
+  - name: Trap
+    uniqueID: 4134720955
+    locked: 0
+  - name: Wall
+    uniqueID: 2355117337
+    locked: 0
